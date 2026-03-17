@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RYVEM — Atendimento Inteligente via WhatsApp</title>
+  <meta name="description" content="RYVEM transforma seu WhatsApp em uma central de atendimento inteligente. Automatize conversas, agende consultas e fidelize clientes com IA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #6C3CE1;
+      --primary-dark: #5228C0;
+      --primary-light: #EDE7FB;
+      --accent: #25D366;
+      --accent-dark: #1DA851;
+      --dark: #111827;
+      --gray-900: #1F2937;
+      --gray-700: #374151;
+      --gray-500: #6B7280;
+      --gray-300: #D1D5DB;
+      --gray-100: #F3F4F6;
+      --white: #FFFFFF;
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--white);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── Container ────────────────────────────────── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1120px; margin: 0 auto; padding: 16px 24px;
+    }
+    .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-700); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+      border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .btn-primary { background: var(--primary); color: var(--white); }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-whatsapp { background: var(--accent); color: var(--white); }
+    .btn-whatsapp:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: var(--white); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger svg { width: 28px; height: 28px; color: var(--gray-700); }
+
+    /* ── Hero ─────────────────────────────────────── */
+    .hero {
+      padding: 140px 0 80px;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--white) 60%);
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; color: var(--dark); }
+    .hero h1 span { color: var(--primary); }
+    .hero p { font-size: 1.15rem; color: var(--gray-500); margin: 20px 0 32px; max-width: 480px; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--white); border-radius: 24px; box-shadow: 0 20px 60px rgba(108,60,225,0.12);
+      padding: 40px; min-height: 360px; position: relative; overflow: hidden;
+    }
+    .hero-visual::before {
+      content: ''; position: absolute; top: -40px; right: -40px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(108,60,225,0.08);
+    }
+    .phone-mock {
+      width: 220px; background: var(--gray-900); border-radius: 28px; padding: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15); position: relative; z-index: 1;
+    }
+    .phone-screen {
+      background: var(--white); border-radius: 20px; padding: 16px; min-height: 380px;
+    }
+    .chat-bubble {
+      padding: 10px 14px; border-radius: 16px; font-size: 0.8rem; margin-bottom: 8px;
+      max-width: 85%; line-height: 1.4;
+    }
+    .chat-user { background: #DCF8C6; margin-left: auto; border-bottom-right-radius: 4px; }
+    .chat-bot { background: var(--gray-100); border-bottom-left-radius: 4px; }
+    .chat-bot .tag { font-size: 0.65rem; color: var(--primary); font-weight: 600; margin-bottom: 2px; }
+
+    /* ── Section base ────────────────────────────── */
+    section { padding: 80px 0; }
+    .section-header { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .section-header h2 { font-size: 2.2rem; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; }
+    .section-header p { color: var(--gray-500); font-size: 1.05rem; margin-top: 12px; }
+    .tag-label {
+      display: inline-block; padding: 4px 14px; border-radius: 50px; font-size: 0.75rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;
+    }
+    .tag-purple { background: var(--primary-light); color: var(--primary); }
+    .tag-green { background: #DCFCE7; color: #16A34A; }
+
+    /* ── Sobre ────────────────────────────────────── */
+    .sobre { background: var(--gray-100); }
+    .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .sobre-text h2 { font-size: 2rem; font-weight: 800; color: var(--dark); margin-bottom: 16px; }
+    .sobre-text p { color: var(--gray-500); font-size: 1.05rem; margin-bottom: 16px; }
+    .sobre-visual {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .stat-card {
+      background: var(--white); border-radius: var(--radius); padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 16px;
+    }
+    .stat-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+    }
+    .stat-icon.purple { background: var(--primary-light); }
+    .stat-icon.green { background: #DCFCE7; }
+    .stat-icon.blue { background: #DBEAFE; }
+    .stat-card h3 { font-size: 1.6rem; font-weight: 800; color: var(--dark); }
+    .stat-card p { font-size: 0.85rem; color: var(--gray-500); }
+
+    /* ── Produtos ─────────────────────────────────── */
+    .produtos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .produto-card {
+      background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius);
+      padding: 32px; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .produto-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(108,60,225,0.1); }
+    .produto-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .produto-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .produto-card p { color: var(--gray-500); font-size: 0.9rem; }
+
+    /* ── Como funciona ────────────────────────────── */
+    .como-funciona { background: var(--gray-100); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step {
+      text-align: center; padding: 32px 20px; background: var(--white);
+      border-radius: var(--radius); box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .step-number {
+      width: 48px; height: 48px; border-radius: 50%; background: var(--primary);
+      color: var(--white); display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.2rem; margin: 0 auto 16px;
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .step p { font-size: 0.85rem; color: var(--gray-500); }
+
+    /* ── Para quem ────────────────────────────────── */
+    .para-quem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .quem-card {
+      background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius);
+      padding: 28px; text-align: center;
+    }
+    .quem-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .quem-card h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .quem-card p { font-size: 0.85rem; color: var(--gray-500); }
+
+    /* ── WhatsApp section ────────────────────────── */
+    .whatsapp-section {
+      background: linear-gradient(135deg, #075E54, #128C7E);
+      color: var(--white); text-align: center;
+    }
+    .whatsapp-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+    .whatsapp-section p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px; }
+    .whatsapp-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    .wf-item {
+      background: rgba(255,255,255,0.1); border-radius: var(--radius); padding: 24px;
+      backdrop-filter: blur(4px);
+    }
+    .wf-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+    .wf-item p { font-size: 0.85rem; opacity: 0.85; }
+
+    /* ── CTA ──────────────────────────────────────── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white); text-align: center;
+    }
+    .cta-section h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; }
+    .cta-section p { font-size: 1.1rem; opacity: 0.9; max-width: 560px; margin: 0 auto 32px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-white { background: var(--white); color: var(--primary); }
+    .btn-white:hover { background: var(--gray-100); transform: translateY(-1px); }
+
+    /* ── Legal ────────────────────────────────────── */
+    .legal { background: var(--gray-100); }
+    .legal-tabs { display: flex; gap: 0; margin-bottom: 32px; justify-content: center; }
+    .legal-tab {
+      padding: 12px 32px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+      border: 2px solid var(--gray-300); background: var(--white); color: var(--gray-500);
+      transition: all 0.2s;
+    }
+    .legal-tab:first-child { border-radius: 8px 0 0 8px; }
+    .legal-tab:last-child { border-radius: 0 8px 8px 0; }
+    .legal-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+    .legal-content { display: none; background: var(--white); border-radius: var(--radius); padding: 40px; max-width: 800px; margin: 0 auto; }
+    .legal-content.active { display: block; }
+    .legal-content h3 { font-size: 1.2rem; font-weight: 700; color: var(--dark); margin: 24px 0 8px; }
+    .legal-content h3:first-child { margin-top: 0; }
+    .legal-content p, .legal-content li { font-size: 0.9rem; color: var(--gray-500); line-height: 1.7; }
+    .legal-content ul { padding-left: 20px; margin: 8px 0; }
+
+    /* ── Contato ──────────────────────────────────── */
+    .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .contato-info h3 { font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+    .contato-item { display: flex; align-items: start; gap: 12px; margin-bottom: 16px; }
+    .contato-item .icon {
+      width: 40px; height: 40px; border-radius: 10px; background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contato-item strong { font-size: 0.85rem; color: var(--dark); display: block; }
+    .contato-item span { font-size: 0.85rem; color: var(--gray-500); }
+    .contato-form { background: var(--gray-100); border-radius: var(--radius); padding: 32px; }
+    .contato-form h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--gray-700); margin-bottom: 6px; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 12px 16px; border: 1px solid var(--gray-300); border-radius: 8px;
+      font-family: inherit; font-size: 0.9rem; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.7); padding: 48px 0 24px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo { color: var(--white); font-size: 1.4rem; margin-bottom: 12px; display: block; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.6; }
+    .footer-col h4 { color: var(--white); font-size: 0.9rem; font-weight: 600; margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 0.85rem; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+      font-size: 0.8rem;
+    }
+
+    /* ── Mobile ───────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0;
+        background: var(--white); padding: 24px; gap: 16px; border-bottom: 1px solid var(--gray-100);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { margin: 16px auto 24px; }
+      .hero-buttons { justify-content: center; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .produtos-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .para-quem-grid { grid-template-columns: 1fr; }
+      .whatsapp-features { grid-template-columns: 1fr; }
+      .contato-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════ NAV ═══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">RYVEM</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#para-quem">Para Quem</a>
+      <a href="#contato">Contato</a>
+      <a href="#cta" class="btn btn-primary">Comece Agora</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════ HERO ══ -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="tag-label tag-purple">Atendimento Inteligente</span>
+      <h1>Seu WhatsApp atendendo clientes <span>24 horas por dia</span></h1>
+      <p>A RYVEM transforma o WhatsApp do seu negocio em uma central de atendimento inteligente com IA. Agende, responda e fidelize clientes automaticamente.</p>
+      <div class="hero-buttons">
+        <a href="#cta" class="btn btn-primary">Quero Conhecer</a>
+        <a href="#como-funciona" class="btn btn-outline">Como Funciona</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="chat-bubble chat-user">Oi, quero agendar uma consulta pro meu cachorro</div>
+          <div class="chat-bubble chat-bot">
+            <div class="tag">RYVEM IA</div>
+            Oi! Claro, vou te ajudar. Qual o nome do pet e qual servico voce precisa?
+          </div>
+          <div class="chat-bubble chat-user">Rex, vacinacao V8</div>
+          <div class="chat-bubble chat-bot">
+            <div class="tag">RYVEM IA</div>
+            Perfeito! Temos horarios disponiveis amanha as 14h ou quinta as 10h. Qual prefere?
+          </div>
+          <div class="chat-bubble chat-user">Amanha as 14h!</div>
+          <div class="chat-bubble chat-bot">
+            <div class="tag">RYVEM IA</div>
+            Agendado! Rex - Vacinacao V8, amanha 14h. Voce recebera um lembrete 24h antes. Ate la!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ SOBRE ═ -->
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-text">
+      <span class="tag-label tag-purple">Sobre a RYVEM</span>
+      <h2>Tecnologia que entende seu negocio</h2>
+      <p>A RYVEM nasceu para resolver um problema real: negocios que perdem clientes porque nao conseguem responder rapido o suficiente. Nosso agente de IA conversa naturalmente via WhatsApp, entende o contexto do seu negocio e atende como seu melhor funcionario faria.</p>
+      <p>Combinamos inteligencia artificial de ultima geracao com profundo conhecimento de atendimento ao cliente para criar experiencias que encantam e convertem.</p>
+    </div>
+    <div class="sobre-visual">
+      <div class="stat-card">
+        <div class="stat-icon purple">&#9889;</div>
+        <div>
+          <h3>24/7</h3>
+          <p>Atendimento ininterrupto</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">&#128172;</div>
+        <div>
+          <h3>&lt; 3s</h3>
+          <p>Tempo medio de resposta</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue">&#128200;</div>
+        <div>
+          <h3>+40%</h3>
+          <p>Aumento em conversoes</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ PRODUTOS -->
+<section id="produtos">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag-label tag-purple">Produtos</span>
+      <h2>Solucoes completas para seu negocio</h2>
+      <p>Do primeiro contato ao pos-atendimento, a RYVEM cobre toda a jornada do seu cliente.</p>
+    </div>
+    <div class="produtos-grid">
+      <div class="produto-card">
+        <div class="produto-icon">&#129302;</div>
+        <h3>Agente de Atendimento IA</h3>
+        <p>Responde perguntas, agenda consultas, informa precos e escala para humanos quando necessario. Tudo via WhatsApp, 24 horas por dia.</p>
+      </div>
+      <div class="produto-card">
+        <div class="produto-icon">&#128197;</div>
+        <h3>Agendamento Inteligente</h3>
+        <p>Lembretes automaticos D-1 e D-0, confirmacao por WhatsApp, deteccao de cancelamento e reagendamento sem intervencao humana.</p>
+      </div>
+      <div class="produto-card">
+        <div class="produto-icon">&#128202;</div>
+        <h3>CRM Conversacional</h3>
+        <p>Historico completo de conversas, tags automaticas, score de engajamento e pipeline visual de cada cliente.</p>
+      </div>
+      <div class="produto-card">
+        <div class="produto-icon">&#128227;</div>
+        <h3>Campanhas Automatizadas</h3>
+        <p>Envie campanhas segmentadas com cadencia inteligente. Deteccao automatica de interesse, objecao e agendamento.</p>
+      </div>
+      <div class="produto-card">
+        <div class="produto-icon">&#128276;</div>
+        <h3>Alertas em Tempo Real</h3>
+        <p>Receba alertas instantaneos no WhatsApp quando um cliente precisa de atencao urgente, tem objecao de preco ou esta insatisfeito.</p>
+      </div>
+      <div class="produto-card">
+        <div class="produto-icon">&#128203;</div>
+        <h3>Relatorio Semanal</h3>
+        <p>Todo domingo receba um relatorio completo: receita estimada, agendamentos, NPS, oportunidades perdidas e pontos de melhoria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ COMO FUNCIONA -->
+<section class="como-funciona" id="como-funciona">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag-label tag-green">Como Funciona</span>
+      <h2>Simples de configurar, poderoso no resultado</h2>
+      <p>Em 4 passos seu negocio tem um atendente virtual no WhatsApp.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Conecte seu WhatsApp</h3>
+        <p>Escaneie o QR Code no painel e seu numero esta pronto para receber atendimento automatico.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Configure o Agente</h3>
+        <p>Informe sobre seu negocio, servicos, precos e horarios. A IA aprende o tom da sua marca.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Teste e Ajuste</h3>
+        <p>Envie mensagens de teste, ajuste as respostas e calibre o agente antes de colocar em producao.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Ative e Monitore</h3>
+        <p>Seu agente comeca a atender. Acompanhe pelo painel com metricas em tempo real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ PARA QUEM -->
+<section id="para-quem">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag-label tag-purple">Para Quem</span>
+      <h2>Feito para negocios que atendem pelo WhatsApp</h2>
+      <p>Se seu cliente entra em contato pelo WhatsApp, a RYVEM pode transformar sua operacao.</p>
+    </div>
+    <div class="para-quem-grid">
+      <div class="quem-card">
+        <div class="quem-icon">&#128137;</div>
+        <h3>Clinicas Veterinarias</h3>
+        <p>Agendamento de consultas, lembretes de vacina, follow-up pos-atendimento e fidelizacao de tutores.</p>
+      </div>
+      <div class="quem-card">
+        <div class="quem-icon">&#127978;</div>
+        <h3>Clinicas e Consultorios</h3>
+        <p>Confirmacao de presenca, triagem inicial, orientacoes pre e pos-consulta automatizadas.</p>
+      </div>
+      <div class="quem-card">
+        <div class="quem-icon">&#128722;</div>
+        <h3>E-commerce e Varejo</h3>
+        <p>Atendimento de duvidas, rastreamento de pedidos, calculo de frete e recuperacao de carrinho abandonado.</p>
+      </div>
+      <div class="quem-card">
+        <div class="quem-icon">&#127968;</div>
+        <h3>Servicos e Manutencao</h3>
+        <p>Orcamentos automaticos, agendamento de visitas, follow-up de propostas e pesquisa de satisfacao.</p>
+      </div>
+      <div class="quem-card">
+        <div class="quem-icon">&#127891;</div>
+        <h3>Educacao e Cursos</h3>
+        <p>Captacao de leads, qualificacao automatica, envio de materiais e nutricao ate a matricula.</p>
+      </div>
+      <div class="quem-card">
+        <div class="quem-icon">&#9749;</div>
+        <h3>Restaurantes e Delivery</h3>
+        <p>Cardapio interativo, pedidos via WhatsApp, confirmacao e rastreamento de entrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ WHATSAPP -->
+<section class="whatsapp-section" id="whatsapp">
+  <div class="container">
+    <span class="tag-label tag-green" style="color:#fff;background:rgba(255,255,255,0.2);">WhatsApp Business</span>
+    <h2>O canal que seus clientes ja usam</h2>
+    <p>Mais de 170 milhoes de brasileiros usam WhatsApp diariamente. Esteja onde seu cliente esta, respondendo na velocidade que ele espera.</p>
+    <div class="whatsapp-features">
+      <div class="wf-item">
+        <h3>&#128172; Conversas Naturais</h3>
+        <p>IA treinada para conversar como um atendente real, com tom adequado ao seu negocio.</p>
+      </div>
+      <div class="wf-item">
+        <h3>&#127912; Audio e Imagens</h3>
+        <p>Transcricao automatica de audios e analise de imagens enviadas pelos clientes.</p>
+      </div>
+      <div class="wf-item">
+        <h3>&#128274; Seguro e Privado</h3>
+        <p>Criptografia ponta a ponta. Seus dados nunca sao compartilhados com terceiros.</p>
+      </div>
+    </div>
+    <a href="#cta" class="btn btn-whatsapp" style="font-size:1.1rem;padding:16px 36px;">
+      &#128172; Quero Atender pelo WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ CTA ═══ -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <h2>Pronto para revolucionar seu atendimento?</h2>
+    <p>Comece hoje com a RYVEM. Configuracao rapida, sem contratos longos, resultados desde o primeiro dia.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/5522981047666?text=Oi!%20Quero%20conhecer%20a%20RYVEM" class="btn btn-white" target="_blank" rel="noopener">
+        &#128172; Falar no WhatsApp
+      </a>
+      <a href="#contato" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);color:#fff;">
+        Enviar Mensagem
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ LEGAL ═ -->
+<section class="legal" id="legal">
+  <div class="container">
+    <div class="section-header">
+      <h2>Termos e Politicas</h2>
+      <p>Transparencia e conformidade com a LGPD.</p>
+    </div>
+    <div class="legal-tabs">
+      <div class="legal-tab active" onclick="showLegal('privacidade')">Politica de Privacidade</div>
+      <div class="legal-tab" onclick="showLegal('termos')">Termos de Uso</div>
+    </div>
+
+    <div class="legal-content active" id="legal-privacidade">
+      <h3>1. Introducao</h3>
+      <p>A DMG SERVICOS EMPRESARIAIS LTDA ("RYVEM"), inscrita no CNPJ 35.416.764/0001-47, respeita sua privacidade e esta comprometida com a protecao dos dados pessoais coletados por meio de seus servicos, em conformidade com a Lei Geral de Protecao de Dados (Lei 13.709/2018).</p>
+
+      <h3>2. Dados Coletados</h3>
+      <p>Coletamos os seguintes dados para prestacao dos servicos:</p>
+      <ul>
+        <li>Dados de identificacao: nome, e-mail, telefone, CNPJ</li>
+        <li>Dados de uso: historico de conversas via WhatsApp processadas pelo agente IA</li>
+        <li>Dados tecnicos: endereco IP, tipo de navegador, cookies de sessao</li>
+      </ul>
+
+      <h3>3. Finalidade do Tratamento</h3>
+      <p>Os dados sao utilizados exclusivamente para:</p>
+      <ul>
+        <li>Prestacao e melhoria dos servicos contratados</li>
+        <li>Comunicacao sobre atualizacoes e novidades</li>
+        <li>Cumprimento de obrigacoes legais e regulatorias</li>
+      </ul>
+
+      <h3>4. Compartilhamento</h3>
+      <p>Nao compartilhamos dados pessoais com terceiros, exceto quando necessario para prestacao do servico (ex.: provedor de infraestrutura) ou por determinacao legal. Os provedores sao contratualmente obrigados a proteger os dados.</p>
+
+      <h3>5. Seguranca</h3>
+      <p>Adotamos medidas tecnicas e organizacionais para proteger seus dados, incluindo criptografia AES-256, controle de acesso por chave e monitoramento continuo de seguranca.</p>
+
+      <h3>6. Direitos do Titular</h3>
+      <p>Conforme a LGPD, voce tem direito a acessar, corrigir, excluir, portar e revogar consentimento sobre seus dados. Para exercer seus direitos, entre em contato pelo e-mail contato@ryvem.com.br.</p>
+
+      <h3>7. Retencao</h3>
+      <p>Os dados sao retidos pelo periodo necessario a prestacao do servico e cumprimento de obrigacoes legais. Apos o termino da relacao contratual, os dados serao excluidos em ate 30 dias, salvo obrigacao legal de retencao.</p>
+
+      <h3>8. Alteracoes</h3>
+      <p>Esta politica pode ser atualizada periodicamente. Alteracoes significativas serao comunicadas por e-mail ou pelo painel do cliente.</p>
+    </div>
+
+    <div class="legal-content" id="legal-termos">
+      <h3>1. Aceitacao</h3>
+      <p>Ao utilizar os servicos da RYVEM, operados pela DMG SERVICOS EMPRESARIAIS LTDA (CNPJ 35.416.764/0001-47), voce concorda com estes Termos de Uso em sua integralidade.</p>
+
+      <h3>2. Descricao do Servico</h3>
+      <p>A RYVEM oferece plataforma de atendimento automatizado via WhatsApp utilizando inteligencia artificial, incluindo agendamento, CRM conversacional, campanhas e relatorios.</p>
+
+      <h3>3. Responsabilidades do Usuario</h3>
+      <ul>
+        <li>Fornecer informacoes verdadeiras e atualizadas</li>
+        <li>Manter a confidencialidade de suas credenciais de acesso</li>
+        <li>Utilizar o servico em conformidade com a legislacao vigente</li>
+        <li>Nao utilizar o servico para envio de spam ou conteudo ilicito</li>
+        <li>Obter consentimento dos seus clientes para processamento via IA</li>
+      </ul>
+
+      <h3>4. Responsabilidades da RYVEM</h3>
+      <ul>
+        <li>Manter a plataforma disponivel com SLA de 99.5%</li>
+        <li>Proteger os dados conforme a Politica de Privacidade</li>
+        <li>Fornecer suporte tecnico em horario comercial</li>
+        <li>Comunicar manutencoes programadas com antecedencia</li>
+      </ul>
+
+      <h3>5. Propriedade Intelectual</h3>
+      <p>Todo o conteudo, codigo-fonte, design e marca RYVEM sao propriedade exclusiva da DMG SERVICOS EMPRESARIAIS LTDA. Os dados inseridos pelo usuario permanecem de sua propriedade.</p>
+
+      <h3>6. Limitacao de Responsabilidade</h3>
+      <p>A RYVEM nao se responsabiliza por: (a) decisoes tomadas com base nas respostas do agente IA; (b) indisponibilidade do WhatsApp; (c) danos indiretos ou lucros cessantes; (d) uso inadequado da plataforma pelo usuario.</p>
+
+      <h3>7. Rescisao</h3>
+      <p>Qualquer parte pode rescindir o contrato a qualquer momento. Os dados do usuario serao exportados mediante solicitacao e excluidos em ate 30 dias apos a rescisao.</p>
+
+      <h3>8. Foro</h3>
+      <p>Fica eleito o foro da comarca de Nova Friburgo - RJ para dirimir quaisquer controversias decorrentes destes Termos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ CONTATO -->
+<section id="contato">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag-label tag-purple">Contato</span>
+      <h2>Fale com a gente</h2>
+      <p>Tire suas duvidas ou solicite uma demonstracao.</p>
+    </div>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <h3>Informacoes de contato</h3>
+        <div class="contato-item">
+          <div class="icon">&#128172;</div>
+          <div>
+            <strong>WhatsApp</strong>
+            <span>+55 (22) 98104-7666</span>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="icon">&#128231;</div>
+          <div>
+            <strong>E-mail</strong>
+            <span>contato@ryvem.com.br</span>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="icon">&#127970;</div>
+          <div>
+            <strong>Empresa</strong>
+            <span>DMG SERVICOS EMPRESARIAIS LTDA</span>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="icon">&#128196;</div>
+          <div>
+            <strong>CNPJ</strong>
+            <span>35.416.764/0001-47</span>
+          </div>
+        </div>
+        <div class="contato-item">
+          <div class="icon">&#128205;</div>
+          <div>
+            <strong>Localizacao</strong>
+            <span>Nova Friburgo - RJ</span>
+          </div>
+        </div>
+      </div>
+      <div class="contato-form">
+        <h3>Envie uma mensagem</h3>
+        <form onsubmit="event.preventDefault();alert('Mensagem enviada! Entraremos em contato em breve.');">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" placeholder="Seu nome completo" required>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp</label>
+            <input type="tel" placeholder="(22) 99999-0000">
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea placeholder="Como podemos ajudar?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════ FOOTER  -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">RYVEM</span>
+        <p>Atendimento inteligente via WhatsApp para negocios que querem crescer sem perder a qualidade do atendimento.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produto</h4>
+        <a href="#produtos">Agente IA</a>
+        <a href="#produtos">Agendamento</a>
+        <a href="#produtos">CRM</a>
+        <a href="#produtos">Campanhas</a>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="#para-quem">Para Quem</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#legal" onclick="showLegal('privacidade')">Privacidade</a>
+        <a href="#legal" onclick="showLegal('termos')">Termos de Uso</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 RYVEM — DMG SERVICOS EMPRESARIAIS LTDA | CNPJ 35.416.764/0001-47</span>
+      <span>Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showLegal(tab) {
+  document.querySelectorAll('.legal-content').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.legal-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('legal-' + tab).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
