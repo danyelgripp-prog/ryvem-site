@@ -19,29 +19,37 @@ export default function GuaranteeSection() {
             </p>
 
             <h2 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-4" style={{ fontFamily: "Montserrat, sans-serif" }}>
-              Se não gerar{" "}
-              <span className="text-[#00c977]">R$ 3.000</span>{" "}
-              em receita automatizada no primeiro mês,{" "}
-              devolvemos o investimento.
+              Nossa Garantia de{" "}
+              <span className="text-[#00c977]">Resultado</span>
             </h2>
 
-            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
-              Receita automatizada = agendamentos confirmados pelo Agente sem intervenção humana,
-              calculados pelo ticket médio da sua clínica. Você acompanha cada conversa no painel.
-              Os números são verificáveis.
+            <p className="text-gray-400 text-sm italic max-w-2xl mx-auto leading-relaxed mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
+              Para o veterinário que já foi prometido demais e entregue de menos.
             </p>
 
-            <p className="text-gray-500 text-sm max-w-xl mx-auto mb-10" style={{ fontFamily: "Inter, sans-serif" }}>
-              Na Fripet, em uma semana com 18% de autonomia, o Agente preservou R$ 9.600 em receita noturna.
-              Com autonomia plena, a projeção é de R$ 8.975/mês em produtividade equivalente.
-              Nossa garantia é conservadora — de propósito.
+            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
+              Nos primeiros 30 dias, se o Agente não gerar{" "}
+              <span className="text-[#00c977] font-semibold">R$ 3.000</span>{" "}
+              em receita automatizada comprovada — agendamentos confirmados sem intervenção humana,
+              rastreáveis no painel — nossa equipe entra na sua operação.
+            </p>
+
+            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
+              Não como suporte. Como consultores dedicados exclusivamente à sua clínica,
+              trabalhando ao seu lado até o resultado ser atingido. Sem prazo. Sem custo adicional.
+            </p>
+
+            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed mb-10" style={{ fontFamily: "Inter, sans-serif" }}>
+              Você não precisa entender de tecnologia para cobrar isso de nós.
+              Só precisa abrir o painel e ver os números. Se não estiverem lá,
+              é nossa responsabilidade — não a sua.
             </p>
 
             <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-10">
               {[
                 { value: "R$ 3.000", label: "Mínimo garantido" },
                 { value: "30 dias", label: "Prazo de avaliação" },
-                { value: "100%", label: "Devolução integral" },
+                { value: "Consultoria dedicada", label: "Se não atingir" },
               ].map((item) => (
                 <div key={item.label} className="bg-black/30 rounded-xl p-4 border border-white/8">
                   <p className="text-[#00c977] font-black text-xl mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>{item.value}</p>
@@ -51,8 +59,7 @@ export default function GuaranteeSection() {
             </div>
 
             <p className="text-gray-600 text-xs italic max-w-xl mx-auto mb-8" style={{ fontFamily: "Inter, sans-serif" }}>
-              Não é promessa de marketing. É compromisso contratual com mecanismo verificável.
-              Porque confiamos no que entregamos.
+              Não devolvemos o dinheiro. Porque não fugimos do problema — nós o resolvemos.
             </p>
 
             <a
