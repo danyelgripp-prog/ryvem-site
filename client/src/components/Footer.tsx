@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { Link } from "wouter";
 
 const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/vetiva_logo_dark_37189109.png";
 const WA_LINK = "https://wa.me/5522998047666";
@@ -57,37 +58,59 @@ export default function Footer() {
               Empresa
             </p>
             <ul className="space-y-2">
-              {[
-                { label: "Garantia", href: "#garantia" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Contato via WhatsApp", href: WA_LINK },
-              ].map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-white/40 hover:text-white text-sm transition-colors"
-                    style={{ fontFamily: "Inter, sans-serif" }}
-                  >
-                    {link.label}
+              <li>
+                <a href="#garantia" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Garantia
+                </a>
+              </li>
+              <li>
+                <a href="#faq" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Contato via WhatsApp
+                </a>
+              </li>
+              <li>
+                <Link href="/privacidade">
+                  <a className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                    Política de Privacidade
                   </a>
-                </li>
-              ))}
+                </Link>
+              </li>
+              <li>
+                <Link href="/termos">
+                  <a className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                    Termos de Uso
+                  </a>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-          <p className="text-white/20 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-            © 2025 Vetiva. Todos os direitos reservados.
-          </p>
+          <div className="space-y-1">
+            <p className="text-white/20 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
+              © 2025 Vetiva by Ryvem Tecnologia Ltda
+            </p>
+            <p className="text-white/15 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
+              CNPJ: 35.416.764/0001-47
+            </p>
+          </div>
           <div className="flex gap-6">
-            {["Política de Privacidade", "Termos de Uso", "LGPD"].map((item) => (
-              <a key={item} href="#" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                {item}
+            <Link href="/privacidade">
+              <a className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                Política de Privacidade
               </a>
-            ))}
+            </Link>
+            <Link href="/termos">
+              <a className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                Termos de Uso
+              </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,18 +1,21 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfUse from "@/pages/TermsOfUse";
 import { Route, Switch } from "wouter";
+import CookieConsent from "./components/CookieConsent";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/privacidade"} component={PrivacyPolicy} />
+      <Route path={"/termos"} component={TermsOfUse} />
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -33,6 +36,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <CookieConsent />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
