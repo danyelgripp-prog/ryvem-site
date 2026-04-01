@@ -1,7 +1,7 @@
 import { Check, MessageCircle } from "lucide-react";
 
-const WA_AGENT = "https://wa.me/5522998047666?text=Quero%20contratar%20o%20Vetiva%20Agent";
-const WA_INTELLIGENCE = "https://wa.me/5522998047666?text=Quero%20saber%20mais%20sobre%20o%20Vetiva%20Intelligence";
+const WA_AGENT = "https://wa.me/5522981047666?text=Quero%20contratar%20o%20Vetiva%20Agent";
+const WA_INTELLIGENCE = "https://wa.me/5522981047666?text=Quero%20saber%20mais%20sobre%20o%20Vetiva%20Intelligence";
 
 const agentFeatures = [
   "Agente Vetiva configurado com sua clínica",

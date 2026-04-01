@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 
 const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/vetiva_logo_dark_37189109.png";
-const WA_LINK = "https://wa.me/5522998047666?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20do%20Vetiva";
+const WA_LINK = "https://wa.me/5522981047666?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20do%20Vetiva";
 
 const navLinks = [
   { label: "Solução", href: "#solucao" },

@@ -87,7 +87,7 @@ export default function AnchorPricingSection() {
                   Economia de R$ 3.260/mês vs. montar separado
                 </p>
                 <a
-                  href="https://wa.me/5522998047666?text=Quero%20contratar%20o%20Vetiva%20Agent"
+                  href="https://wa.me/5522981047666?text=Quero%20contratar%20o%20Vetiva%20Agent"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-[#00c977] hover:bg-[#00b368] text-black font-bold py-3 rounded-xl text-center transition-colors"

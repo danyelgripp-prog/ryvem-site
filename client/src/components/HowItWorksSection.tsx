@@ -1,6 +1,6 @@
 import { FileText, Settings, Play, BarChart2, MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522998047666?text=Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20da%20Vetiva";
+const WA_LINK = "https://wa.me/5522981047666?text=Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20da%20Vetiva";
 
 const steps = [
   {

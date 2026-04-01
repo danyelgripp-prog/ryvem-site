@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Zap, BarChart2 } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/5522998047666?text=Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20da%20Vetiva";
+const WHATSAPP_URL = "https://wa.me/5522981047666?text=Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20da%20Vetiva";
 
 export default function HeroSection() {
   return (

@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 
 const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/vetiva_logo_dark_37189109.png";
-const WA_LINK = "https://wa.me/5522998047666";
+const WA_LINK = "https://wa.me/5522981047666";
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
               style={{ color: "#00C896", fontFamily: "Inter, sans-serif" }}
             >
               <MessageCircle size={16} />
-              (22) 99804-7666
+              (22) 98104-7666
             </a>
           </div>
 

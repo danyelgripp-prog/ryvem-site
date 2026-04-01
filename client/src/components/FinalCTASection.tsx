@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522998047666?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20do%20Vetiva%20Agent";
+const WA_LINK = "https://wa.me/5522981047666?text=Quero%20o%20diagn%C3%B3stico%20gratuito%20do%20Vetiva%20Agent";
 
 export default function FinalCTASection() {
   return (
@@ -65,7 +65,7 @@ export default function FinalCTASection() {
         </div>
 
         <p className="text-gray-700 text-xs mt-6" style={{ fontFamily: "Inter, sans-serif" }}>
-          (22) 99804-7666 · Atendimento de segunda a sexta, 9h às 18h
+          (22) 98104-7666 · Atendimento de segunda a sexta, 9h às 18h
         </p>
       </div>
     </section>
