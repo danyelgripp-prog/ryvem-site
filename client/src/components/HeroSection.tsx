@@ -1,124 +1,133 @@
-import { MessageCircle, Star, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Clock, Zap, BarChart2 } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20Vetiva%20Agent";
+const WHATSAPP_URL = "https://wa.me/5522998047666?text=Quero%20fazer%20o%20diagn%C3%B3stico%20gratuito%20da%20Vetiva";
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{
-        background:
-          "radial-gradient(ellipse at 70% 50%, rgba(0, 200, 150, 0.08) 0%, transparent 60%), linear-gradient(135deg, #0D1F3C 0%, #0f2847 100%)",
-      }}
-    >
-      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "linear-gradient(rgba(0,200,150,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,150,0.5) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(0,200,150,0.12) 0%, transparent 70%)" }} />
+    <section className="relative bg-[#071810] overflow-hidden min-h-screen flex items-center">
+      {/* Grid background */}
+      <div
+        className="absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#00c97730 1px, transparent 1px), linear-gradient(90deg, #00c97730 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-[#00c977]/8 blur-[140px] pointer-events-none" />
+      <div className="absolute -bottom-40 right-0 w-[500px] h-[500px] rounded-full bg-[#00c977]/6 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 pt-24 pb-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00C896]/30 bg-[#00C896]/10 text-[#00C896] text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
-              IA com DNA da sua clínica veterinária
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-28 lg:py-36">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* ── Left: Copy ── */}
+          <div>
+            <div className="inline-flex items-center gap-2 bg-[#00c977]/10 border border-[#00c977]/25 rounded-full px-4 py-1.5 mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#00c977] animate-pulse" />
+              <span className="text-[#00c977] text-sm font-medium">
+                Agente de IA exclusivo para clínicas veterinárias
+              </span>
             </div>
 
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                ÀS 21H UM TUTOR<br />
-                MANDOU MENSAGEM.<br />
-                <span style={{ color: "#00C896" }}>ÀS 21H20 ELE JÁ</span><br />
-                <span style={{ color: "#00C896" }}>TINHA PAGO R$ 250.</span>
-              </h1>
-              <p className="text-lg sm:text-xl text-white/70 font-light leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
-                A Maya — sua recepcionista com IA — atendeu, agendou e fechou.{" "}
-                <strong className="text-white font-semibold">Sem você precisar estar presente.</strong>
-              </p>
-            </div>
+            <h1 className="text-4xl lg:text-5xl xl:text-[3.4rem] font-black text-white leading-[1.08] tracking-tight mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Cada tutor sem resposta{" "}
+              <span className="text-[#00c977]">é receita</span>{" "}
+              indo para a clínica ao lado.
+            </h1>
 
-            <div className="flex flex-wrap gap-8">
+            <p className="text-lg text-gray-300 leading-relaxed mb-3 max-w-xl" style={{ fontFamily: "Inter, sans-serif" }}>
+              O <strong className="text-white">Agente Vetiva</strong> responde em{" "}
+              <strong className="text-[#00c977]">7 segundos</strong>, 24 horas por dia,
+              com os protocolos da sua clínica. Você monitora cada atendimento
+              em tempo real pelo Kanban nativo.
+            </p>
+            <p className="text-sm text-gray-500 mb-10 max-w-xl" style={{ fontFamily: "Inter, sans-serif" }}>
+              Não é um chatbot genérico com nome bonito. É um agente configurado com
+              sua tabela de preços, sua escala médica e seus limites de autonomia.
+              Você define o que ele pode e não pode responder.
+            </p>
+
+            {/* Stats */}
+            <div className="flex flex-wrap gap-6 mb-10">
               {[
-                { value: "24/7", label: "Atendimento sem pausas" },
-                { value: "20 min", label: "Tempo médio de fechamento" },
-                { value: "R$ 3K+", label: "Garantido ou ajustamos" },
-              ].map((stat) => (
-                <div key={stat.label} className="space-y-1">
-                  <div className="text-2xl font-black" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>{stat.value}</div>
-                  <div className="text-xs text-white/50 uppercase tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>{stat.label}</div>
+                { icon: <Zap className="w-5 h-5 text-[#00c977]" />, value: "7s", label: "tempo de resposta" },
+                { icon: <Clock className="w-5 h-5 text-[#00c977]" />, value: "24h / 7d", label: "sem interrupção" },
+                { icon: <BarChart2 className="w-5 h-5 text-[#00c977]" />, value: "R$ 9.600", label: "receita preservada/mês¹" },
+              ].map((s) => (
+                <div key={s.label} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-[#00c977]/12 flex items-center justify-center flex-shrink-0">
+                    {s.icon}
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg leading-none" style={{ fontFamily: "Montserrat, sans-serif" }}>{s.value}</p>
+                    <p className="text-gray-400 text-xs mt-0.5">{s.label}</p>
+                  </div>
                 </div>
               ))}
             </div>
 
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-[#0D1F3C] transition-all duration-200 hover:brightness-110 hover:scale-105 active:scale-95"
-                style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
-                <MessageCircle size={20} />
-                Quero a Maya na Minha Clínica
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="bg-[#00c977] hover:bg-[#00b368] text-black font-bold px-8 py-4 text-base rounded-xl w-full sm:w-auto"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Diagnóstico gratuito
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
               </a>
-              <a href="#produtos"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white border border-white/20 hover:border-[#00C896]/50 hover:bg-white/5 transition-all duration-200"
-                style={{ fontFamily: "Inter, sans-serif" }}>
-                Ver Planos e Preços
+              <a href="#como-funciona">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/5 px-8 py-4 text-base rounded-xl w-full sm:w-auto bg-transparent"
+                  style={{ fontFamily: "Inter, sans-serif" }}
+                >
+                  Ver como funciona
+                </Button>
               </a>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <div className="flex">{[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#00C896" stroke="none" />)}</div>
-              <p className="text-white/50 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-                <span className="text-white/80 font-medium">"Melhor IA que já usei"</span> — Pedro, Fripet Veterinária · Nova Friburgo, RJ
-              </p>
-            </div>
+            <p className="text-gray-600 text-xs mt-4" style={{ fontFamily: "Inter, sans-serif" }}>
+              ¹ Dado real — Fripet Clínica Veterinária, Nova Friburgo (RJ), semana 24–31/03/2026.
+              12 tutores atendidos de noite × R$ 200 ticket médio × 4 semanas.
+            </p>
           </div>
 
-          {/* Chat Mockup */}
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div className="w-full max-w-sm rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(20px)" }}>
-              <div className="flex items-center gap-3 px-5 py-4 border-b border-white/10" style={{ background: "rgba(0,200,150,0.1)" }}>
-                <div className="w-10 h-10 rounded-full bg-[#00C896] flex items-center justify-center text-[#0D1F3C] font-black text-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>M</div>
-                <div>
-                  <p className="text-white font-bold text-sm" style={{ fontFamily: "Montserrat, sans-serif" }}>Maya</p>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
-                    <p className="text-[#00C896] text-xs" style={{ fontFamily: "Inter, sans-serif" }}>Online agora</p>
-                  </div>
-                </div>
-                <div className="ml-auto text-white/40 text-xs flex items-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
-                  <Clock size={12} /> 21:00
-                </div>
+          {/* ── Right: Product screenshot ── */}
+          <div className="relative hidden lg:block">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.7)]">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/kanban_mockup_faf3f42e.jpg"
+                alt="Kanban de Atendimentos Vetiva — visão em tempo real"
+                className="w-full object-cover"
+              />
+              <div className="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                94 aguardando resposta
               </div>
-              <div className="p-5 space-y-4">
-                <div className="flex justify-end">
-                  <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm text-sm text-white" style={{ background: "rgba(255,255,255,0.1)", fontFamily: "Inter, sans-serif" }}>
-                    Boa noite! Meu cachorro está com a vacina vencida, tem horário amanhã?
-                  </div>
-                </div>
-                <div className="flex justify-start">
-                  <div className="max-w-[80%] px-4 py-3 rounded-2xl rounded-tl-sm text-sm text-[#0D1F3C] font-medium" style={{ background: "#00C896", fontFamily: "Inter, sans-serif" }}>
-                    Boa noite! 🐾 Claro, temos horário amanhã às 9h e às 14h. Qual fica melhor pra você?
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm text-sm text-white" style={{ background: "rgba(255,255,255,0.1)", fontFamily: "Inter, sans-serif" }}>
-                    14h perfeito! Quanto vai custar?
-                  </div>
-                </div>
-                <div className="flex justify-start">
-                  <div className="max-w-[80%] px-4 py-3 rounded-2xl rounded-tl-sm text-sm text-[#0D1F3C] font-medium" style={{ background: "#00C896", fontFamily: "Inter, sans-serif" }}>
-                    A consulta + vacina fica R$ 250. Confirmo o agendamento para amanhã às 14h? 😊
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm text-sm text-white" style={{ background: "rgba(255,255,255,0.1)", fontFamily: "Inter, sans-serif" }}>
-                    Confirmado! Obrigado 👍
-                  </div>
-                </div>
-                <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#00C896]/30 mt-2" style={{ background: "rgba(0,200,150,0.08)" }}>
-                  <span className="text-[#00C896] text-xs font-bold" style={{ fontFamily: "Montserrat, sans-serif" }}>✓ Agendamento confirmado · R$ 250 · 21:20</span>
-                </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 to-transparent px-5 py-4">
+                <p className="text-white text-sm font-semibold" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                  Kanban de Atendimentos — tempo real
+                </p>
+                <p className="text-gray-300 text-xs mt-0.5">
+                  Cada conversa, cada etapa, cada resultado — visível para você.
+                </p>
               </div>
             </div>
-            <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full text-xs font-bold text-[#0D1F3C]" style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
-              20 min · R$ 250 fechados
+
+            {/* Floating metric */}
+            <div className="absolute -bottom-5 -left-5 bg-[#0d2a1a] border border-[#00c977]/30 rounded-xl px-5 py-4 shadow-2xl">
+              <p className="text-[#00c977] font-black text-2xl leading-none" style={{ fontFamily: "Montserrat, sans-serif" }}>232</p>
+              <p className="text-gray-300 text-xs mt-1">tutores atendidos</p>
+              <p className="text-gray-500 text-xs">em 7 dias · Fripet</p>
+            </div>
+
+            {/* Floating speed badge */}
+            <div className="absolute -top-4 -right-4 bg-[#00c977] text-black text-xs font-black px-4 py-2 rounded-full shadow-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Resposta em 7s
             </div>
           </div>
         </div>

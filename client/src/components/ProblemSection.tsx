@@ -1,69 +1,105 @@
-import { Moon, UserX, TrendingDown } from "lucide-react";
-
-const problems = [
-  {
-    icon: <Moon size={28} />,
-    title: "Tutor mandou mensagem às 21h. Ninguém respondeu.",
-    description:
-      "Ele esperou até a manhã. Mas de manhã ele já tinha ido para o concorrente. Você perdeu o cliente sem nem saber que ele existia.",
-    stat: "68%",
-    statLabel: "dos tutores não voltam após falta de resposta rápida",
-  },
-  {
-    icon: <UserX size={28} />,
-    title: "Recepcionista boa é difícil de encontrar e fácil de perder.",
-    description:
-      "Treinar, pagar, gerenciar — e ainda assim o atendimento é inconsistente. Cada funcionário atende de um jeito. O padrão da sua clínica depende do humor do dia.",
-    stat: "R$ 3.200",
-    statLabel: "custo médio mensal de uma recepcionista treinada",
-  },
-  {
-    icon: <TrendingDown size={28} />,
-    title: "Clientes somem e você só descobre quando o faturamento cai.",
-    description:
-      "Vacinas vencidas, retornos não agendados, aniversários de pets ignorados. Cada um desses é dinheiro que saiu da sua clínica em silêncio.",
-    stat: "R$ 34K+",
-    statLabel: "receita média não capturada por clínica por ano",
-  },
-];
+import { AlertTriangle, PhoneOff, Moon, TrendingDown } from "lucide-react";
 
 export default function ProblemSection() {
   return (
-    <section className="py-24" style={{ background: "#F5F7FA" }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0D1F3C]/20 bg-[#0D1F3C]/5 text-[#0D1F3C] text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0D1F3C] inline-block" />
-            O Problema Real
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0D1F3C] leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-            Você Não Perde Clientes<br />
-            <span style={{ color: "#00C896" }}>por Falta de Qualidade.</span><br />
-            Perde por Falta de Presença.
+    <section className="bg-[#040f08] py-24 px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <p className="text-[#00c977] text-sm font-semibold uppercase tracking-widest mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
+            O diagnóstico
+          </p>
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black text-white leading-tight mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            Você sabe quantos tutores{" "}
+            <span className="text-[#00c977]">sua clínica perdeu</span>{" "}
+            essa semana?
           </h2>
-          <p className="text-lg text-[#0D1F3C]/60 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-            A clínica veterinária que cresce hoje não é a que tem o melhor médico. É a que está disponível quando o tutor precisa.
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+            A maioria dos donos de clínica não sabe. Porque a receita que some não aparece
+            em nenhum relatório — ela simplesmente não entra.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {problems.map((problem, i) => (
-            <div key={i} className="bg-white rounded-2xl p-8 border border-[#0D1F3C]/8 hover:border-[#00C896]/30 hover:shadow-lg transition-all duration-300">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-[#0D1F3C] mb-6" style={{ background: "rgba(13,31,60,0.06)" }}>
-                {problem.icon}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {[
+            {
+              icon: <Moon className="w-6 h-6 text-[#00c977]" />,
+              title: "Fora do horário",
+              stat: "45 tutores",
+              statLabel: "perdidos por semana sem atendimento noturno¹",
+              desc: "Tutores mandam mensagem às 20h, 21h, 22h. Sem resposta, ligam para a clínica ao lado. Você nem fica sabendo.",
+            },
+            {
+              icon: <PhoneOff className="w-6 h-6 text-[#00c977]" />,
+              title: "Demora na resposta",
+              stat: "10,7 min",
+              statLabel: "tempo médio de resposta de uma equipe humana¹",
+              desc: "Em 10 minutos o tutor já abriu o WhatsApp de outra clínica. A primeira a responder fica com o agendamento.",
+            },
+            {
+              icon: <TrendingDown className="w-6 h-6 text-[#00c977]" />,
+              title: "Receita invisível",
+              stat: "R$ 9.600",
+              statLabel: "de receita noturna preservada em 1 mês¹",
+              desc: "Não é receita que você perdeu — é receita que nunca entrou. Não aparece no relatório. Não aparece no caixa.",
+            },
+          ].map((card) => (
+            <div
+              key={card.title}
+              className="bg-[#0a1f14]/60 border border-white/8 rounded-2xl p-6 hover:border-[#00c977]/20 transition-colors"
+            >
+              <div className="w-12 h-12 rounded-xl bg-[#00c977]/10 flex items-center justify-center mb-5">
+                {card.icon}
               </div>
-              <h3 className="text-lg font-bold text-[#0D1F3C] mb-3 leading-snug" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                {problem.title}
+              <h3 className="text-white font-bold text-lg mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                {card.title}
               </h3>
-              <p className="text-[#0D1F3C]/60 text-sm leading-relaxed mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
-                {problem.description}
+              <p className="text-[#00c977] font-black text-3xl leading-none mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                {card.stat}
               </p>
-              <div className="pt-4 border-t border-[#0D1F3C]/8">
-                <div className="text-2xl font-black" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>{problem.stat}</div>
-                <div className="text-xs text-[#0D1F3C]/50 mt-1" style={{ fontFamily: "Inter, sans-serif" }}>{problem.statLabel}</div>
-              </div>
+              <p className="text-gray-500 text-xs mb-4">{card.statLabel}</p>
+              <p className="text-gray-400 text-sm leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+                {card.desc}
+              </p>
             </div>
           ))}
+        </div>
+
+        {/* Cost of inaction banner */}
+        <div className="bg-[#0a1f14] border border-[#00c977]/20 rounded-2xl p-8 lg:p-10">
+          <div className="flex items-start gap-4 mb-8">
+            <div className="w-10 h-10 rounded-lg bg-red-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <AlertTriangle className="w-5 h-5 text-red-400" />
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-xl mb-1" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                O custo real de não resolver isso
+              </h3>
+              <p className="text-gray-400 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
+                Com ticket médio de R$ 200 e apenas 1 tutor perdido por dia:
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { period: "Por dia", value: "R$ 200", color: "text-yellow-400" },
+              { period: "Por semana", value: "R$ 1.400", color: "text-orange-400" },
+              { period: "Por mês", value: "R$ 4.400", color: "text-red-400" },
+              { period: "Por ano", value: "R$ 52.800", color: "text-red-500" },
+            ].map((item) => (
+              <div key={item.period} className="bg-black/30 rounded-xl p-4 text-center">
+                <p className="text-gray-400 text-xs uppercase tracking-wide mb-2">{item.period}</p>
+                <p className={`font-black text-2xl ${item.color}`} style={{ fontFamily: "Montserrat, sans-serif" }}>
+                  {item.value}
+                </p>
+                <p className="text-gray-600 text-xs mt-1">de receita invisível</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-gray-600 text-xs mt-6 text-center" style={{ fontFamily: "Inter, sans-serif" }}>
+            ¹ Dados reais — Fripet Clínica Veterinária, Nova Friburgo (RJ), semana 24–31/03/2026.
+          </p>
         </div>
       </div>
     </section>
