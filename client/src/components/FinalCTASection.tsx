@@ -21,14 +21,14 @@ export default function FinalCTASection() {
         </p>
 
         <h2 className="text-3xl lg:text-4xl xl:text-5xl font-black text-white leading-tight mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
-          Quanto a sua clínica vai perder{" "}
+          Quanto sua clínica pode otimizar{" "}
           <span className="text-[#00c977]">esse mês</span>{" "}
-          sem o Agente Vetiva?
+          com atendimento 24h?
         </h2>
 
         <p className="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
-          Com ticket médio de R$ 200 e 1 tutor perdido por dia: R$ 4.400/mês de receita
-          que não entra no caixa. Não aparece no relatório. Não aparece em lugar nenhum.
+          Com ticket médio de R$ 200 e atendimento 24h, veja a projeção para sua clínica.
+          Sem compromisso. O diagnóstico gratuito mostra os números reais.
         </p>
 
         <p className="text-gray-500 text-base max-w-lg mx-auto leading-relaxed mb-10" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -48,6 +48,7 @@ export default function FinalCTASection() {
             <MessageCircle size={22} />
             Diagnóstico gratuito agora
           </a>
+          <p className="text-gray-600 text-[10px] mt-1" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-6">

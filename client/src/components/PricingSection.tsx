@@ -90,9 +90,10 @@ export default function PricingSection() {
               <MessageCircle size={18} />
               Contratar Vetiva Agent
             </a>
+            <p className="text-gray-600 text-[10px] mt-1 text-center" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
 
             <p className="text-gray-600 text-xs mt-3 text-center" style={{ fontFamily: "Inter, sans-serif" }}>
-              Garantia: R$ 3.000 em receita automatizada no 1º mês ou devolvemos.
+              Garantia: R$ 3.000 em valor gerado no 1º mês ou devolvemos.
             </p>
           </div>
 
@@ -138,6 +139,7 @@ export default function PricingSection() {
               <MessageCircle size={18} />
               Solicitar diagnóstico
             </a>
+            <p className="text-gray-600 text-[10px] mt-1 text-center" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
           </div>
         </div>
       </div>

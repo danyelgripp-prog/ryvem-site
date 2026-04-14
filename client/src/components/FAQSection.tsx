@@ -106,6 +106,7 @@ export default function FAQSection() {
             <MessageCircle size={16} />
             Tirar dúvida pelo WhatsApp
           </a>
+          <p className="text-gray-600 text-[10px] mt-1" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
         </div>
       </div>
     </section>

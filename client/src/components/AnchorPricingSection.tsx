@@ -95,8 +95,9 @@ export default function AnchorPricingSection() {
                 >
                   Contratar Vetiva Agent
                 </a>
+                <p className="text-gray-600 text-[10px] mt-1" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
                 <p className="text-gray-500 text-xs mt-3" style={{ fontFamily: "Inter, sans-serif" }}>
-                  Garantia: R$ 3.000 em receita automatizada no primeiro mês ou devolvemos o investimento.
+                  Garantia: R$ 3.000 em valor gerado no primeiro mês ou devolvemos o investimento.
                 </p>
               </div>
             </div>

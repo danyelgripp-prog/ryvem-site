@@ -30,7 +30,7 @@ export default function GuaranteeSection() {
             <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed mb-4" style={{ fontFamily: "Inter, sans-serif" }}>
               Nos primeiros 30 dias, se o Agente não gerar{" "}
               <span className="text-[#00c977] font-semibold">R$ 3.000</span>{" "}
-              em receita automatizada comprovada — agendamentos confirmados sem intervenção humana,
+              em valor gerado comprovado — agendamentos confirmados sem intervenção humana,
               rastreáveis no painel — nossa equipe entra na sua operação.
             </p>
 
@@ -72,6 +72,7 @@ export default function GuaranteeSection() {
               <MessageCircle size={20} />
               Quero esta garantia
             </a>
+            <p className="text-gray-600 text-[10px] mt-2" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
           </div>
         </div>
       </div>

@@ -92,7 +92,7 @@ export default function ProblemSection() {
                 <p className={`font-black text-2xl ${item.color}`} style={{ fontFamily: "Montserrat, sans-serif" }}>
                   {item.value}
                 </p>
-                <p className="text-gray-600 text-xs mt-1">de receita invisível</p>
+                <p className="text-gray-600 text-xs mt-1">de atendimentos não realizados</p>
               </div>
             ))}
           </div>

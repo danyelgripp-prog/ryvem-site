@@ -95,6 +95,7 @@ export default function HowItWorksSection() {
             <MessageCircle size={20} />
             Iniciar diagnóstico gratuito
           </a>
+          <p className="text-gray-600 text-[10px] mt-1" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
           <p className="text-gray-600 text-xs mt-3" style={{ fontFamily: "Inter, sans-serif" }}>Sem compromisso · Resposta em até 2 horas</p>
         </div>
       </div>

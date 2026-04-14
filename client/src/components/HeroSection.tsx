@@ -32,8 +32,8 @@ export default function HeroSection() {
 
             <h1 className="text-4xl lg:text-5xl xl:text-[3.4rem] font-black text-white leading-[1.08] tracking-tight mb-6" style={{ fontFamily: "Montserrat, sans-serif" }}>
               Cada tutor sem resposta{" "}
-              <span className="text-[#00c977]">é receita</span>{" "}
-              indo para a clínica ao lado.
+              <span className="text-[#00c977]">é uma oportunidade</span>{" "}
+              de atendimento perdida.
             </h1>
 
             <p className="text-lg text-gray-300 leading-relaxed mb-3 max-w-xl" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -79,6 +79,7 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </a>
+              <p className="text-gray-600 text-[10px] mt-1" style={{ fontFamily: "Inter, sans-serif" }}>Ao clicar, você concorda em receber mensagens da Vetiva via WhatsApp.</p>
               <a href="#como-funciona">
                 <Button
                   size="lg"
