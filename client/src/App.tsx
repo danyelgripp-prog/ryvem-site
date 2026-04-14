@@ -1,8 +1,13 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import PrivacyPolicy from "@/pages/PrivacyPolicy";
-import TermsOfUse from "@/pages/TermsOfUse";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
+import Cookies from "@/pages/Cookies";
+import AntiSpam from "@/pages/AntiSpam";
+import WhatsappPolicy from "@/pages/WhatsappPolicy";
+import Lgpd from "@/pages/Lgpd";
+import Accessibility from "@/pages/Accessibility";
 import Support from "@/pages/Support";
 import { Route, Switch } from "wouter";
 import CookieConsent from "./components/CookieConsent";
@@ -14,9 +19,16 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/privacidade"} component={PrivacyPolicy} />
-      <Route path={"/termos"} component={TermsOfUse} />
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/terms"} component={Terms} />
+      <Route path={"/cookies"} component={Cookies} />
+      <Route path={"/anti-spam"} component={AntiSpam} />
+      <Route path={"/whatsapp-policy"} component={WhatsappPolicy} />
+      <Route path={"/lgpd"} component={Lgpd} />
+      <Route path={"/accessibility"} component={Accessibility} />
       <Route path={"/support"} component={Support} />
+      <Route path={"/privacidade"} component={Privacy} />
+      <Route path={"/termos"} component={Terms} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

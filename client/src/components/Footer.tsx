@@ -73,21 +73,22 @@ export default function Footer() {
                   Contato via WhatsApp
                 </a>
               </li>
-              <li>
-                <Link href="/privacidade" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                  Política de Privacidade
-                </Link>
-              </li>
-              <li>
-                <Link href="/termos" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                  Termos de Uso
-                </Link>
-              </li>
-              <li>
-                <Link href="/support" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                  Suporte
-                </Link>
-              </li>
+              {[
+                { label: "Privacidade", href: "/privacy" },
+                { label: "Termos", href: "/terms" },
+                { label: "Cookies", href: "/cookies" },
+                { label: "Anti-Spam", href: "/anti-spam" },
+                { label: "Política WhatsApp", href: "/whatsapp-policy" },
+                { label: "LGPD", href: "/lgpd" },
+                { label: "Acessibilidade", href: "/accessibility" },
+                { label: "Suporte", href: "/support" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -95,22 +96,27 @@ export default function Footer() {
         <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="space-y-1">
             <p className="text-white/20 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-              © 2025 Vetiva by Ryvem Tecnologia Ltda
+              © 2026 DMG Servicos Empresariais Ltda — CNPJ 35.416.764/0001-47
             </p>
             <p className="text-white/15 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-              CNPJ: 35.416.764/0001-47
+              Rua Romualdo Machado, 122, Nova Friburgo/RJ — vetiva@ryvem.com.br
             </p>
           </div>
           <div className="flex gap-6">
-            <Link href="/privacidade" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-              Política de Privacidade
-            </Link>
-            <Link href="/termos" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-              Termos de Uso
-            </Link>
-            <Link href="/support" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-              Suporte
-            </Link>
+            {[
+              { label: "Privacidade", href: "/privacy" },
+              { label: "Termos", href: "/terms" },
+              { label: "Cookies", href: "/cookies" },
+              { label: "Anti-Spam", href: "/anti-spam" },
+              { label: "WhatsApp", href: "/whatsapp-policy" },
+              { label: "LGPD", href: "/lgpd" },
+              { label: "Acessibilidade", href: "/accessibility" },
+              { label: "Suporte", href: "/support" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
