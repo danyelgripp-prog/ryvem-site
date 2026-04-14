@@ -74,17 +74,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/privacidade">
-                  <a className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                    Política de Privacidade
-                  </a>
+                <Link href="/privacidade" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Política de Privacidade
                 </Link>
               </li>
               <li>
-                <Link href="/termos">
-                  <a className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                    Termos de Uso
-                  </a>
+                <Link href="/termos" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Termos de Uso
+                </Link>
+              </li>
+              <li>
+                <Link href="/support" className="text-white/40 hover:text-white text-sm transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Suporte
                 </Link>
               </li>
             </ul>
@@ -101,15 +102,14 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6">
-            <Link href="/privacidade">
-              <a className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                Política de Privacidade
-              </a>
+            <Link href="/privacidade" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+              Política de Privacidade
             </Link>
-            <Link href="/termos">
-              <a className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                Termos de Uso
-              </a>
+            <Link href="/termos" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+              Termos de Uso
+            </Link>
+            <Link href="/support" className="text-white/20 hover:text-white/50 text-xs transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+              Suporte
             </Link>
           </div>
         </div>

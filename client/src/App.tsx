@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfUse from "@/pages/TermsOfUse";
+import Support from "@/pages/Support";
 import { Route, Switch } from "wouter";
 import CookieConsent from "./components/CookieConsent";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -15,6 +16,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/privacidade"} component={PrivacyPolicy} />
       <Route path={"/termos"} component={TermsOfUse} />
+      <Route path={"/support"} component={Support} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
