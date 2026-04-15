@@ -73,9 +73,11 @@ export default function PoliticaPrivacidade() {
 
       <h2>5. Transferência Internacional de Dados</h2>
       <p>
-        Alguns de nossos fornecedores de tecnologia estão localizados fora do Brasil. Nestes casos,
-        garantimos que a transferência ocorre com salvaguardas adequadas, incluindo cláusulas contratuais
-        padrão e conformidade com a LGPD.
+        Os dados processados pela RYVEM e seus produtos (incluindo o Vetiva) podem ser transferidos
+        para servidores localizados fora do Brasil, incluindo servidores operados pela Meta Platforms
+        Ireland Limited (Irlanda) e pela Anthropic PBC (Estados Unidos). Essas transferências são
+        realizadas com base nas salvaguardas previstas no Art. 33 da LGPD, incluindo cláusulas
+        contratuais padrão e certificações de adequação.
       </p>
 
       <h2>6. Retenção de Dados</h2>
@@ -119,6 +121,16 @@ export default function PoliticaPrivacidade() {
         <li>Garantimos que nossos clientes obtêm o consentimento adequado dos usuários finais antes de enviar mensagens</li>
         <li>Não armazenamos conteúdo de mensagens além do período necessário para a prestação do serviço</li>
       </ul>
+      <h3>9.1 Processamento via WhatsApp Business API</h3>
+      <p>
+        O Vetiva utiliza a API oficial do WhatsApp Business, fornecida pela Meta Platforms Ireland
+        Limited, para processar mensagens entre tutores e clínicas veterinárias. A Meta Platforms
+        atua como suboperadora no processamento desses dados, estando sujeita às políticas de
+        privacidade da Meta disponíveis em{" "}
+        <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+          https://www.whatsapp.com/legal/privacy-policy
+        </a>.
+      </p>
 
       <h2>10. Cookies</h2>
       <p>
@@ -132,14 +144,22 @@ export default function PoliticaPrivacidade() {
         <a href="mailto:contato@ryvem.com.br">contato@ryvem.com.br</a>, com o assunto "DPO — LGPD".
       </p>
 
-      <h2>12. Alterações nesta Política</h2>
+      <h2>12. Data Processing Agreement (DPA)</h2>
+      <p>
+        Para clientes empresariais, o Acordo de Processamento de Dados (DPA) completo está disponível
+        em{" "}
+        <a href="https://ryvem.com.br/dpa">ryvem.com.br/dpa</a>, detalhando as obrigações de controlador
+        e operador conforme a LGPD e o GDPR.
+      </p>
+
+      <h2>13. Alterações nesta Política</h2>
       <p>
         Esta política pode ser atualizada periodicamente. Notificaremos sobre alterações relevantes
         por e-mail ou por aviso em destaque no site. A data da última atualização está indicada no
         topo desta página.
       </p>
 
-      <h2>13. Contato</h2>
+      <h2>14. Contato</h2>
       <p>
         Para qualquer questão relacionada a esta Política de Privacidade:
       </p>
