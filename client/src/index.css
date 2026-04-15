@@ -1,0 +1,491 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* RYVEM Brand Identity System */
+  --ryvem-navy: #0A0A1A;
+  --ryvem-navy-mid: #0D0D2B;
+  --ryvem-navy-light: #12123A;
+  --ryvem-blue: #0055EE;
+  --ryvem-blue-light: #3377FF;
+  --ryvem-blue-glow: rgba(0, 85, 238, 0.2);
+  --ryvem-violet: #5B21B6;
+  --ryvem-violet-light: #7C3AED;
+  --ryvem-violet-glow: rgba(91, 33, 182, 0.2);
+  --ryvem-white: #FFFFFF;
+  --ryvem-white-90: rgba(255, 255, 255, 0.9);
+  --ryvem-white-60: rgba(255, 255, 255, 0.6);
+  --ryvem-white-30: rgba(255, 255, 255, 0.3);
+  --ryvem-white-10: rgba(255, 255, 255, 0.1);
+  --ryvem-white-06: rgba(255, 255, 255, 0.06);
+  --ryvem-border: rgba(255, 255, 255, 0.08);
+  --ryvem-border-active: rgba(0, 85, 238, 0.4);
+  --ryvem-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --ryvem-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --ryvem-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --ryvem-shadow-blue: 0 8px 32px rgba(0, 85, 238, 0.35);
+  --ryvem-shadow-violet: 0 8px 32px rgba(91, 33, 182, 0.35);
+  --ryvem-gradient-primary: linear-gradient(135deg, #0055EE 0%, #5B21B6 100%);
+  --ryvem-gradient-subtle: linear-gradient(135deg, rgba(0, 85, 238, 0.15) 0%, rgba(91, 33, 182, 0.15) 100%);
+
+  --primary: oklch(0.488 0.243 264.376);
+  --primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --chart-1: oklch(0.6 0.2 264);
+  --chart-2: oklch(0.5 0.22 280);
+  --chart-3: oklch(0.45 0.24 264);
+  --chart-4: oklch(0.4 0.2 280);
+  --chart-5: oklch(0.35 0.18 264);
+  --radius: 0.75rem;
+  --background: oklch(0.07 0.02 264);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.1 0.02 264);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.1 0.02 264);
+  --popover-foreground: oklch(0.97 0 0);
+  --secondary: oklch(0.15 0.02 264);
+  --secondary-foreground: oklch(0.85 0 0);
+  --muted: oklch(0.18 0.02 264);
+  --muted-foreground: oklch(0.6 0.01 264);
+  --accent: oklch(0.18 0.02 264);
+  --accent-foreground: oklch(0.97 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.488 0.243 264.376);
+  --sidebar: oklch(0.09 0.02 264);
+  --sidebar-foreground: oklch(0.85 0 0);
+  --sidebar-accent: oklch(0.15 0.02 264);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.488 0.243 264.376);
+}
+
+.dark {
+  --primary: oklch(0.488 0.243 264.376);
+  --primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --background: oklch(0.07 0.02 264);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.1 0.02 264);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.1 0.02 264);
+  --popover-foreground: oklch(0.97 0 0);
+  --secondary: oklch(0.15 0.02 264);
+  --secondary-foreground: oklch(0.85 0 0);
+  --muted: oklch(0.18 0.02 264);
+  --muted-foreground: oklch(0.6 0.01 264);
+  --accent: oklch(0.18 0.02 264);
+  --accent-foreground: oklch(0.97 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.488 0.243 264.376);
+  --chart-1: oklch(0.6 0.2 264);
+  --chart-2: oklch(0.5 0.22 280);
+  --chart-3: oklch(0.45 0.24 264);
+  --chart-4: oklch(0.4 0.2 280);
+  --chart-5: oklch(0.35 0.18 264);
+  --sidebar: oklch(0.09 0.02 264);
+  --sidebar-foreground: oklch(0.85 0 0);
+  --sidebar-accent: oklch(0.15 0.02 264);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.488 0.243 264.376);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #0A0A1A;
+    color: #FFFFFF;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
+
+/* ===== RYVEM BRAND UTILITIES ===== */
+
+.ryvem-hero-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 85, 238, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(91, 33, 182, 0.1) 0%, transparent 50%),
+    #0A0A1A;
+}
+
+.ryvem-section-dark {
+  background: #0A0A1A;
+}
+
+.ryvem-section-mid {
+  background: #0D0D2B;
+}
+
+.ryvem-gradient-text {
+  background: linear-gradient(135deg, #3377FF 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ryvem-btn-primary {
+  background: linear-gradient(135deg, #0055EE 0%, #5B21B6 100%);
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0, 85, 238, 0.4);
+  border: none;
+}
+
+.ryvem-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(0, 85, 238, 0.55);
+}
+
+.ryvem-btn-ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+.ryvem-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+}
+
+.ryvem-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.ryvem-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 85, 238, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.ryvem-card-featured {
+  background: linear-gradient(135deg, rgba(0, 85, 238, 0.12) 0%, rgba(91, 33, 182, 0.12) 100%);
+  border: 1px solid rgba(0, 85, 238, 0.3);
+  border-radius: 16px;
+}
+
+.ryvem-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: rgba(0, 85, 238, 0.12);
+  border: 1px solid rgba(0, 85, 238, 0.25);
+  color: #3377FF;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.875rem;
+  border-radius: 100px;
+}
+
+.ryvem-divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #0055EE, #5B21B6);
+  border-radius: 2px;
+}
+
+.ryvem-metric {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3377FF 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ryvem-noise-overlay {
+  position: relative;
+}
+
+.ryvem-noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.ryvem-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 85, 238, 0.15) 50%, transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 4px 24px rgba(0, 85, 238, 0.4); }
+  50% { box-shadow: 0 4px 48px rgba(0, 85, 238, 0.65); }
+}
+
+.pulse-cta {
+  animation: pulse-blue 2.5s ease-in-out infinite;
+}
+
+/* ─── RYVEM SECTION UTILITIES ─── */
+.ryvem-section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  font-family: 'Inter', sans-serif;
+}
+.ryvem-section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, #0055EE, #5B21B6);
+}
+
+.ryvem-stat-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ryvem-glow-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,85,238,0.5), rgba(91,33,182,0.5), transparent);
+}
+
+.ryvem-manifesto-contrast {
+  background: linear-gradient(135deg, rgba(0,85,238,0.06) 0%, rgba(91,33,182,0.06) 100%);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.ryvem-valor-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: rgba(0,85,238,0.12);
+  position: absolute;
+  top: -0.5rem;
+  right: 1.5rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Ticker / Marquee ─── */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.r-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+.r-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Gradient border ─── */
+.r-border-gradient {
+  position: relative;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.03);
+}
+.r-border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0,85,238,0.4), rgba(91,33,182,0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── Fade in on scroll (intersection observer) ─── */
+.r-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.r-reveal.r-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Number counter ─── */
+.r-counter {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  background: linear-gradient(135deg, #3377FF 0%, #7C3AED 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Syne display font ─── */
+.r-syne {
+  font-family: 'Syne', 'Space Grotesk', sans-serif;
+}
+
+/* Y symbol animation */
+@keyframes y-glow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(0, 85, 238, 0.6)); }
+  50% { filter: drop-shadow(0 0 20px rgba(91, 33, 182, 0.8)); }
+}
+
+.ryvem-logo-glow {
+  animation: y-glow 3s ease-in-out infinite;
+}
