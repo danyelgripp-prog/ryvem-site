@@ -4,7 +4,7 @@ const LOGO_PRINCIPAL = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247
 
 const links = {
   solucoes: [
-    { label: 'Vetiva', href: 'https://vetiva.manus.space', externo: true },
+    { label: 'Vetiva', href: 'https://vetiva.ryvem.com.br', externo: true },
     { label: 'Magic SDR', href: '#solucoes', externo: false },
   ],
   empresa: [
