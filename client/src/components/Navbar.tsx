@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 const WA_LINK = "https://wa.me/5522981047666?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20RYVEM";
 
 const navLinks = [
-  { label: "Produtos", href: "#produtos" },
-  { label: "Cases", href: "#cases" },
-  { label: "Como funciona", href: "#processo" },
-  { label: "Contato", href: "#contato" },
+  { label: "Solução", href: "#solucao" },
+  { label: "Como funciona", href: "#metodologia" },
+  { label: "Preços", href: "#produtos" },
+  { label: "Contato", href: "https://wa.me/5522981047666" },
 ];
 
 function RyvemVetLogo() {
@@ -18,14 +18,14 @@ function RyvemVetLogo() {
         src="/ryvem_vet_logo_dark.png"
         alt="RYVEM VET"
         className="hidden md:block"
-        style={{ height: "56px", width: "auto", objectFit: "contain", marginLeft: "8px" }}
+        style={{ height: "72px", width: "auto", objectFit: "contain", marginLeft: "8px" }}
       />
       {/* Mobile: icon 40px */}
       <img
         src="/ryvem_vet_icon.png"
         alt="RYVEM VET"
         className="block md:hidden"
-        style={{ height: "40px", width: "auto", objectFit: "contain", marginLeft: "4px" }}
+        style={{ height: "48px", width: "auto", objectFit: "contain", marginLeft: "4px" }}
       />
     </a>
   );
@@ -95,7 +95,7 @@ export default function Navbar() {
             gap: "0.5rem",
           }}
         >
-          Falar com a RYVEM
+          Falar com a RYVEM VET
         </a>
 
         {/* Mobile Toggle */}
@@ -152,7 +152,7 @@ export default function Navbar() {
             }}
             onClick={() => setMobileOpen(false)}
           >
-            Falar com a RYVEM
+            Falar com a RYVEM VET
           </a>
         </div>
       )}
