@@ -2,16 +2,16 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FrustracoesSection from "@/components/FrustracoesSection";
 import ProblemSection from "@/components/ProblemSection";
+import DiagnosticSection from "@/components/DiagnosticSection";
 import SolutionSection from "@/components/SolutionSection";
 import MethodologySection from "@/components/MethodologySection";
 import ResultsSection from "@/components/ResultsSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
 import ComparisonSection from "@/components/ComparisonSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
+import QuemESection from "@/components/QuemESection";
+import EscassezSection from "@/components/EscassezSection";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
@@ -22,16 +22,16 @@ export default function VetHome() {
       <HeroSection />
       <FrustracoesSection />
       <ProblemSection />
+      <DiagnosticSection />
       <SolutionSection />
       <MethodologySection />
       <ResultsSection />
-      <HowItWorksSection />
       <ComparisonSection />
-      <TestimonialsSection />
       <PricingSection />
       <GuaranteeSection />
+      <QuemESection />
+      <EscassezSection />
       <FAQSection />
-      <CTASection />
       <FinalCTASection />
       <Footer />
     </div>
