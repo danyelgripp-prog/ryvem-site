@@ -21,7 +21,7 @@ export default function TermosDeUso() {
       </p>
       <ul>
         <li><strong>Consultoria personalizada:</strong> diagnóstico, construção e implementação de soluções comerciais sob medida</li>
-        <li><strong>Vetiva:</strong> plataforma de atendimento inteligente via WhatsApp para clínicas veterinárias, com CRM, Kanban e integração com ERP Vetus</li>
+        <li><strong>RYVEM VET:</strong> plataforma de atendimento inteligente via WhatsApp para clínicas veterinárias, com CRM, Kanban e integração com ERP Vetus</li>
         <li><strong>Magic SDR:</strong> agente autônomo de prospecção B2B que avalia a qualidade do atendimento digital de empresas e gera diagnósticos e relatórios de oportunidade comercial</li>
       </ul>
 

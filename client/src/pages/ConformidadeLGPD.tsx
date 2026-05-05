@@ -41,7 +41,7 @@ export default function ConformidadeLGPD() {
       <h3>2.2 RYVEM como Operadora</h3>
       <p>
         Quando a RYVEM processa dados em nome de seus clientes (ex.: dados de pacientes de clínicas
-        veterinárias no Vetiva, ou dados de prospects no Magic SDR), atua como <strong>Operadora</strong>
+        veterinárias no RYVEM VET, ou dados de prospects no Magic SDR), atua como <strong>Operadora</strong>
         — seguindo as instruções do cliente controlador.
       </p>
       <h3>2.3 Encarregado (DPO)</h3>
@@ -125,9 +125,9 @@ export default function ConformidadeLGPD() {
         ou anonimizados.
       </p>
 
-      <h2>9. Conformidade como Operadora (Produtos Vetiva e Magic SDR)</h2>
+      <h2>9. Conformidade como Operadora (Produtos RYVEM VET e Magic SDR)</h2>
       <p>
-        Ao operar como Operadora de dados para clientes que utilizam o Vetiva e o Magic SDR, a RYVEM:
+        Ao operar como Operadora de dados para clientes que utilizam o RYVEM VET e o Magic SDR, a RYVEM:
       </p>
       <ul>
         <li>Celebra Acordo de Processamento de Dados (DPA) com cada cliente controlador</li>

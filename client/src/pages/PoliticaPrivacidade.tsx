@@ -32,7 +32,7 @@ export default function PoliticaPrivacidade() {
         <li>Páginas visitadas, tempo de permanência e origem do acesso</li>
         <li>Cookies e tecnologias similares (veja nossa <a href="/politica-de-cookies">Política de Cookies</a>)</li>
       </ul>
-      <h3>1.3 Dados de clientes que utilizam nossos produtos (Vetiva e Magic SDR)</h3>
+      <h3>1.3 Dados de clientes que utilizam nossos produtos (RYVEM VET e Magic SDR)</h3>
       <ul>
         <li>Dados de conversas via WhatsApp Business API processados em nome do cliente</li>
         <li>Informações de contato de leads e clientes finais do contratante</li>
@@ -73,7 +73,7 @@ export default function PoliticaPrivacidade() {
 
       <h2>5. Transferência Internacional de Dados</h2>
       <p>
-        Os dados processados pela RYVEM e seus produtos (incluindo o Vetiva) podem ser transferidos
+        Os dados processados pela RYVEM e seus produtos (incluindo o RYVEM VET) podem ser transferidos
         para servidores localizados fora do Brasil, incluindo servidores operados pela Meta Platforms
         Ireland Limited (Irlanda) e pela Anthropic PBC (Estados Unidos). Essas transferências são
         realizadas com base nas salvaguardas previstas no Art. 33 da LGPD, incluindo cláusulas
@@ -123,7 +123,7 @@ export default function PoliticaPrivacidade() {
       </ul>
       <h3>9.1 Processamento via WhatsApp Business API</h3>
       <p>
-        O Vetiva utiliza a API oficial do WhatsApp Business, fornecida pela Meta Platforms Ireland
+        O RYVEM VET utiliza a API oficial do WhatsApp Business, fornecida pela Meta Platforms Ireland
         Limited, para processar mensagens entre tutores e clínicas veterinárias. A Meta Platforms
         atua como suboperadora no processamento desses dados, estando sujeita às políticas de
         privacidade da Meta disponíveis em{" "}
