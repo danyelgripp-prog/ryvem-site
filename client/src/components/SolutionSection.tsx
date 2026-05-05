@@ -38,7 +38,7 @@ export default function SolutionSection() {
             <span style={{ color: "#00C896" }}>É Um Membro da Sua Equipe.</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-            A Maya aprende o DNA da sua clínica e atende cada tutor como se fosse sua melhor recepcionista — 24 horas por dia, 7 dias por semana.
+            O super agente aprende o DNA da sua clínica e atende cada tutor como se fosse sua melhor recepcionista — 24 horas por dia, 7 dias por semana.
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export default function SolutionSection() {
 
         <div className="mt-16 text-center">
           <p className="text-white/40 text-sm italic" style={{ fontFamily: "Inter, sans-serif" }}>
-            "O ERP registra o passado. O Vetiva decide o futuro."
+            "O ERP registra o passado. A RYVEM VET decide o futuro."
           </p>
         </div>
       </div>

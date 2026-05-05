@@ -90,12 +90,12 @@ export default function ResultsSection() {
           <div className="flex justify-center">
             <img
               src={LOGO_DARK_URL}
-              alt="Vetiva"
+              alt="RYVEM VET"
               className="h-10 w-auto object-contain"
               style={{ maxWidth: "160px" }}
             />
           </div>
-          <div className="vetiva-badge w-fit mx-auto">
+          <div className="ryvem-vet-badge w-fit mx-auto">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
             Resultados Reais
           </div>
@@ -121,7 +121,7 @@ export default function ResultsSection() {
           {cases.map((c, i) => (
             <div
               key={i}
-              className="vetiva-card p-6 space-y-5 relative overflow-hidden"
+              className="ryvem-vet-card p-6 space-y-5 relative overflow-hidden"
             >
               {/* Top accent */}
               <div

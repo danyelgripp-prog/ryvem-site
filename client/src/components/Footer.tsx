@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2 space-y-4">
-            <img src={LOGO_DARK_URL} alt="Vetiva" className="h-8 w-auto object-contain" />
+            <img src={LOGO_DARK_URL} alt="RYVEM VET" className="h-8 w-auto object-contain" />
             <p className="text-white/40 text-sm leading-relaxed max-w-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-              IA de atendimento 24/7 com DNA da sua clínica veterinária. A Maya atende, agenda e fecha — enquanto você cuida dos animais.
+              Aceleradora de negócios veterinários. Atendimento 24/7, CRM, campanhas e diagnóstico de receita para clínicas veterinárias.
             </p>
             <a
               href={WA_LINK}
@@ -36,8 +36,8 @@ export default function Footer() {
                 { label: "Solução", href: "#solucao" },
                 { label: "Como Funciona", href: "#como-funciona" },
                 { label: "Comparativo", href: "#comparativo" },
-                { label: "Vetiva Agent", href: "#produtos" },
-                { label: "Vetiva Intelligence", href: "#produtos" },
+                { label: "RYVEM VET AGENTE", href: "#produtos" },
+                { label: "RYVEM VET DIRETOR", href: "#produtos" },
               ].map((link) => (
                 <li key={link.label}>
                   <a
@@ -80,7 +80,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <p className="text-white/20 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-            © 2025 Vetiva. Todos os direitos reservados.
+            © 2025 RYVEM VET. Todos os direitos reservados.
           </p>
           <div className="flex gap-6">
             {["Política de Privacidade", "Termos de Uso", "LGPD"].map((item) => (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Vetiva";
+const WA_LINK = "https://wa.me/5522997178962?text=Tenho%20uma%20d%C3%BAvida%20sobre%20a%20RYVEM%20VET";
 
 const faqs = [
   {
@@ -15,9 +15,9 @@ const faqs = [
       "A Maya identifica quando o tutor precisa de atendimento humano — seja por urgência, complexidade ou preferência — e transfere a conversa para você ou sua equipe com todo o contexto já registrado. Nenhuma informação se perde na transição.",
   },
   {
-    question: "Preciso trocar meu sistema atual para usar o Vetiva?",
+    question: "Preciso trocar meu sistema atual para usar a RYVEM VET?",
     answer:
-      "Não. O Vetiva Agent funciona de forma independente, pelo WhatsApp da sua clínica. O Vetiva Intelligence se integra ao seu ERP atual sem substituí-lo. Você não precisa mudar nada do que já funciona.",
+      "Não. O RYVEM VET AGENTE funciona de forma independente, pelo WhatsApp da sua clínica. O RYVEM VET DIRETOR se integra ao seu ERP atual sem substituí-lo. Você não precisa mudar nada do que já funciona.",
   },
   {
     question: "Quanto tempo leva para a Maya estar funcionando?",

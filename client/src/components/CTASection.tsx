@@ -53,11 +53,11 @@ export default function CTASection() {
             <div className="space-y-4">
               <img
                 src={LOGO_DARK_URL}
-                alt="Vetiva"
+                alt="RYVEM VET"
                 className="h-10 w-auto object-contain mb-2"
                 style={{ maxWidth: "160px" }}
               />
-              <div className="vetiva-badge w-fit">
+              <div className="ryvem-vet-badge w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
                 Diagnóstico Gratuito
               </div>

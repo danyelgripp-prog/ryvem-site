@@ -1,16 +1,16 @@
 import { Check, X } from "lucide-react";
 
 const rows = [
-  { feature: "Aprende o DNA da sua clínica", generic: false, vetiva: true },
-  { feature: "Tom de voz personalizado por clínica", generic: false, vetiva: true },
-  { feature: "Tabela de preços e serviços integrada", generic: false, vetiva: true },
-  { feature: "Agenda consultas automaticamente", generic: false, vetiva: true },
-  { feature: "Detecta frustração e objeção do tutor", generic: false, vetiva: true },
-  { feature: "Relatório diário no WhatsApp às 8h", generic: false, vetiva: true },
-  { feature: "NPS automático pós-atendimento", generic: false, vetiva: true },
-  { feature: "Suporte e ajustes contínuos", generic: false, vetiva: true },
-  { feature: "Responde perguntas básicas", generic: true, vetiva: true },
-  { feature: "Disponível 24 horas por dia, 7 dias", generic: true, vetiva: true },
+  { feature: "Aprende o DNA da sua clínica", generic: false, ryvemvet: true },
+  { feature: "Tom de voz personalizado por clínica", generic: false, ryvemvet: true },
+  { feature: "Tabela de preços e serviços integrada", generic: false, ryvemvet: true },
+  { feature: "Agenda consultas automaticamente", generic: false, ryvemvet: true },
+  { feature: "Detecta frustração e objeção do tutor", generic: false, ryvemvet: true },
+  { feature: "Relatório diário no WhatsApp às 8h", generic: false, ryvemvet: true },
+  { feature: "NPS automático pós-atendimento", generic: false, ryvemvet: true },
+  { feature: "Suporte e ajustes contínuos", generic: false, ryvemvet: true },
+  { feature: "Responde perguntas básicas", generic: true, ryvemvet: true },
+  { feature: "Disponível 24 horas por dia, 7 dias", generic: true, ryvemvet: true },
 ];
 
 export default function ComparisonSection() {
@@ -30,13 +30,13 @@ export default function ComparisonSection() {
             style={{ fontFamily: "Montserrat, sans-serif" }}
           >
             Robô Genérico vs.{" "}
-            <span style={{ color: "#00C896" }}>Vetiva com DNA da Sua Clínica</span>
+            <span style={{ color: "#00C896" }}>RYVEM VET com DNA da Sua Clínica</span>
           </h2>
           <p
             className="text-lg text-[#0D1F3C]/60 max-w-2xl mx-auto"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            Qualquer chatbot responde. Só a Maya resolve — porque ela conhece sua clínica.
+            Qualquer chatbot responde. Só o super agente resolve — porque ele conhece sua clínica.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function ComparisonSection() {
               style={{ background: "rgba(0,200,150,0.06)" }}
             >
               <p className="text-sm font-bold" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
-                Vetiva
+                RYVEM VET
               </p>
               <p className="text-xs text-[#0D1F3C]/40 mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
                 IA com DNA da clínica
@@ -112,7 +112,7 @@ export default function ComparisonSection() {
         </div>
 
         <p className="text-center text-[#0D1F3C]/40 text-sm mt-6" style={{ fontFamily: "Inter, sans-serif" }}>
-          Robôs genéricos respondem. A Maya resolve.
+          Robôs genéricos respondem. O super agente resolve.
         </p>
       </div>
     </section>

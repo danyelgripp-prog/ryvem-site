@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="ml-auto flex flex-col items-end gap-2">
                   <div className="flex">{[1,2,3,4,5].map(i => <Star key={i} size={18} fill="#00C896" stroke="none" />)}</div>
-                  <span className="text-xs text-[#0D1F3C]/40" style={{ fontFamily: "Inter, sans-serif" }}>Cliente Vetiva Agent</span>
+                  <span className="text-xs text-[#0D1F3C]/40" style={{ fontFamily: "Inter, sans-serif" }}>Cliente RYVEM VET AGENTE</span>
                 </div>
               </div>
             </div>
