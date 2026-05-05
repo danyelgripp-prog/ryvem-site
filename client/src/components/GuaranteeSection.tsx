@@ -1,6 +1,6 @@
 import { Shield, MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Quero%20saber%20mais%20sobre%20a%20garantia%20do%20Vetiva";
+const WA_LINK = "https://wa.me/5522997178962?text=Quero%20saber%20mais%20sobre%20a%20garantia%20da%20RYVEM%20VET";
 
 export default function GuaranteeSection() {
   return (
@@ -41,7 +41,7 @@ export default function GuaranteeSection() {
                 className="text-lg text-[#0D1F3C]/60 max-w-2xl mx-auto leading-relaxed"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                Se nos primeiros 90 dias a Maya não gerar pelo menos{" "}
+                Se nos primeiros 90 dias o sistema não gerar pelo menos{" "}
                 <strong className="text-[#0D1F3C]">R$ 3.000 em receita automatizada comprovada</strong>,
                 nossa equipe entra na sua operação e garante os ajustes necessários — sem custo adicional.
               </p>

@@ -1,6 +1,6 @@
 import { MessageCircle, Star, Clock } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20Vetiva%20Agent";
+const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20fazer%20meu%20diagn%C3%B3stico%20gratuito";
 
 export default function HeroSection() {
   return (
@@ -30,7 +30,7 @@ export default function HeroSection() {
                 <span style={{ color: "#00C896" }}>TINHA PAGO R$ 250.</span>
               </h1>
               <p className="text-lg sm:text-xl text-white/70 font-light leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
-                A Maya — sua recepcionista com IA — atendeu, agendou e fechou.{" "}
+                O super agente — sua recepcionista com IA — atendeu, agendou e fechou.{" "}
                 <strong className="text-white font-semibold">Sem você precisar estar presente.</strong>
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-[#0D1F3C] transition-all duration-200 hover:brightness-110 hover:scale-105 active:scale-95"
                 style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
                 <MessageCircle size={20} />
-                Quero a Maya na Minha Clínica
+                Quero a RYVEM VET na Minha Clínica
               </a>
               <a href="#produtos"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white border border-white/20 hover:border-[#00C896]/50 hover:bg-white/5 transition-all duration-200"
@@ -76,7 +76,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-3 px-5 py-4 border-b border-white/10" style={{ background: "rgba(0,200,150,0.1)" }}>
                 <div className="w-10 h-10 rounded-full bg-[#00C896] flex items-center justify-center text-[#0D1F3C] font-black text-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>M</div>
                 <div>
-                  <p className="text-white font-bold text-sm" style={{ fontFamily: "Montserrat, sans-serif" }}>Maya</p>
+                  <p className="text-white font-bold text-sm" style={{ fontFamily: "Montserrat, sans-serif" }}>RYVEM VET</p>
                   <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
                     <p className="text-[#00C896] text-xs" style={{ fontFamily: "Inter, sans-serif" }}>Online agora</p>

@@ -11,20 +11,20 @@ const steps = [
   },
   {
     number: "02",
-    title: "Configuramos a Maya",
-    description: "Nossa equipe programa a Maya com o DNA da sua clínica: tom de voz, tabela de preços, escala médica, regras e protocolos específicos.",
+    title: "Configuramos seu super agente",
+    description: "Nossa equipe programa seu agente com o DNA da sua clínica: tom de voz, tabela de preços, escala médica, regras e protocolos específicos.",
     duration: "48 horas",
   },
   {
     number: "03",
     title: "Ativação e Treinamento",
-    description: "Você recebe acesso ao painel, testamos juntos os fluxos e garantimos que a Maya está respondendo exatamente como você quer.",
+    description: "Você recebe acesso ao painel, testamos juntos os fluxos e garantimos que o agente está respondendo exatamente como você quer.",
     duration: "1 dia",
   },
   {
     number: "04",
     title: "Resultados em Tempo Real",
-    description: "A Maya começa a atender. Você recebe relatório diário às 8h no WhatsApp com tudo que aconteceu: atendimentos, agendamentos, receita gerada.",
+    description: "O agente começa a atender. Você recebe relatório diário às 8h no WhatsApp com tudo que aconteceu: atendimentos, agendamentos, receita gerada.",
     duration: "Contínuo",
   },
 ];
@@ -39,7 +39,7 @@ export default function HowItWorksSection() {
             Como Funciona
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-            De Zero a Maya Funcionando<br />
+            De Zero ao seu agente funcionando<br />
             <span style={{ color: "#00C896" }}>em Menos de 72 Horas.</span>
           </h2>
           <p className="text-lg text-white/60 max-w-xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>

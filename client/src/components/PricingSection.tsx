@@ -4,7 +4,7 @@ const WA_AGENT = "https://wa.me/5522997178962?text=Quero%20contratar%20o%20Vetiv
 const WA_INTELLIGENCE = "https://wa.me/5522997178962?text=Quero%20saber%20mais%20sobre%20o%20Vetiva%20Intelligence";
 
 const agentFeatures = [
-  "Maya com DNA da sua clínica",
+  "Super agente com DNA da sua clínica",
   "Atendimento 24/7 pelo WhatsApp",
   "Agendamento automático de consultas",
   "Follow-up de vacinas e retornos",
@@ -84,7 +84,7 @@ export default function PricingSection() {
                 Vetiva Agent
               </h3>
               <p className="text-white/50 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-                A Maya no WhatsApp da sua clínica
+                Atendimento profissional 24/7 via WhatsApp
               </p>
             </div>
 
@@ -142,7 +142,7 @@ export default function PricingSection() {
                 Vetiva Intelligence
               </h3>
               <p className="text-white/50 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-                Maya + ERP + Inteligência de Receita
+                Super agente + ERP + Inteligência de Receita
               </p>
             </div>
 

@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20o%20Vetiva%20Agent";
+const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20a%20RYVEM%20VET";
 
 export default function FinalCTASection() {
   return (
@@ -26,7 +26,7 @@ export default function FinalCTASection() {
               className="text-lg text-white/60 max-w-xl mx-auto leading-relaxed"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Cada mensagem sem resposta é uma consulta perdida. A Maya pode estar atendendo agora mesmo — em menos de 72 horas.
+              Cada mensagem sem resposta é uma consulta perdida. O super agente pode estar atendendo agora mesmo — em menos de 72 horas.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export default function FinalCTASection() {
               style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}
             >
               <MessageCircle size={22} />
-              Quero a Maya na Minha Clínica
+              Quero a RYVEM VET na Minha Clínica
             </a>
           </div>
 
