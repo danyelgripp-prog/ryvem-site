@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/vetiva_logo_dark_37189109.png";
+const LOGO_DARK_URL = "/ryvem_vet_logo_dark.png";
 const WA_LINK = "https://wa.me/5522997178962";
 
 export default function Footer() {
