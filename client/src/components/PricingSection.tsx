@@ -113,12 +113,6 @@ export default function PricingSection() {
               ))}
             </ul>
 
-            <div className="mb-6 p-4 rounded-xl border border-[#00C896]/20" style={{ background: "rgba(0,200,150,0.06)" }}>
-              <p className="text-white/70 text-xs leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-                <strong className="text-white">Garantia:</strong> Em 60 dias, sua clínica responde tutor em menos de 10 segundos, 24h por dia — ou cancelamos seu plano e devolvemos cada centavo pago.
-              </p>
-            </div>
-
             <a
               href={WA_AGENT}
               target="_blank"
@@ -199,12 +193,6 @@ export default function PricingSection() {
                 </li>
               ))}
             </ul>
-
-            <div className="mb-6 p-4 rounded-xl border border-[#00C896]/20" style={{ background: "rgba(0,200,150,0.06)" }}>
-              <p className="text-white/70 text-xs leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-                <strong className="text-white">Garantia:</strong> Em 90 dias, sua clínica recupera pelo menos R$ 5.000 em receita atribuída ao sistema, rastreável no painel — ou trabalhamos sem custo adicional até atingir.
-              </p>
-            </div>
 
             <a
               href={WA_DIRETOR}
