@@ -129,7 +129,7 @@ export default function RyvemHero() {
             {/* CTAs */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem', alignItems: 'center', marginBottom: '3rem' }}>
               <a
-                href="https://wa.me/5522997178962?text=Quero%20estruturar%20meu%20fluxo%20de%20resultado"
+                href="https://wa.me/5522981047666?text=Quero%20estruturar%20meu%20fluxo%20de%20resultado"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

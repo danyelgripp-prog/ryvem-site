@@ -1,7 +1,7 @@
 import { Check, MessageCircle } from "lucide-react";
 
-const WA_AGENT = "https://wa.me/5522997178962?text=Quero%20come%C3%A7ar%20meu%20diagn%C3%B3stico%20gratuito%20RYVEM%20VET%20AGENTE";
-const WA_DIRETOR = "https://wa.me/5522997178962?text=Quero%20solicitar%20diagn%C3%B3stico%20RYVEM%20VET%20DIRETOR";
+const WA_AGENT = "https://wa.me/5522981047666?text=Quero%20come%C3%A7ar%20meu%20diagn%C3%B3stico%20gratuito%20RYVEM%20VET%20AGENTE";
+const WA_DIRETOR = "https://wa.me/5522981047666?text=Quero%20solicitar%20diagn%C3%B3stico%20RYVEM%20VET%20DIRETOR";
 
 const agentFeatures = [
   "Atendimento profissional 24/7 via WhatsApp",

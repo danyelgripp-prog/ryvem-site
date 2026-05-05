@@ -14,7 +14,7 @@ const links = {
     { label: 'Como trabalhamos', href: '#processo', externo: false },
   ],
   contato: [
-    { label: 'WhatsApp', href: 'https://wa.me/5522997178962', externo: true },
+    { label: 'WhatsApp', href: 'https://wa.me/5522981047666', externo: true },
     { label: 'contato@ryvem.com.br', href: 'mailto:contato@ryvem.com.br', externo: false },
     { label: 'LinkedIn', href: 'https://linkedin.com/company/ryvem', externo: true },
     { label: 'Instagram', href: 'https://instagram.com/ryvem.tech', externo: true },

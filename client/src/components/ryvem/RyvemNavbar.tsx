@@ -115,7 +115,7 @@ export default function RyvemNavbar() {
           {/* CTA */}
           <div className="hidden md:flex" style={{ alignItems: 'center', gap: '0.75rem' }}>
             <a
-              href="https://wa.me/5522997178962?text=Quero%20falar%20com%20a%20RYVEM"
+              href="https://wa.me/5522981047666?text=Quero%20falar%20com%20a%20RYVEM"
               target="_blank"
               rel="noopener noreferrer"
               className="ryvem-btn-primary"
@@ -212,7 +212,7 @@ export default function RyvemNavbar() {
               )}
             </div>
             <a
-              href="https://wa.me/5522997178962?text=Quero%20falar%20com%20a%20RYVEM"
+              href="https://wa.me/5522981047666?text=Quero%20falar%20com%20a%20RYVEM"
               target="_blank"
               rel="noopener noreferrer"
               className="ryvem-btn-primary"

@@ -475,7 +475,7 @@ export default function MissaoVisaoValores() {
               ← Voltar ao site
             </a>
             <a
-              href="https://wa.me/5522997178962?text=Quero%20um%20diagn%C3%B3stico%20gratuito"
+              href="https://wa.me/5522981047666?text=Quero%20um%20diagn%C3%B3stico%20gratuito"
               target="_blank"
               rel="noopener noreferrer"
               style={{

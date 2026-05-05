@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20RYVEM%20VET";
+const WA_LINK = "https://wa.me/5522981047666?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20RYVEM%20VET";
 
 const steps = [
   {

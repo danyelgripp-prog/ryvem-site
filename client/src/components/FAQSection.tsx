@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Tenho%20uma%20d%C3%BAvida%20sobre%20a%20RYVEM%20VET";
+const WA_LINK = "https://wa.me/5522981047666?text=Tenho%20uma%20d%C3%BAvida%20sobre%20a%20RYVEM%20VET";
 
 const faqs = [
   {

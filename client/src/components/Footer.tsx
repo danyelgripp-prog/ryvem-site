@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const LOGO_DARK_URL = "/ryvem_vet_logo_dark.png";
-const WA_LINK = "https://wa.me/5522997178962";
+const WA_LINK = "https://wa.me/5522981047666";
 
 export default function Footer() {
   return (
@@ -22,7 +22,7 @@ export default function Footer() {
               style={{ color: "#00C896", fontFamily: "Inter, sans-serif" }}
             >
               <MessageCircle size={16} />
-              (22) 99717-8962
+              (22) 98104-7666
             </a>
           </div>
 

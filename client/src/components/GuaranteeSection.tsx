@@ -1,6 +1,6 @@
 import { Shield, MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Quero%20saber%20mais%20sobre%20a%20garantia%20da%20RYVEM%20VET";
+const WA_LINK = "https://wa.me/5522981047666?text=Quero%20saber%20mais%20sobre%20a%20garantia%20da%20RYVEM%20VET";
 
 export default function GuaranteeSection() {
   return (

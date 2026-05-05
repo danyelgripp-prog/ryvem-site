@@ -1,6 +1,6 @@
 import { MessageCircle, Star, Clock } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20saber%20quanto%20estou%20perdendo";
+const WA_LINK = "https://wa.me/5522981047666?text=Ol%C3%A1%2C%20quero%20saber%20quanto%20estou%20perdendo";
 
 export default function HeroSection() {
   return (

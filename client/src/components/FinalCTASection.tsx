@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20a%20RYVEM%20VET";
+const WA_LINK = "https://wa.me/5522981047666?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20com%20a%20RYVEM%20VET";
 
 export default function FinalCTASection() {
   return (
@@ -58,7 +58,7 @@ export default function FinalCTASection() {
           </div>
 
           <p className="text-white/30 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-            (22) 99717-8962 · Atendimento de segunda a sexta, 9h às 18h
+            (22) 98104-7666 · Atendimento de segunda a sexta, 9h às 18h
           </p>
         </div>
       </div>

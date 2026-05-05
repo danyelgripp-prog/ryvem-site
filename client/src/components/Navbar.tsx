@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20RYVEM";
+const WA_LINK = "https://wa.me/5522981047666?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20RYVEM";
 
 const navLinks = [
   { label: "Produtos", href: "#produtos" },
