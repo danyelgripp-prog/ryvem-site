@@ -77,13 +77,13 @@ export default function HeroSection() {
 
           {/* Kanban Screenshot */}
           <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-lg">
+            <div className="relative w-full max-w-lg overflow-hidden max-h-[500px]">
               {/* Screenshot principal */}
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/kanban_mockup_faf3f42e.jpg"
                 alt="Kanban de atendimentos RYVEM VET em tempo real"
-                className="w-full rounded-2xl shadow-2xl"
-                style={{ border: "1px solid rgba(255,255,255,0.1)" }}
+                className="w-full h-full object-cover object-top rounded-2xl shadow-2xl"
+                style={{ border: "1px solid rgba(255,255,255,0.1)", maxHeight: "480px" }}
               />
               {/* Badge superior direito — vermelho */}
               <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold text-white"
