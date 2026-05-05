@@ -489,3 +489,45 @@
 .ryvem-logo-glow {
   animation: y-glow 3s ease-in-out infinite;
 }
+
+/* ─── RYVEM VET Product Classes ─── */
+.ryvem-vet-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: rgba(0, 200, 150, 0.10);
+  border: 1px solid rgba(0, 200, 150, 0.25);
+  color: #00C896;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.875rem;
+  border-radius: 100px;
+}
+
+.ryvem-vet-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 31, 60, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.ryvem-vet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cta {
+  background: #00C896;
+  color: #0D1F3C;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-cta:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}

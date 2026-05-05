@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20RYVEM";
+const WA_LINK = "https://wa.me/5522981047666?text=Ol%C3%A1%2C%20quero%20falar%20com%20a%20RYVEM";
 
 const navLinks = [
   { label: "Produtos", href: "#produtos" },
@@ -10,30 +10,23 @@ const navLinks = [
   { label: "Contato", href: "#contato" },
 ];
 
-function RyvemLogo() {
+function RyvemVetLogo() {
   return (
-    <a href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className="ryvem-logo-glow">
-        <defs>
-          <linearGradient id="navYGrad" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#3377FF"/>
-            <stop offset="100%" stopColor="#7C3AED"/>
-          </linearGradient>
-        </defs>
-        <path d="M15 17 L15 26" stroke="url(#navYGrad)" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M15 17 L7 7" stroke="url(#navYGrad)" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M15 17 L23 7" stroke="url(#navYGrad)" strokeWidth="2.5" strokeLinecap="round"/>
-        <path d="M12.5 23.5 L15 26 L17.5 23.5" stroke="url(#navYGrad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      </svg>
-      <span style={{
-        fontFamily: "'Space Grotesk', sans-serif",
-        fontWeight: 700,
-        fontSize: "1.2rem",
-        letterSpacing: "-0.04em",
-        color: "#FFFFFF",
-      }}>
-        RYVEM
-      </span>
+    <a href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+      {/* Desktop: logo dark 56px */}
+      <img
+        src="/ryvem_vet_logo_dark.png"
+        alt="RYVEM VET"
+        className="hidden md:block"
+        style={{ height: "56px", width: "auto", objectFit: "contain", marginLeft: "8px" }}
+      />
+      {/* Mobile: icon 40px */}
+      <img
+        src="/ryvem_vet_icon.png"
+        alt="RYVEM VET"
+        className="block md:hidden"
+        style={{ height: "40px", width: "auto", objectFit: "contain", marginLeft: "4px" }}
+      />
     </a>
   );
 }
@@ -63,7 +56,7 @@ export default function Navbar() {
       }}
     >
       <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "64px" }}>
-        <RyvemLogo />
+        <RyvemVetLogo />
 
         {/* Desktop Nav */}
         <nav style={{ display: "flex", alignItems: "center", gap: "2rem" }} className="hidden md:flex">

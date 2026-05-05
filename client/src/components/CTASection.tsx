@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle, Shield, Clock, Zap } from "lucide-react";
 
-const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247/VACwyab7ptYEtM7zHnvqz6/vetiva_logo_dark_37189109.png";
+const LOGO_DARK_URL = "/ryvem_vet_logo_dark.png";
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
@@ -53,11 +53,11 @@ export default function CTASection() {
             <div className="space-y-4">
               <img
                 src={LOGO_DARK_URL}
-                alt="Vetiva"
+                alt="RYVEM VET"
                 className="h-10 w-auto object-contain mb-2"
                 style={{ maxWidth: "160px" }}
               />
-              <div className="vetiva-badge w-fit">
+              <div className="ryvem-vet-badge w-fit">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
                 Diagnóstico Gratuito
               </div>

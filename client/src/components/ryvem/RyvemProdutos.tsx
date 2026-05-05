@@ -1,6 +1,6 @@
 // ============================================================
 // COPY EXATO FORNECIDO PELO CLIENTE — NÃO ALTERAR
-// Vetiva e Magic SDR são PRODUTOS DE PRATELEIRA da RYVEM
+// RYVEM VET e Magic SDR são PRODUTOS DE PRATELEIRA da RYVEM
 // ============================================================
 
 export default function RyvemProdutos() {
@@ -58,7 +58,7 @@ export default function RyvemProdutos() {
           gap: '1.5rem',
         }}>
 
-          {/* ─── VETIVA ─── */}
+          {/* ─── RYVEM VET ─── */}
           <div style={{
             background: 'rgba(0,168,80,0.03)',
             border: '1px solid rgba(0,168,80,0.22)',
@@ -95,7 +95,7 @@ export default function RyvemProdutos() {
                 fontWeight: 800, letterSpacing: '-0.03em',
                 color: '#F0F2FF', marginBottom: '0.5rem',
               }}>
-                VETIVA
+                RYVEM VET
               </h3>
               {/* Tagline — copy exato */}
               <p style={{
@@ -170,7 +170,7 @@ export default function RyvemProdutos() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.85'; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; }}
             >
-              Conhecer Vetiva →
+              Conhecer RYVEM VET →
             </a>
           </div>
 

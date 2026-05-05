@@ -28,7 +28,7 @@ const cases = [
     cor: '#5B21B6',
   },
   {
-    tag: 'Vetiva — Clínica Veterinária',
+    tag: 'RYVEM VET — Clínica Veterinária',
     titulo: 'Atendimento inteligente 24/7 com DNA da clínica veterinária',
     descricao:
       'Clínica com 5.820 clientes ativos perdendo agendamentos fora do horário comercial. Implementamos atendimento inteligente 24h por 7 via WhatsApp, com linguagem e protocolos da própria clínica.',

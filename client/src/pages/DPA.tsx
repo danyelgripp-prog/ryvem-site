@@ -7,7 +7,7 @@ export default function DPA() {
         Este <strong>Acordo de Processamento de Dados</strong> (Data Processing Agreement — DPA)
         estabelece os termos sob os quais a <strong>DMG Serviços Empresariais Ltda</strong> (RYVEM),
         inscrita no CNPJ 35.416.764/0001-47, processa dados pessoais em nome de seus clientes
-        ("Controladores") no contexto dos produtos <strong>Vetiva</strong> e <strong>Magic SDR</strong>.
+        ("Controladores") no contexto dos produtos <strong>RYVEM VET</strong> e <strong>Magic SDR</strong>.
       </p>
       <p>
         Este DPA complementa os contratos de serviço celebrados entre a RYVEM e seus clientes e
@@ -29,7 +29,7 @@ export default function DPA() {
         A RYVEM processa dados pessoais exclusivamente para fins de prestação dos serviços contratados,
         incluindo:
       </p>
-      <h3>2.1 Produto Vetiva</h3>
+      <h3>2.1 Produto RYVEM VET</h3>
       <ul>
         <li><strong>Tipos de dados:</strong> nome, telefone, e-mail, histórico de atendimento, dados de agendamento e informações de saúde animal de tutores e pacientes</li>
         <li><strong>Finalidade:</strong> automação de atendimento via WhatsApp, gestão de relacionamento com tutores, integração com ERP Vetus</li>
@@ -131,7 +131,7 @@ export default function DPA() {
         Como parceiro da API do WhatsApp Business da Meta, a RYVEM assegura que:
       </p>
       <ul>
-        <li>Todos os clientes que utilizam o Vetiva obtêm opt-in explícito dos usuários finais antes de enviar mensagens via WhatsApp</li>
+        <li>Todos os clientes que utilizam a RYVEM VET obtêm opt-in explícito dos usuários finais antes de enviar mensagens via WhatsApp</li>
         <li>As mensagens enviadas cumprem as Políticas de Uso Aceitável do WhatsApp Business</li>
         <li>Dados de mensagens não são utilizados para fins além da prestação do serviço contratado</li>
         <li>Os clientes são informados sobre as responsabilidades de conformidade com as políticas da Meta</li>

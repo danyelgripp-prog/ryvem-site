@@ -6,7 +6,7 @@ const steps = [
     icon: Database,
     title: "Conecta ao Seu ERP",
     description:
-      "O Vetiva se integra ao sistema que você já usa. Sem migração, sem troca de software, sem treinamento da equipe. Em 48 horas, seus dados estão sendo analisados.",
+      "A RYVEM VET se integra ao sistema que você já usa. Sem migração, sem troca de software, sem treinamento da equipe. Em 48 horas, seus dados estão sendo analisados.",
     detail: "Compatível com os principais ERPs veterinários do Brasil",
     color: "#3B82F6",
   },
@@ -58,7 +58,7 @@ export default function MethodologySection() {
       <div className="max-w-6xl mx-auto px-6 relative">
         {/* Header */}
         <div className="text-center mb-16 space-y-4">
-          <div className="vetiva-badge w-fit mx-auto">
+          <div className="ryvem-vet-badge w-fit mx-auto">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
             Como Funciona
           </div>
@@ -157,7 +157,7 @@ export default function MethodologySection() {
               className="text-xl font-black"
               style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
             >
-              Pronto para ver o Vetiva em ação na sua clínica?
+              Pronto para ver a RYVEM VET em ação na sua clínica?
             </h3>
             <p
               className="text-gray-600 text-sm"

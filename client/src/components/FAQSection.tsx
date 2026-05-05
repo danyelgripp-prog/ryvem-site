@@ -1,28 +1,28 @@
 import { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Vetiva";
+const WA_LINK = "https://wa.me/5522981047666?text=Tenho%20uma%20d%C3%BAvida%20sobre%20a%20RYVEM%20VET";
 
 const faqs = [
   {
-    question: "A Maya vai errar e passar informação errada para o tutor?",
+    question: "O super agente vai errar e passar informação errada para o tutor?",
     answer:
-      "A Maya só responde com o que você configurou. Ela não inventa preços, não cria horários e não promete o que não pode cumprir. Se ela não souber responder algo, ela diz que vai verificar com a equipe e pede o contato. Você tem controle total sobre o que ela pode e não pode falar.",
+      "O super agente só responde com o que você configurou. Ele não inventa preços, não cria horários e não promete o que não pode cumprir. Se ele não souber responder algo, ele diz que vai verificar com a equipe e pede o contato. Você tem controle total sobre o que ele pode e não pode falar.",
   },
   {
     question: "E se o tutor quiser falar com uma pessoa de verdade?",
     answer:
-      "A Maya identifica quando o tutor precisa de atendimento humano — seja por urgência, complexidade ou preferência — e transfere a conversa para você ou sua equipe com todo o contexto já registrado. Nenhuma informação se perde na transição.",
+      "O super agente identifica quando o tutor precisa de atendimento humano — seja por urgência, complexidade ou preferência — e transfere a conversa para você ou sua equipe com todo o contexto já registrado. Nenhuma informação se perde na transição.",
   },
   {
-    question: "Preciso trocar meu sistema atual para usar o Vetiva?",
+    question: "Preciso trocar meu sistema atual para usar a RYVEM VET?",
     answer:
-      "Não. O Vetiva Agent funciona de forma independente, pelo WhatsApp da sua clínica. O Vetiva Intelligence se integra ao seu ERP atual sem substituí-lo. Você não precisa mudar nada do que já funciona.",
+      "Não. O RYVEM VET AGENTE funciona de forma independente, pelo WhatsApp da sua clínica. O RYVEM VET DIRETOR se integra ao seu ERP atual sem substituí-lo. Você não precisa mudar nada do que já funciona.",
   },
   {
-    question: "Quanto tempo leva para a Maya estar funcionando?",
+    question: "Quanto tempo leva para o agente estar funcionando?",
     answer:
-      "Em até 72 horas após o diagnóstico inicial. Nossa equipe configura tudo: tom de voz, tabela de preços, horários, protocolos. Você revisa, aprova e a Maya começa a atender. Sem instalação técnica da sua parte.",
+      "Em até 72 horas após o diagnóstico inicial. Nossa equipe configura tudo: tom de voz, tabela de preços, horários, protocolos. Você revisa, aprova e o agente começa a atender. Sem instalação técnica da sua parte.",
   },
   {
     question: "O que acontece se eu quiser cancelar?",

@@ -4,7 +4,7 @@ const LOGO_PRINCIPAL = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663061774247
 
 const links = {
   solucoes: [
-    { label: 'Vetiva', href: 'https://vetiva.ryvem.com.br', externo: true },
+    { label: 'RYVEM VET', href: 'https://vetiva.ryvem.com.br', externo: true },
     { label: 'Magic SDR', href: '#solucoes', externo: false },
   ],
   empresa: [
@@ -14,7 +14,7 @@ const links = {
     { label: 'Como trabalhamos', href: '#processo', externo: false },
   ],
   contato: [
-    { label: 'WhatsApp', href: 'https://wa.me/5522997178962', externo: true },
+    { label: 'WhatsApp', href: 'https://wa.me/5522981047666', externo: true },
     { label: 'contato@ryvem.com.br', href: 'mailto:contato@ryvem.com.br', externo: false },
     { label: 'LinkedIn', href: 'https://linkedin.com/company/ryvem', externo: true },
     { label: 'Instagram', href: 'https://instagram.com/ryvem.tech', externo: true },

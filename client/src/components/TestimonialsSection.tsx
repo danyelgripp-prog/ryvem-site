@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
             <div className="relative">
               <Quote size={48} className="mb-6" style={{ color: "#00C896", opacity: 0.3 }} />
               <blockquote className="text-2xl sm:text-3xl font-bold text-[#0D1F3C] leading-snug mb-8" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                &quot;Melhor IA que ja usei. A Maya atendeu um cliente as 21h &mdash; as 21h20 ele ja tinha sido atendido e pago R$ 250.&quot;
+                &quot;Melhor IA que ja usei. O super agente atendeu um cliente as 21h &mdash; as 21h20 ele ja tinha sido atendido e pago R$ 250.&quot;
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-full bg-[#0D1F3C] flex items-center justify-center text-white font-black text-xl" style={{ fontFamily: "Montserrat, sans-serif" }}>P</div>
@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div className="ml-auto flex flex-col items-end gap-2">
                   <div className="flex">{[1,2,3,4,5].map(i => <Star key={i} size={18} fill="#00C896" stroke="none" />)}</div>
-                  <span className="text-xs text-[#0D1F3C]/40" style={{ fontFamily: "Inter, sans-serif" }}>Cliente Vetiva Agent</span>
+                  <span className="text-xs text-[#0D1F3C]/40" style={{ fontFamily: "Inter, sans-serif" }}>Cliente RYVEM VET AGENTE</span>
                 </div>
               </div>
             </div>

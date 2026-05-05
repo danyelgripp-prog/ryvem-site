@@ -128,7 +128,7 @@ export default function RyvemCTA() {
 
           {/* CTA Button */}
           <a
-            href="https://wa.me/5522997178962?text=Quero%20estruturar%20meu%20fluxo%20de%20resultado%20com%20a%20RYVEM"
+            href="https://wa.me/5522981047666?text=Quero%20estruturar%20meu%20fluxo%20de%20resultado%20com%20a%20RYVEM"
             target="_blank"
             rel="noopener noreferrer"
             style={{

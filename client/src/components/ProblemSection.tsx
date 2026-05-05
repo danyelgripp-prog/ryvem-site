@@ -3,27 +3,27 @@ import { Moon, UserX, TrendingDown } from "lucide-react";
 const problems = [
   {
     icon: <Moon size={28} />,
-    title: "Tutor mandou mensagem às 21h. Ninguém respondeu.",
+    title: "O tutor manda mensagem às 21h. Ninguém vê até amanhã.",
     description:
-      "Ele esperou até a manhã. Mas de manhã ele já tinha ido para o concorrente. Você perdeu o cliente sem nem saber que ele existia.",
-    stat: "68%",
-    statLabel: "dos tutores não voltam após falta de resposta rápida",
+      "Ele não espera. Em menos de 10 minutos está buscando outra clínica no Google. Você nem ficou sabendo que ele existiu.",
+    stat: "70%",
+    statLabel: "dos tutores escolhem a primeira clínica que responde",
   },
   {
     icon: <UserX size={28} />,
-    title: "Recepcionista boa é difícil de encontrar e fácil de perder.",
+    title: "Cada pessoa da sua equipe atende de um jeito.",
     description:
-      "Treinar, pagar, gerenciar — e ainda assim o atendimento é inconsistente. Cada funcionário atende de um jeito. O padrão da sua clínica depende do humor do dia.",
-    stat: "R$ 3.200",
-    statLabel: "custo médio mensal de uma recepcionista treinada",
+      "Um passa preço diferente. Outro esquece de confirmar a consulta. O tutor percebe a bagunça antes de você perceber.",
+    stat: "Inconsistência",
+    statLabel: "de atendimento é a principal causa de perda de clientes",
   },
   {
     icon: <TrendingDown size={28} />,
-    title: "Clientes somem e você só descobre quando o faturamento cai.",
+    title: "Clientes que pararam de vir e você não sabe por quê.",
     description:
-      "Vacinas vencidas, retornos não agendados, aniversários de pets ignorados. Cada um desses é dinheiro que saiu da sua clínica em silêncio.",
-    stat: "R$ 34K+",
-    statLabel: "receita média não capturada por clínica por ano",
+      "Eles estão na sua base. Consultaram uma vez, duas vezes, e sumiram. Ninguém ligou. Ninguém mandou mensagem. A cadeira ficou vazia.",
+    stat: "5x",
+    statLabel: "mais barato reativar um cliente do que conquistar um novo",
   },
 ];
 
@@ -37,12 +37,12 @@ export default function ProblemSection() {
             O Problema Real
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0D1F3C] leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-            Você Não Perde Clientes<br />
-            <span style={{ color: "#00C896" }}>por Falta de Qualidade.</span><br />
-            Perde por Falta de Presença.
+            O problema não é a qualidade<br />
+            do seu atendimento.<br />
+            <span style={{ color: "#00C896" }}>É o que acontece antes e depois da consulta.</span>
           </h2>
           <p className="text-lg text-[#0D1F3C]/60 max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-            A clínica veterinária que cresce hoje não é a que tem o melhor médico. É a que está disponível quando o tutor precisa.
+            São situações que acontecem em toda clínica veterinária. Silenciosas. E custosas.
           </p>
         </div>
 
