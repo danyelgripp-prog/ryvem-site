@@ -74,6 +74,34 @@ export default function PricingSection() {
               </p>
             </div>
 
+            <div className="mb-6 p-4 rounded-xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              <p className="text-white/50 text-xs mb-3 uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif" }}>
+                Para ter isso separado hoje, você pagaria:
+              </p>
+              {[
+                { item: "Recepcionista CLT 1 turno", valor: "R$ 3.106/mês" },
+                { item: "Atendente WhatsApp dedicado", valor: "R$ 3.106/mês" },
+                { item: "Software de agendamento", valor: "R$ 200/mês" },
+                { item: "CRM separado", valor: "R$ 300/mês" },
+                { item: "Plataforma de mensageria", valor: "R$ 200/mês" },
+              ].map((l) => (
+                <div key={l.item} className="flex justify-between text-xs py-1 border-b border-white/5">
+                  <span style={{ color: "rgba(255,255,255,0.4)", fontFamily: "Inter, sans-serif" }}>{l.item}</span>
+                  <span style={{ color: "rgba(255,255,255,0.6)", fontFamily: "Inter, sans-serif" }}>{l.valor}</span>
+                </div>
+              ))}
+              <div className="flex justify-between mt-3 pt-2">
+                <span className="text-xs font-bold text-white/60" style={{ fontFamily: "Montserrat, sans-serif" }}>Total</span>
+                <span className="text-sm font-black" style={{ color: "#EF4444", fontFamily: "Montserrat, sans-serif" }}>R$ 6.912/mês</span>
+              </div>
+              <p className="text-xs mt-2" style={{ color: "#00C896", fontFamily: "Inter, sans-serif" }}>
+                Com o AGENTE: R$ 797/mês. Você economiza R$ 6.115/mês.
+              </p>
+              <p className="text-white/30 text-xs mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
+                * Salário base R$ 1.827 + 70% encargos CLT. Fonte: CAGED 2025-2026.
+              </p>
+            </div>
+
             <ul className="space-y-3 mb-8 flex-1">
               {agentFeatures.map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm text-white/70" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -128,6 +156,36 @@ export default function PricingSection() {
               </div>
               <p className="text-white/40 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
                 ou R$ 1.997/mês no plano mensal
+              </p>
+            </div>
+
+            <div className="mb-6 p-4 rounded-xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              <p className="text-white/50 text-xs mb-3 uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif" }}>
+                Para ter isso separado hoje, você pagaria:
+              </p>
+              {[
+                { item: "Atendimento 24/7 (3 turnos CLT)", valor: "R$ 9.318/mês" },
+                { item: "Software agendamento + CRM", valor: "R$ 700/mês" },
+                { item: "Diretor comercial veterinário", valor: "R$ 5.500/mês" },
+                { item: "Analista de dados", valor: "R$ 3.500/mês" },
+                { item: "Especialista em campanhas", valor: "R$ 1.800/mês" },
+                { item: "Auditor de qualidade", valor: "R$ 1.200/mês" },
+                { item: "Consultoria comercial", valor: "R$ 2.500/mês" },
+              ].map((l) => (
+                <div key={l.item} className="flex justify-between text-xs py-1 border-b border-white/5">
+                  <span style={{ color: "rgba(255,255,255,0.4)", fontFamily: "Inter, sans-serif" }}>{l.item}</span>
+                  <span style={{ color: "rgba(255,255,255,0.6)", fontFamily: "Inter, sans-serif" }}>{l.valor}</span>
+                </div>
+              ))}
+              <div className="flex justify-between mt-3 pt-2">
+                <span className="text-xs font-bold text-white/60" style={{ fontFamily: "Montserrat, sans-serif" }}>Total</span>
+                <span className="text-sm font-black" style={{ color: "#EF4444", fontFamily: "Montserrat, sans-serif" }}>R$ 24.518/mês</span>
+              </div>
+              <p className="text-xs mt-2" style={{ color: "#00C896", fontFamily: "Inter, sans-serif" }}>
+                Com o DIRETOR: R$ 1.497/mês. Você economiza R$ 23.021/mês.
+              </p>
+              <p className="text-white/30 text-xs mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
+                * 3 turnos × R$ 3.106/mês CLT. Atendimento 24/7 humano é inviável com menos de 3 pessoas.
               </p>
             </div>
 
