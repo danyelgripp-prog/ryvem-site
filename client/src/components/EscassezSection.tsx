@@ -18,7 +18,7 @@ export default function EscassezSection() {
             Restam 3 vagas para maio de 2026.
           </p>
           <p className="text-white/60 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-            Próxima turma: junho de 2026.
+            Próximas vagas: junho de 2026.
           </p>
         </div>
 
