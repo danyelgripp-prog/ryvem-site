@@ -1,4 +1,4 @@
-import { MessageCircle, Star } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const WA_LINK = "https://wa.me/5522981047666?text=Quero%20saber%20quanto%20estou%20perdendo";
 
@@ -67,12 +67,6 @@ export default function HeroSection() {
               </a>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <div className="flex">{[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#00C896" stroke="none" />)}</div>
-              <p className="text-white/50 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-                <span className="text-white/80 font-medium">"Antes a gente perdia paciente toda semana sem nem saber. Agora cada contato é atendido. A diferença apareceu no caixa logo na primeira semana."</span> — Pedro · Fripet Veterinária · Nova Friburgo, RJ
-              </p>
-            </div>
           </div>
 
           {/* Kanban Screenshot */}
