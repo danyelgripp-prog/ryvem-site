@@ -19,27 +19,33 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00C896]/30 bg-[#00C896]/10 text-[#00C896] text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
-              IA com DNA da sua clínica veterinária
+              Aceleradora de Negócios Veterinários
             </div>
 
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                ÀS 21H UM TUTOR<br />
-                MANDOU MENSAGEM.<br />
-                <span style={{ color: "#00C896" }}>ÀS 21H20 ELE JÁ</span><br />
-                <span style={{ color: "#00C896" }}>TINHA PAGO R$ 250.</span>
+                SUA CLÍNICA NÃO<br />
+                PRECISA DE MAIS<br />
+                <span style={{ color: "#00C896" }}>PACIENTES.</span>
               </h1>
-              <p className="text-lg sm:text-xl text-white/70 font-light leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
-                O super agente — sua recepcionista com IA — atendeu, agendou e fechou.{" "}
-                <strong className="text-white font-semibold">Sem você precisar estar presente.</strong>
+              <p className="text-lg sm:text-xl text-white/80 font-semibold leading-snug max-w-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                Precisa parar de perder os que já chegam.
+              </p>
+              <p className="text-base text-white/60 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                Todos os dias, tutores entram em contato pelo WhatsApp, Instagram ou indicação.
+                Sem resposta rápida e sem padrão no atendimento, eles procuram outra clínica.
+              </p>
+              <p className="text-sm text-white/50 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                A RYVEM VET é a primeira aceleradora de negócios veterinários do Brasil.
+                Não somos empresa de tecnologia. Somos especialistas em clínica veterinária que garantem aumento de faturamento e lucratividade através de estratégias comerciais específicas do segmento.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-8">
               {[
                 { value: "24/7", label: "Atendimento sem pausas" },
-                { value: "20 min", label: "Tempo médio de fechamento" },
-                { value: "R$ 3K+", label: "Garantido ou ajustamos" },
+                { value: "10s", label: "Tempo médio de resposta" },
+                { value: "R$ 5K+", label: "Garantido em 90 dias" },
               ].map((stat) => (
                 <div key={stat.label} className="space-y-1">
                   <div className="text-2xl font-black" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>{stat.value}</div>
@@ -53,12 +59,12 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-[#0D1F3C] transition-all duration-200 hover:brightness-110 hover:scale-105 active:scale-95"
                 style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
                 <MessageCircle size={20} />
-                Quero a RYVEM VET na Minha Clínica
+                Diagnóstico gratuito
               </a>
-              <a href="#produtos"
+              <a href="#como-funciona"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white border border-white/20 hover:border-[#00C896]/50 hover:bg-white/5 transition-all duration-200"
                 style={{ fontFamily: "Inter, sans-serif" }}>
-                Ver Planos e Preços
+                Ver como funciona
               </a>
             </div>
 
@@ -74,7 +80,7 @@ export default function HeroSection() {
           <div className="relative hidden lg:flex items-center justify-center">
             <div className="w-full max-w-sm rounded-3xl overflow-hidden border border-white/10 shadow-2xl" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(20px)" }}>
               <div className="flex items-center gap-3 px-5 py-4 border-b border-white/10" style={{ background: "rgba(0,200,150,0.1)" }}>
-                <div className="w-10 h-10 rounded-full bg-[#00C896] flex items-center justify-center text-[#0D1F3C] font-black text-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>M</div>
+                <div className="w-10 h-10 rounded-full bg-[#00C896] flex items-center justify-center text-[#0D1F3C] font-black text-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>R</div>
                 <div>
                   <p className="text-white font-bold text-sm" style={{ fontFamily: "Montserrat, sans-serif" }}>RYVEM VET</p>
                   <div className="flex items-center gap-1.5">
