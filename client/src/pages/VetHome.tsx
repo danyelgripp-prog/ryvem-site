@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import FrustracoesSection from "@/components/FrustracoesSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import MethodologySection from "@/components/MethodologySection";
@@ -19,6 +20,7 @@ export default function VetHome() {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <FrustracoesSection />
       <ProblemSection />
       <SolutionSection />
       <MethodologySection />
