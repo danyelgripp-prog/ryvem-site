@@ -6,6 +6,7 @@ import DiagnosticSection from "@/components/DiagnosticSection";
 import SolutionSection from "@/components/SolutionSection";
 import MethodologySection from "@/components/MethodologySection";
 import ResultsSection from "@/components/ResultsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import PricingSection from "@/components/PricingSection";
 import GuaranteeSection from "@/components/GuaranteeSection";
@@ -26,6 +27,7 @@ export default function VetHome() {
       <SolutionSection />
       <MethodologySection />
       <ResultsSection />
+      <TestimonialsSection />
       <ComparisonSection />
       <PricingSection />
       <GuaranteeSection />
