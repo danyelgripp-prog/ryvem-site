@@ -1,6 +1,6 @@
 import { MessageCircle, Star, Clock } from "lucide-react";
 
-const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20fazer%20meu%20diagn%C3%B3stico%20gratuito";
+const WA_LINK = "https://wa.me/5522997178962?text=Ol%C3%A1%2C%20quero%20saber%20quanto%20estou%20perdendo";
 
 export default function HeroSection() {
   return (
@@ -19,32 +19,26 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00C896]/30 bg-[#00C896]/10 text-[#00C896] text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
               <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
-              Aceleradora de Negócios Veterinários
+              Para donos de clínica veterinária
             </div>
 
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                SUA CLÍNICA NÃO<br />
-                PRECISA DE MAIS<br />
-                <span style={{ color: "#00C896" }}>PACIENTES.</span>
+                Sua clínica perde dinheiro todo dia.<br />
+                <span style={{ color: "#00C896" }}>E você provavelmente não sabe quanto.</span>
               </h1>
-              <p className="text-lg sm:text-xl text-white/80 font-semibold leading-snug max-w-lg" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                Precisa parar de perder os que já chegam.
+              <p className="text-base text-white/60 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                Você foi formado para cuidar de animais, não para estruturar uma operação comercial. Só que enquanto você atende, a recepção passa preço errado, o tutor que mandou mensagem ontem não recebeu resposta, e o cliente que não volta há três meses não sabe que você ainda está lá.
               </p>
               <p className="text-base text-white/60 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
-                Todos os dias, tutores entram em contato pelo WhatsApp, Instagram ou indicação.
-                Sem resposta rápida e sem padrão no atendimento, eles procuram outra clínica.
-              </p>
-              <p className="text-sm text-white/50 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
-                A RYVEM VET é a primeira aceleradora de negócios veterinários do Brasil.
-                Não somos empresa de tecnologia. Somos especialistas em clínica veterinária que garantem aumento de faturamento e lucratividade através de estratégias comerciais específicas do segmento.
+                A RYVEM VET entra na sua clínica, organiza tudo isso e entrega funcionando em 72 horas. Você não aprende nada novo. Sua equipe não muda de sistema. Você só vê o resultado.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-8">
               {[
-                { value: "24/7", label: "Atendimento sem pausas" },
-                { value: "10s", label: "Tempo médio de resposta" },
+                { value: "72h", label: "Para estar funcionando" },
+                { value: "24/7", label: "Sua clínica disponível" },
                 { value: "R$ 5K+", label: "Garantido em 90 dias" },
               ].map((stat) => (
                 <div key={stat.label} className="space-y-1">
@@ -59,7 +53,7 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-[#0D1F3C] transition-all duration-200 hover:brightness-110 hover:scale-105 active:scale-95"
                 style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
                 <MessageCircle size={20} />
-                Diagnóstico gratuito
+                Quero saber quanto estou perdendo
               </a>
               <a href="#como-funciona"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white border border-white/20 hover:border-[#00C896]/50 hover:bg-white/5 transition-all duration-200"
@@ -71,7 +65,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-3 pt-2">
               <div className="flex">{[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#00C896" stroke="none" />)}</div>
               <p className="text-white/50 text-sm" style={{ fontFamily: "Inter, sans-serif" }}>
-                <span className="text-white/80 font-medium">"Melhor IA que já usei"</span> — Pedro, Fripet Veterinária · Nova Friburgo, RJ
+                <span className="text-white/80 font-medium">"Antes a gente perdia paciente toda semana sem nem saber. Agora cada contato é atendido. A diferença apareceu no caixa logo na primeira semana."</span> — Pedro · Fripet Veterinária · Nova Friburgo, RJ
               </p>
             </div>
           </div>
@@ -89,42 +83,34 @@ export default function HeroSection() {
                   </div>
                 </div>
                 <div className="ml-auto text-white/40 text-xs flex items-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
-                  <Clock size={12} /> 21:00
+                  <Clock size={12} /> 21:03
                 </div>
               </div>
               <div className="p-5 space-y-4">
                 <div className="flex justify-end">
                   <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm text-sm text-white" style={{ background: "rgba(255,255,255,0.1)", fontFamily: "Inter, sans-serif" }}>
-                    Boa noite! Meu cachorro está com a vacina vencida, tem horário amanhã?
+                    Boa noite! Quanto custa uma castração de gato macho?
                   </div>
                 </div>
                 <div className="flex justify-start">
                   <div className="max-w-[80%] px-4 py-3 rounded-2xl rounded-tl-sm text-sm text-[#0D1F3C] font-medium" style={{ background: "#00C896", fontFamily: "Inter, sans-serif" }}>
-                    Boa noite! 🐾 Claro, temos horário amanhã às 9h e às 14h. Qual fica melhor pra você?
+                    Boa noite! A castração de gato macho aqui na clínica custa R$ 280, incluindo anestesia e acompanhamento pós-operatório. Posso verificar a agenda para você. Qual seria o melhor dia?
                   </div>
                 </div>
                 <div className="flex justify-end">
                   <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm text-sm text-white" style={{ background: "rgba(255,255,255,0.1)", fontFamily: "Inter, sans-serif" }}>
-                    14h perfeito! Quanto vai custar?
+                    Que rápido! Pode ser sábado de manhã?
                   </div>
                 </div>
                 <div className="flex justify-start">
                   <div className="max-w-[80%] px-4 py-3 rounded-2xl rounded-tl-sm text-sm text-[#0D1F3C] font-medium" style={{ background: "#00C896", fontFamily: "Inter, sans-serif" }}>
-                    A consulta + vacina fica R$ 250. Confirmo o agendamento para amanhã às 14h? 😊
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <div className="max-w-[75%] px-4 py-3 rounded-2xl rounded-tr-sm text-sm text-white" style={{ background: "rgba(255,255,255,0.1)", fontFamily: "Inter, sans-serif" }}>
-                    Confirmado! Obrigado 👍
+                    Tenho horário disponível sábado às 9h. Vou reservar para você. Qual o nome do gatinho?
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-[#00C896]/30 mt-2" style={{ background: "rgba(0,200,150,0.08)" }}>
-                  <span className="text-[#00C896] text-xs font-bold" style={{ fontFamily: "Montserrat, sans-serif" }}>✓ Agendamento confirmado · R$ 250 · 21:20</span>
+                  <span className="text-[#00C896] text-xs font-bold" style={{ fontFamily: "Montserrat, sans-serif" }}>21h03 · Atendido · Consulta agendada</span>
                 </div>
               </div>
-            </div>
-            <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full text-xs font-bold text-[#0D1F3C]" style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
-              20 min · R$ 250 fechados
             </div>
           </div>
         </div>
