@@ -1,0 +1,179 @@
+/* legal.css — Ryvem VET — Páginas legais estáticas */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --text: #1a1a2e;
+  --muted: #555570;
+  --link: #0055EE;
+  --header-bg: #1a1a2e;
+  --header-text: #f0f2ff;
+  --footer-bg: #f5f5f8;
+  --border: #e0e0ea;
+  --max-w: 800px;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+header {
+  background: var(--header-bg);
+  padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header nav {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header nav a {
+  color: var(--header-text);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+
+header nav a:first-child {
+  font-weight: 700;
+  opacity: 1;
+  letter-spacing: -0.01em;
+}
+
+header nav a:hover { opacity: 1; }
+
+/* Main */
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 4vw, 2rem);
+}
+
+main > p:first-child {
+  font-size: 1.0625rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-meta {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+/* Typography */
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 2px solid var(--border);
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.375rem;
+  color: var(--muted);
+}
+
+li strong { color: var(--text); }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+a:hover { opacity: 0.8; }
+
+strong { color: var(--text); font-weight: 600; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Status box (data-deletion) */
+.status-box {
+  background: #f0f7ff;
+  border: 1px solid #c0d8ff;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Footer */
+footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem);
+  margin-top: 4rem;
+}
+
+footer > * {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer p {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 0.375rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--link);
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.5rem; }
+  header nav { gap: 1rem; }
+}

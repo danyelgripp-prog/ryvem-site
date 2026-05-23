@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclusão de Dados — Ryvem VET</title>
+  <meta name="description" content="Status de solicitação de exclusão de dados pessoais conforme LGPD e políticas Meta.">
+  <meta property="og:title" content="Exclusão de Dados — Ryvem VET">
+  <meta property="og:description" content="Solicitação de exclusão de dados pessoais.">
+  <meta property="og:url" content="https://vet.ryvem.com.br/data-deletion">
+  <meta property="og:image" content="https://vet.ryvem.com.br/ryvem_vet_logo_light.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://vet.ryvem.com.br/data-deletion">
+  <link rel="stylesheet" href="/legal.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Ryvem</a>
+      <a href="/vet">Ryvem VET</a>
+      <a href="/politica-de-privacidade">Privacidade</a>
+      <a href="/termos-de-uso">Termos</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Exclusão de Dados Pessoais</h1>
+    <p id="status-msg">Solicitação de exclusão de dados recebida.</p>
+    <div class="status-box">
+      <p>Código de confirmação: <strong id="deletion-code">—</strong></p>
+      <p>Status: <strong>Em processamento</strong></p>
+    </div>
+    <p>Você receberá confirmação por e-mail em até 30 dias após o processamento da solicitação.</p>
+    <p>Em caso de dúvidas, entre em contato: <a href="mailto:contato@ryvem.com.br">contato@ryvem.com.br</a></p>
+    <hr>
+    <p>Esta página é parte do processo de conformidade com a LGPD (Lei Geral de Proteção de Dados) e com as políticas de privacidade da Meta Platforms, Inc.</p>
+    <p>
+      Para mais informações sobre seus direitos como titular de dados, consulte nossa
+      <a href="/politica-de-privacidade">Política de Privacidade</a> ou nossa página de
+      <a href="/conformidade-lgpd">Conformidade LGPD</a>.
+    </p>
+  </main>
+  <footer>
+    <p>DMG Serviços Empresariais Ltda — CNPJ 35.416.764/0001-47 — Rua Romualdo Machado, 122 — Nova Friburgo/RJ — contato@ryvem.com.br</p>
+    <p><a href="/politica-de-privacidade">Política de Privacidade</a> | <a href="/termos-de-uso">Termos de Uso</a></p>
+  </footer>
+  <script>
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('code');
+      if (code) {
+        document.getElementById('deletion-code').textContent = code;
+        document.getElementById('status-msg').textContent = 'Solicitação de exclusão de dados recebida com sucesso.';
+      }
+    } catch(e) {}
+  </script>
+</body>
+</html>

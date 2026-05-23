@@ -27,6 +27,9 @@ export default function HeroSection() {
                 Sua clínica perde dinheiro todo dia.<br />
                 <span style={{ color: "#00C896" }}>E você provavelmente não sabe quanto.</span>
               </h1>
+              <p className="text-sm text-white/40 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                A Ryvem VET é uma plataforma SaaS de inteligência comercial para clínicas veterinárias brasileiras. Cada clínica conecta seu próprio WhatsApp Business — via integração oficial com a Meta (WhatsApp Business Platform) — e a Ryvem opera atendimento, agendamento, lembretes de vacinação e reativação de tutores com IA, 24h por dia.
+              </p>
               <p className="text-base text-white/60 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
                 Você foi formado para cuidar de animais, não para estruturar uma operação comercial. Só que enquanto você atende, a recepção passa preço errado, o tutor que mandou mensagem ontem não recebeu resposta, e o cliente que não volta há três meses não sabe que você ainda está lá.
               </p>

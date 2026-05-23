@@ -12,7 +12,12 @@ export default function CookieBanner() {
   }, []);
 
   function accept() {
-    localStorage.setItem(STORAGE_KEY, "true");
+    localStorage.setItem(STORAGE_KEY, "all");
+    setVisible(false);
+  }
+
+  function acceptNecessary() {
+    localStorage.setItem(STORAGE_KEY, "necessary");
     setVisible(false);
   }
 
@@ -62,30 +67,56 @@ export default function CookieBanner() {
           </a>
           .
         </p>
-        <button
-          onClick={accept}
-          style={{
-            background: "linear-gradient(135deg, #0055EE, #7C3AED)",
-            color: "#fff",
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontWeight: 700,
-            fontSize: "0.875rem",
-            padding: "0.625rem 1.5rem",
-            borderRadius: "8px",
-            border: "none",
-            cursor: "pointer",
-            flexShrink: 0,
-            transition: "opacity 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.opacity = "0.85";
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.opacity = "1";
-          }}
-        >
-          Aceitar
-        </button>
+        <div style={{ display: "flex", gap: "0.625rem", flexShrink: 0, flexWrap: "wrap" }}>
+          <button
+            onClick={acceptNecessary}
+            style={{
+              background: "transparent",
+              color: "rgba(240,242,255,0.5)",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 600,
+              fontSize: "0.875rem",
+              padding: "0.625rem 1.25rem",
+              borderRadius: "8px",
+              border: "1px solid rgba(255,255,255,0.15)",
+              cursor: "pointer",
+              transition: "border-color 0.2s, color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.3)";
+              (e.currentTarget as HTMLButtonElement).style.color = "rgba(240,242,255,0.8)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.15)";
+              (e.currentTarget as HTMLButtonElement).style.color = "rgba(240,242,255,0.5)";
+            }}
+          >
+            Apenas necessários
+          </button>
+          <button
+            onClick={accept}
+            style={{
+              background: "linear-gradient(135deg, #0055EE, #7C3AED)",
+              color: "#fff",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontWeight: 700,
+              fontSize: "0.875rem",
+              padding: "0.625rem 1.5rem",
+              borderRadius: "8px",
+              border: "none",
+              cursor: "pointer",
+              transition: "opacity 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.opacity = "0.85";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLButtonElement).style.opacity = "1";
+            }}
+          >
+            Aceitar todos
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -112,6 +112,18 @@ export default function RyvemHero() {
               </span>
             </h1>
 
+            {/* Copy Tech Provider — plataforma SaaS + Meta */}
+            <p style={{
+              fontSize: 'clamp(0.8125rem, 1.2vw, 0.9375rem)',
+              lineHeight: 1.7,
+              color: 'rgba(240,242,255,0.45)',
+              fontFamily: 'Inter, sans-serif',
+              marginBottom: '1.25rem',
+              maxWidth: '520px',
+            }}>
+              A Ryvem VET é uma plataforma SaaS de inteligência comercial para clínicas veterinárias brasileiras. Cada clínica conecta seu próprio WhatsApp Business — via integração oficial com a Meta (WhatsApp Business Platform) — e a Ryvem opera atendimento, agendamento, lembretes de vacinação e reativação de tutores com IA, 24h por dia.
+            </p>
+
             {/* Subtítulo — copy do Manifesto */}
             <p style={{
               fontSize: 'clamp(0.9375rem, 1.5vw, 1.0625rem)',
