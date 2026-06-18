@@ -1,5 +1,9 @@
 import { useState, useRef } from "react";
-import { MessageCircle, CheckCircle, Shield, ChevronDown, ChevronUp } from "lucide-react";
+import { MessageCircle, CheckCircle } from "lucide-react";
+import FrustracoesSection from "@/components/FrustracoesSection";
+import ProblemSection from "@/components/ProblemSection";
+import SolutionSection from "@/components/SolutionSection";
+import GuaranteeSection from "@/components/GuaranteeSection";
 
 const CALENDLY = "https://calendly.com/raioxvet/diagnostico-pro-scale?month=2026-06";
 const API_IPL = "https://apex.ryvem.com.br/api/ipl/lead";
@@ -8,35 +12,37 @@ const KANBAN_IMG =
 
 type Etapa = "calculadora" | "formulario" | "confirmacao";
 
-function formatarReais(valor: number): string {
-  return valor.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+function formatarReais(v: number) {
+  return v.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
 }
 
+const inputLight =
+  "w-full rounded-xl py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-[#00C896]/40 transition-all";
+const inputLightStyle = {
+  background: "#fff",
+  border: "1px solid rgba(13,31,60,0.15)",
+  color: "#0D1F3C",
+  fontFamily: "Inter, sans-serif",
+};
+
 export default function CampanhaPage() {
-  // Etapa 1
   const [atendimentos, setAtendimentos] = useState("");
   const [ticket, setTicket] = useState("");
-
-  // Calculado
   const [perdaMensal, setPerdaMensal] = useState<number | null>(null);
-
-  // Estado geral
   const [etapa, setEtapa] = useState<Etapa>("calculadora");
-
-  // Etapa 2
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
-
-  // Controles
   const [loading, setLoading] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
-  const [faqAberto, setFaqAberto] = useState<number | null>(null);
 
-  // Refs para scroll
-  const blocoResultadoRef = useRef<HTMLDivElement>(null);
-  const blocoConfirmacaoRef = useRef<HTMLDivElement>(null);
-  const blocoHeroRef = useRef<HTMLDivElement>(null);
+  const formularioRef = useRef<HTMLElement>(null);
+  const resultadoRef = useRef<HTMLDivElement>(null);
+  const confirmacaoRef = useRef<HTMLDivElement>(null);
+
+  function scrollParaFormulario() {
+    formularioRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
 
   function calcular() {
     const a = parseInt(atendimentos);
@@ -46,12 +52,9 @@ export default function CampanhaPage() {
       return;
     }
     setErro(null);
-    const perda = a * t * 0.3 * 22;
-    setPerdaMensal(perda);
+    setPerdaMensal(a * t * 0.3 * 22);
     setEtapa("formulario");
-    setTimeout(() => {
-      blocoResultadoRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 50);
+    setTimeout(() => resultadoRef.current?.scrollIntoView({ behavior: "smooth" }), 50);
   }
 
   async function submeter() {
@@ -72,15 +75,12 @@ export default function CampanhaPage() {
           cargo: cargo.trim(),
           wpp_pessoal: whatsapp.trim(),
           atendimentos_dia: atendimentos,
-          auto_avaliacao:
-            "ticket_medio:R$" + ticket + ";perda_estimada:R$" + perdaMensal,
+          auto_avaliacao: `ticket_medio:R$${ticket};perda_estimada:R$${perdaMensal}`,
         }),
       });
       if (!resp.ok) throw new Error("status " + resp.status);
       setEtapa("confirmacao");
-      setTimeout(() => {
-        blocoConfirmacaoRef.current?.scrollIntoView({ behavior: "smooth" });
-      }, 50);
+      setTimeout(() => confirmacaoRef.current?.scrollIntoView({ behavior: "smooth" }), 50);
     } catch {
       setErro("Erro ao enviar. Tente novamente.");
     } finally {
@@ -88,176 +88,116 @@ export default function CampanhaPage() {
     }
   }
 
-  const faqs = [
-    {
-      p: "O que acontece depois que preencho o formulário?",
-      r: "Nossa equipe entra em contato pelo WhatsApp em até 24 horas com o diagnóstico completo da sua clínica. Sem pitch. Sem pressão. Só os números reais.",
-    },
-    {
-      p: "O atendente vai passar informação errada para o tutor?",
-      r: "O atendente só responde com o que você configurou. Não inventa preços, não cria horários, não promete o que não está na sua tabela. Se não souber responder algo, transfere para sua equipe e registra no painel.",
-    },
-    {
-      p: "Preciso trocar meu sistema atual para usar a RYVEM VET?",
-      r: "Não. A RYVEM VET funciona de forma independente, pelo WhatsApp da sua clínica. No plano DIRETOR fazemos análise de viabilidade de integração com o sistema que você já usa.",
-    },
-  ];
-
-  const inputClass =
-    "w-full rounded-xl py-3 px-4 text-white placeholder-white/30 text-sm outline-none focus:ring-2 focus:ring-[#00C896]/50 transition-all";
-  const inputStyle = {
-    background: "rgba(255,255,255,0.08)",
-    border: "1px solid rgba(255,255,255,0.15)",
-  };
-
   return (
     <div className="min-h-screen" style={{ fontFamily: "Inter, sans-serif" }}>
 
-      {/* ═══ BLOCO 1 — HEADER ═══ */}
+      {/* ─── HEADER MÍNIMO ─────────────────────────────────────────── */}
       <header
         className="w-full flex items-center justify-between px-6"
         style={{ background: "#0D1F3C", height: 64 }}
       >
         <img src="/ryvem_vet_logo_dark.png" alt="RYVEM VET" style={{ height: 56 }} />
-        <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 13, fontFamily: "Inter, sans-serif" }}>
+        <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 13 }}>
           (22) 98104-7666
         </span>
       </header>
 
-      {/* ═══ BLOCO 2 — HERO + FORMULÁRIO ETAPA 1 ═══ */}
+      {/* ─── 1. HERO ────────────────────────────────────────────────── */}
       <section
-        ref={blocoHeroRef}
-        className="py-16"
+        className="relative min-h-screen flex items-center overflow-hidden"
         style={{
           background:
-            "linear-gradient(135deg, #0D1F3C 0%, #0f2847 100%)",
+            "radial-gradient(ellipse at 70% 50%, rgba(0,200,150,0.08) 0%, transparent 60%), linear-gradient(135deg, #0D1F3C 0%, #0f2847 100%)",
         }}
       >
-        <div className="max-w-6xl mx-auto px-6">
+        {/* grid overlay */}
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,200,150,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,150,0.5) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div
+          className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(0,200,150,0.12) 0%, transparent 70%)" }}
+        />
+
+        <div className="max-w-6xl mx-auto px-6 pt-16 pb-16 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Coluna esquerda */}
             <div className="space-y-8">
               <div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
-                style={{
-                  border: "1px solid rgba(0,200,150,0.30)",
-                  background: "rgba(0,200,150,0.10)",
-                  color: "#00C896",
-                  fontFamily: "Inter, sans-serif",
-                }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00C896]/30 bg-[#00C896]/10 text-[#00C896] text-sm font-medium"
+                style={{ fontFamily: "Inter, sans-serif" }}
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
                 Para donos de clínica veterinária
               </div>
 
-              <h1
-                className="text-4xl sm:text-5xl font-black text-white leading-tight"
-                style={{ fontFamily: "Montserrat, sans-serif" }}
-              >
-                Sua clínica perde dinheiro<br />
-                <span style={{ color: "#00C896" }}>todo dia sem saber quanto.</span>
-              </h1>
-
-              <p
-                className="text-base leading-relaxed max-w-lg"
-                style={{ color: "rgba(255,255,255,0.70)", fontFamily: "Inter, sans-serif" }}
-              >
-                Você foi formado para cuidar de animais, não para estruturar operação comercial.
-                Descubra em 2 minutos quanto está saindo pelo ralo.
-              </p>
-
-              {/* Card formulário etapa 1 */}
-              <div
-                className="rounded-2xl p-6 space-y-5"
-                style={{
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
-                  <span
-                    className="text-xs font-semibold uppercase tracking-widest"
-                    style={{ color: "rgba(255,255,255,0.80)", fontFamily: "Inter, sans-serif" }}
-                  >
-                    Calcule sua perda mensal
-                  </span>
-                </div>
-
-                <div className="space-y-4">
-                  <div>
-                    <label
-                      className="block text-xs mb-2"
-                      style={{ color: "rgba(255,255,255,0.60)", fontFamily: "Inter, sans-serif" }}
-                    >
-                      Atendimentos por dia
-                    </label>
-                    <input
-                      type="number"
-                      min={1}
-                      max={200}
-                      placeholder="Ex: 15"
-                      value={atendimentos}
-                      onChange={(e) => setAtendimentos(e.target.value)}
-                      className={inputClass}
-                      style={inputStyle}
-                    />
-                  </div>
-
-                  <div>
-                    <label
-                      className="block text-xs mb-2"
-                      style={{ color: "rgba(255,255,255,0.60)", fontFamily: "Inter, sans-serif" }}
-                    >
-                      Ticket médio da consulta (R$)
-                    </label>
-                    <input
-                      type="number"
-                      min={50}
-                      max={2000}
-                      placeholder="Ex: 250"
-                      value={ticket}
-                      onChange={(e) => setTicket(e.target.value)}
-                      className={inputClass}
-                      style={inputStyle}
-                    />
-                  </div>
-                </div>
-
-                {erro && etapa === "calculadora" && (
-                  <p className="text-xs" style={{ color: "#EF4444" }}>{erro}</p>
-                )}
-
-                <button
-                  onClick={calcular}
-                  className="w-full py-4 rounded-xl font-bold text-sm transition-all hover:brightness-110 hover:scale-[1.01] active:scale-95"
-                  style={{
-                    background: "#00C896",
-                    color: "#0D1F3C",
-                    fontFamily: "Montserrat, sans-serif",
-                  }}
+              <div className="space-y-4">
+                <h1
+                  className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
-                  Calcular minha perda mensal →
-                </button>
-
-                <p
-                  className="text-center"
-                  style={{ fontSize: 11, color: "rgba(255,255,255,0.30)", fontFamily: "Inter, sans-serif" }}
-                >
-                  Cálculo baseado em dados reais de clínicas veterinárias brasileiras.
+                  Sua clínica perde dinheiro todo dia.<br />
+                  <span style={{ color: "#00C896" }}>E você provavelmente não sabe quanto.</span>
+                </h1>
+                <p className="text-base text-white/60 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Você foi formado para cuidar de animais, não para estruturar uma operação comercial. Só que enquanto você atende, a recepção passa preço errado, o tutor que mandou mensagem ontem não recebeu resposta, e o cliente que não volta há três meses não sabe que você ainda está lá.
                 </p>
+                <p className="text-base text-white/60 leading-relaxed max-w-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                  A RYVEM VET entra na sua clínica, organiza tudo isso e entrega funcionando em 72 horas. Você não aprende nada novo. Sua equipe não muda de sistema. Você só vê o resultado.
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex flex-wrap gap-8">
+                  {[
+                    { value: "72h", label: "Para estar funcionando" },
+                    { value: "24/7", label: "Sua clínica disponível" },
+                    { value: "R$ 9.600", label: "receita preservada/mês¹" },
+                  ].map((s) => (
+                    <div key={s.label} className="space-y-1">
+                      <div className="text-2xl font-black" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>{s.value}</div>
+                      <div className="text-xs text-white/50 uppercase tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-white/40" style={{ fontSize: 11, fontFamily: "Inter, sans-serif" }}>
+                  ¹ Dados reais — clínica veterinária de médio porte, interior do RJ — semana 24–31/03/2026.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={scrollParaFormulario}
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-[#0D1F3C] transition-all duration-200 hover:brightness-110 hover:scale-105 active:scale-95"
+                  style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}
+                >
+                  <MessageCircle size={20} />
+                  Calcular quanto estou perdendo
+                </button>
+                <a
+                  href="#solucao"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white border border-white/20 hover:border-[#00C896]/50 hover:bg-white/5 transition-all duration-200"
+                  style={{ fontFamily: "Inter, sans-serif" }}
+                >
+                  Ver como funciona
+                </a>
               </div>
             </div>
 
-            {/* Coluna direita — Kanban */}
+            {/* Coluna direita — Kanban screenshot */}
             <div className="relative hidden lg:flex items-center justify-center">
               <div className="relative w-full max-w-lg overflow-hidden max-h-[500px]">
                 <img
                   src={KANBAN_IMG}
                   alt="Kanban de atendimentos RYVEM VET em tempo real"
                   className="w-full h-full object-cover object-top rounded-2xl shadow-2xl"
-                  style={{ border: "1px solid rgba(255,255,255,0.10)", maxHeight: 480 }}
+                  style={{ border: "1px solid rgba(255,255,255,0.1)", maxHeight: 480 }}
                 />
                 <div
                   className="absolute top-4 right-4 px-3 py-1.5 rounded-full text-xs font-bold text-white"
@@ -266,8 +206,8 @@ export default function CampanhaPage() {
                   94 aguardando resposta
                 </div>
                 <div
-                  className="absolute top-12 right-4 px-3 py-1.5 rounded-full text-xs font-bold"
-                  style={{ background: "#00C896", color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
+                  className="absolute top-12 right-4 px-3 py-1.5 rounded-full text-xs font-bold text-[#0D1F3C]"
+                  style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif" }}
                 >
                   Resposta em 7s
                 </div>
@@ -277,7 +217,7 @@ export default function CampanhaPage() {
                 >
                   <div className="text-3xl font-black" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>232</div>
                   <div className="text-white text-xs" style={{ fontFamily: "Inter, sans-serif" }}>tutores atendidos</div>
-                  <div className="text-xs" style={{ color: "rgba(255,255,255,0.50)", fontFamily: "Inter, sans-serif" }}>em 7 dias · clínica interior RJ</div>
+                  <div className="text-white/50 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>em 7 dias · clínica interior RJ</div>
                 </div>
                 <div
                   className="absolute bottom-0 left-0 right-0 px-4 py-3 rounded-b-2xl"
@@ -286,466 +226,363 @@ export default function CampanhaPage() {
                   <p className="text-white text-sm font-semibold" style={{ fontFamily: "Montserrat, sans-serif" }}>
                     Kanban de Atendimentos — tempo real
                   </p>
-                  <p className="text-xs" style={{ color: "rgba(255,255,255,0.60)", fontFamily: "Inter, sans-serif" }}>
+                  <p className="text-white/60 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
                     Cada etapa, cada resultado — visível para você.
                   </p>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ═══ BLOCO 3 — RESULTADO + ETAPA 2 ═══ */}
-      {etapa !== "calculadora" && (
-        <section
-          ref={blocoResultadoRef}
-          className="py-16"
-          style={{ background: "#F5F7FA" }}
-        >
-          <div className="max-w-2xl mx-auto px-6 space-y-8">
+      {/* ─── 2. FRUSTRAÇÕES ─────────────────────────────────────────── */}
+      <FrustracoesSection />
 
-            {/* Card resultado */}
-            <div
-              className="rounded-3xl p-8 text-center space-y-4"
-              style={{ background: "#fff", boxShadow: "0 4px 32px rgba(0,0,0,0.10)" }}
-            >
-              <p
-                className="text-sm"
-                style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}
-              >
-                Com {atendimentos} atendimentos/dia e ticket R$ {ticket}, sua clínica pode estar perdendo:
-              </p>
+      {/* ─── 3. PROBLEMA ────────────────────────────────────────────── */}
+      <ProblemSection />
 
-              <div
-                className="text-5xl font-black"
-                style={{ color: "#EF4444", fontFamily: "Montserrat, sans-serif" }}
-              >
-                R$ {perdaMensal !== null ? formatarReais(perdaMensal) : "—"}
+      {/* ─── 4. SOLUÇÃO ─────────────────────────────────────────────── */}
+      <SolutionSection />
+
+      {/* ─── 5. CALCULADORA + FORMULÁRIO ────────────────────────────── */}
+      <section
+        id="formulario"
+        ref={formularioRef}
+        className="py-24"
+        style={{ background: "#F5F7FA" }}
+      >
+        <div className="max-w-2xl mx-auto px-6">
+
+          {/* ── ETAPA: calculadora ── */}
+          {etapa === "calculadora" && (
+            <div className="space-y-8">
+              <div className="text-center space-y-3">
+                <div
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#0D1F3C]/20 bg-[#0D1F3C]/5 text-[#0D1F3C] text-sm font-medium"
+                  style={{ fontFamily: "Inter, sans-serif" }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
+                  Diagnóstico gratuito
+                </div>
+                <h2
+                  className="text-3xl sm:text-4xl font-black text-[#0D1F3C] leading-tight"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  Você já está convicto.<br />
+                  <span style={{ color: "#00C896" }}>Agora veja o número real.</span>
+                </h2>
+                <p className="text-[#0D1F3C]/60 leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Preencha os dois campos abaixo e descubra quanto sua clínica pode estar deixando de faturar todo mês.
+                </p>
               </div>
 
-              <p
-                className="text-xs"
-                style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}
+              <div
+                className="rounded-3xl p-8 space-y-6"
+                style={{ background: "#fff", boxShadow: "0 4px 32px rgba(0,0,0,0.08)" }}
               >
-                por mês em atendimentos não realizados¹
-              </p>
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
+                  <span
+                    className="text-xs font-semibold uppercase tracking-widest"
+                    style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}
+                  >
+                    Calcule sua perda mensal
+                  </span>
+                </div>
 
-              <p
-                className="text-xs"
-                style={{ color: "rgba(13,31,60,0.30)", fontFamily: "Inter, sans-serif" }}
-              >
-                ¹ Estimativa baseada em 30% de perda de contatos não respondidos e 22 dias úteis. Dado real — clínica veterinária de médio porte, interior do RJ, março 2026.
-              </p>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-medium mb-2" style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}>
+                      Atendimentos por dia
+                    </label>
+                    <input
+                      type="number" min={1} max={200} placeholder="Ex: 15"
+                      value={atendimentos} onChange={(e) => setAtendimentos(e.target.value)}
+                      className={inputLight} style={inputLightStyle}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium mb-2" style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}>
+                      Ticket médio da consulta (R$)
+                    </label>
+                    <input
+                      type="number" min={50} max={2000} placeholder="Ex: 250"
+                      value={ticket} onChange={(e) => setTicket(e.target.value)}
+                      className={inputLight} style={inputLightStyle}
+                    />
+                  </div>
+                </div>
 
-              <hr style={{ borderColor: "rgba(13,31,60,0.08)" }} />
+                {erro && <p className="text-xs" style={{ color: "#EF4444" }}>{erro}</p>}
 
-              <p
-                className="text-lg font-bold"
-                style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
-              >
-                Quer saber o número exato da sua clínica?
-              </p>
+                <button
+                  onClick={calcular}
+                  className="w-full py-4 rounded-xl font-bold text-[#0D1F3C] transition-all hover:brightness-110 hover:scale-[1.01] active:scale-95"
+                  style={{ background: "#00C896", fontFamily: "Montserrat, sans-serif", fontSize: 15 }}
+                >
+                  Calcular minha perda mensal →
+                </button>
 
-              <p
-                className="text-sm"
-                style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}
-              >
-                Preencha abaixo para receber seu diagnóstico gratuito em até 24h.
-              </p>
+                <p className="text-center" style={{ fontSize: 11, color: "rgba(13,31,60,0.35)", fontFamily: "Inter, sans-serif" }}>
+                  Cálculo baseado em dados reais de clínicas veterinárias brasileiras.
+                </p>
+              </div>
             </div>
+          )}
 
-            {/* Formulário etapa 2 */}
-            {etapa === "formulario" && (
+          {/* ── ETAPA: formulário (após calcular) ── */}
+          {etapa === "formulario" && (
+            <div ref={resultadoRef} className="space-y-6">
+
+              {/* Card resultado */}
+              <div
+                className="rounded-3xl p-8 text-center space-y-4"
+                style={{ background: "#fff", boxShadow: "0 4px 32px rgba(0,0,0,0.10)" }}
+              >
+                <p className="text-sm" style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}>
+                  Com {atendimentos} atendimentos/dia e ticket R$ {ticket}, sua clínica pode estar perdendo:
+                </p>
+                <div className="text-5xl font-black" style={{ color: "#EF4444", fontFamily: "Montserrat, sans-serif" }}>
+                  R$ {perdaMensal !== null ? formatarReais(perdaMensal) : "—"}
+                </div>
+                <p className="text-xs" style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}>
+                  por mês em atendimentos não realizados¹
+                </p>
+                <p className="text-xs" style={{ color: "rgba(13,31,60,0.30)", fontFamily: "Inter, sans-serif" }}>
+                  ¹ Estimativa baseada em 30% de perda de contatos não respondidos e 22 dias úteis. Dado real — clínica veterinária de médio porte, interior do RJ, março 2026.
+                </p>
+                <hr style={{ borderColor: "rgba(13,31,60,0.08)" }} />
+                <p className="text-lg font-bold" style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}>
+                  Quer saber o número exato da sua clínica?
+                </p>
+                <p className="text-sm" style={{ color: "rgba(13,31,60,0.60)", fontFamily: "Inter, sans-serif" }}>
+                  Preencha abaixo para receber seu diagnóstico gratuito em até 24h.
+                </p>
+              </div>
+
+              {/* Campos */}
               <div className="space-y-4">
-                {[
-                  {
-                    label: "Nome completo",
-                    type: "text",
-                    placeholder: "Dr. João Silva",
-                    value: nome,
-                    onChange: (v: string) => setNome(v),
-                  },
-                  {
-                    label: "Cargo",
-                    type: "text",
-                    placeholder: "Proprietário, Sócio, Diretor...",
-                    value: cargo,
-                    onChange: (v: string) => setCargo(v),
-                  },
-                  {
-                    label: "WhatsApp",
-                    type: "tel",
-                    placeholder: "(22) 99999-9999",
-                    value: whatsapp,
-                    onChange: (v: string) => setWhatsapp(v),
-                  },
-                ].map((f) => (
+                {([
+                  { label: "Nome completo", type: "text", placeholder: "Dr. João Silva", value: nome, onChange: setNome },
+                  { label: "Cargo", type: "text", placeholder: "Proprietário, Sócio, Diretor...", value: cargo, onChange: setCargo },
+                  { label: "WhatsApp", type: "tel", placeholder: "(22) 99999-9999", value: whatsapp, onChange: setWhatsapp },
+                ] as const).map((f) => (
                   <div key={f.label}>
-                    <label
-                      className="block text-xs mb-1.5 font-medium"
-                      style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}
-                    >
+                    <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}>
                       {f.label}
                     </label>
                     <input
-                      type={f.type}
-                      placeholder={f.placeholder}
-                      value={f.value}
+                      type={f.type} placeholder={f.placeholder} value={f.value}
                       onChange={(e) => f.onChange(e.target.value)}
-                      className="w-full rounded-xl py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-[#00C896]/40 transition-all"
-                      style={{
-                        background: "#fff",
-                        border: "1px solid rgba(13,31,60,0.15)",
-                        color: "#0D1F3C",
-                        fontFamily: "Inter, sans-serif",
-                      }}
+                      className={inputLight} style={inputLightStyle}
                     />
                   </div>
                 ))}
 
-                {/* Atendimentos pré-preenchido */}
                 <div>
-                  <label
-                    className="block text-xs mb-1.5 font-medium"
-                    style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}
-                  >
+                  <label className="block text-xs font-medium mb-1.5" style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}>
                     Atendimentos por dia
                   </label>
                   <input
-                    type="number"
-                    value={atendimentos}
-                    onChange={(e) => setAtendimentos(e.target.value)}
-                    className="w-full rounded-xl py-3 px-4 text-sm outline-none focus:ring-2 focus:ring-[#00C896]/40 transition-all"
-                    style={{
-                      background: "#fff",
-                      border: "1px solid rgba(13,31,60,0.15)",
-                      color: "#0D1F3C",
-                      fontFamily: "Inter, sans-serif",
-                    }}
+                    type="number" value={atendimentos} onChange={(e) => setAtendimentos(e.target.value)}
+                    className={inputLight} style={inputLightStyle}
                   />
                 </div>
 
-                {erro && (
-                  <p className="text-xs" style={{ color: "#EF4444" }}>{erro}</p>
-                )}
+                {erro && <p className="text-xs" style={{ color: "#EF4444" }}>{erro}</p>}
 
                 <button
-                  onClick={submeter}
-                  disabled={loading}
+                  onClick={submeter} disabled={loading}
                   className="w-full py-4 rounded-xl font-bold flex items-center justify-center gap-3 transition-all hover:brightness-110 hover:scale-[1.01] active:scale-95 disabled:opacity-60"
-                  style={{
-                    background: "#00C896",
-                    color: "#0D1F3C",
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: 15,
-                  }}
+                  style={{ background: "#00C896", color: "#0D1F3C", fontFamily: "Montserrat, sans-serif", fontSize: 15 }}
                 >
                   <MessageCircle size={20} />
                   {loading ? "Enviando..." : "Quero meu diagnóstico gratuito"}
                 </button>
 
                 <a
-                  href={CALENDLY}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={CALENDLY} target="_blank" rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl font-semibold flex items-center justify-center transition-all hover:bg-[#0D1F3C]/5"
-                  style={{
-                    border: "1px solid rgba(13,31,60,0.20)",
-                    color: "#0D1F3C",
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: 14,
-                    display: "flex",
-                  }}
+                  style={{ border: "1px solid rgba(13,31,60,0.20)", color: "#0D1F3C", fontFamily: "Inter, sans-serif", fontSize: 14 }}
                 >
                   Prefiro agendar direto
                 </a>
 
-                <p
-                  className="text-center"
-                  style={{ fontSize: 12, color: "rgba(13,31,60,0.40)", fontFamily: "Inter, sans-serif" }}
-                >
+                <p className="text-center" style={{ fontSize: 12, color: "rgba(13,31,60,0.40)", fontFamily: "Inter, sans-serif" }}>
                   30 minutos. Sem compromisso. Sem cartão.
                 </p>
               </div>
-            )}
-          </div>
-        </section>
-      )}
+            </div>
+          )}
 
-      {/* ═══ BLOCO 4 — CONFIRMAÇÃO ═══ */}
-      {etapa === "confirmacao" && (
-        <section
-          ref={blocoConfirmacaoRef}
-          className="py-16 text-center"
-          style={{ background: "#0D1F3C" }}
-        >
-          <div className="max-w-lg mx-auto px-6 space-y-6">
-            <CheckCircle size={64} color="#00C896" className="mx-auto" />
+          {/* ── ETAPA: confirmação ── */}
+          {etapa === "confirmacao" && (
+            <div ref={confirmacaoRef} className="text-center space-y-6 py-8">
+              <CheckCircle size={64} color="#00C896" className="mx-auto" />
+              <h2 className="text-3xl font-black" style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}>
+                Diagnóstico recebido.
+              </h2>
+              <p className="text-base leading-relaxed" style={{ color: "rgba(13,31,60,0.65)", fontFamily: "Inter, sans-serif" }}>
+                Nossa equipe vai entrar em contato pelo WhatsApp em até 24 horas com o diagnóstico completo da sua clínica.
+              </p>
+              <a
+                href={CALENDLY} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-semibold transition-all hover:bg-[#00C896]/10"
+                style={{ border: "1px solid rgba(0,200,150,0.40)", color: "#00C896", fontFamily: "Inter, sans-serif" }}
+              >
+                Prefiro agendar agora
+              </a>
+            </div>
+          )}
 
-            <h2
-              className="text-3xl font-black text-white"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
+        </div>
+      </section>
+
+      {/* ─── 6. PROVA SOCIAL ANÔNIMA ────────────────────────────────── */}
+      <section className="py-24" style={{ background: "#0D1F3C" }}>
+        <div className="max-w-5xl mx-auto px-6">
+
+          <div className="text-center mb-16 space-y-4">
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00C896]/30 bg-[#00C896]/10 text-[#00C896] text-sm font-medium"
+              style={{ fontFamily: "Inter, sans-serif" }}
             >
-              Diagnóstico recebido.
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00C896] inline-block" />
+              Resultados documentados
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight" style={{ fontFamily: "Montserrat, sans-serif" }}>
+              Nossos clientes têm seus dados protegidos.<br />
+              <span style={{ color: "#00C896" }}>Mas os resultados são documentados.</span>
             </h2>
-
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: "rgba(255,255,255,0.70)", fontFamily: "Inter, sans-serif" }}
-            >
-              Nossa equipe vai entrar em contato pelo WhatsApp em até 24 horas com
-              o diagnóstico completo da sua clínica.
+            <p className="text-white/50 max-w-xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
+              Todos os dados abaixo são de clínicas reais. Os nomes foram omitidos a pedido dos proprietários.
             </p>
-
-            <a
-              href={CALENDLY}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl font-semibold transition-all hover:bg-[#00C896]/10"
-              style={{
-                border: "1px solid rgba(0,200,150,0.40)",
-                color: "#00C896",
-                fontFamily: "Inter, sans-serif",
-              }}
-            >
-              Prefiro agendar agora
-            </a>
-          </div>
-        </section>
-      )}
-
-      {/* ═══ BLOCO 5 — PROVA SOCIAL ═══ */}
-      <section className="py-16" style={{ background: "#F5F7FA" }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {/* Card 1 */}
-            <div
-              className="rounded-2xl p-8 space-y-4"
-              style={{ background: "#fff", boxShadow: "0 2px 16px rgba(0,0,0,0.07)", overflow: "hidden", position: "relative" }}
-            >
-              <div style={{ height: 4, background: "#00C896", borderRadius: "4px 4px 0 0", position: "absolute", top: 0, left: 0, right: 0 }} />
-              <div className="flex gap-1 pt-2">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: "#00C896", fontSize: 16 }}>★</span>
-                ))}
-              </div>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "rgba(13,31,60,0.75)", fontFamily: "Inter, sans-serif" }}
-              >
-                "Antes a gente perdia paciente toda semana sem nem saber. Agora cada contato é atendido. A diferença apareceu no caixa logo na primeira semana."
-              </p>
-              <div>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
-                >
-                  Pedro · Fripet Veterinária · Nova Friburgo, RJ
-                </p>
-                <span
-                  className="inline-block mt-1 px-2 py-0.5 rounded text-xs font-bold"
-                  style={{ background: "rgba(0,200,150,0.12)", color: "#00C896", fontFamily: "Inter, sans-serif" }}
-                >
-                  RYVEM VET DIRETOR
-                </span>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div
-              className="rounded-2xl p-8 space-y-4"
-              style={{ background: "#fff", boxShadow: "0 2px 16px rgba(0,0,0,0.07)", overflow: "hidden", position: "relative" }}
-            >
-              <div style={{ height: 4, background: "#3B82F6", borderRadius: "4px 4px 0 0", position: "absolute", top: 0, left: 0, right: 0 }} />
-              <div className="flex gap-1 pt-2">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: "#3B82F6", fontSize: 16 }}>★</span>
-                ))}
-              </div>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "rgba(13,31,60,0.75)", fontFamily: "Inter, sans-serif" }}
-              >
-                "A gente não tinha noção de quantos tutores a gente perdia por não responder rápido. Agora a clínica responde em segundos e o movimento aumentou visivelmente."
-              </p>
-              <div>
-                <p
-                  className="text-sm font-semibold"
-                  style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
-                >
-                  Gestor · Clínica veterinária · interior do RJ
-                </p>
-                <span
-                  className="inline-block mt-1 px-2 py-0.5 rounded text-xs font-bold"
-                  style={{ background: "rgba(59,130,246,0.12)", color: "#3B82F6", fontFamily: "Inter, sans-serif" }}
-                >
-                  RYVEM VET AGENTE
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Stats */}
-          <div className="mt-10 text-center space-y-2">
-            <p
-              className="text-2xl font-black"
-              style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
-            >
-              232 tutores atendidos em 7 dias
-            </p>
-            <p
-              className="text-base font-semibold"
-              style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}
-            >
-              R$ 9.600 recuperados no primeiro mês
-            </p>
-            <p
-              className="text-xs"
-              style={{ color: "rgba(13,31,60,0.35)", fontFamily: "Inter, sans-serif" }}
-            >
-              ¹ Dados reais — clínica veterinária de médio porte, interior do RJ, março 2026.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ BLOCO 6 — FAQ ═══ */}
-      <section className="py-16" style={{ background: "#fff" }}>
-        <div className="max-w-2xl mx-auto px-6">
-          <h2
-            className="text-2xl font-bold text-center mb-8"
-            style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
-          >
-            Perguntas frequentes
-          </h2>
-
-          <div className="space-y-3">
-            {faqs.map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl overflow-hidden"
-                style={{ border: "1px solid rgba(13,31,60,0.10)" }}
-              >
-                <button
-                  onClick={() => setFaqAberto(faqAberto === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left transition-colors hover:bg-gray-50"
-                >
-                  <span
-                    className="text-sm font-semibold pr-4"
-                    style={{ color: "#0D1F3C", fontFamily: "Inter, sans-serif" }}
-                  >
-                    {item.p}
-                  </span>
-                  {faqAberto === i ? (
-                    <ChevronUp size={18} color="#0D1F3C" className="flex-shrink-0" />
-                  ) : (
-                    <ChevronDown size={18} color="rgba(13,31,60,0.40)" className="flex-shrink-0" />
-                  )}
-                </button>
-                {faqAberto === i && (
-                  <div
-                    className="px-6 pb-5 text-sm leading-relaxed"
-                    style={{ color: "rgba(13,31,60,0.65)", fontFamily: "Inter, sans-serif" }}
-                  >
-                    {item.r}
-                  </div>
-                )}
+          <div className="grid grid-cols-3 gap-6 mb-16 max-w-2xl mx-auto">
+            {[
+              { value: "232", label: "tutores atendidos" },
+              { value: "R$ 9.600", label: "receita preservada/mês" },
+              { value: "7 dias", label: "para aparecer no resultado" },
+            ].map((s) => (
+              <div key={s.label} className="text-center space-y-1">
+                <div className="text-2xl sm:text-3xl font-black" style={{ color: "#00C896", fontFamily: "Montserrat, sans-serif" }}>
+                  {s.value}
+                </div>
+                <div className="text-xs text-white/50 leading-snug" style={{ fontFamily: "Inter, sans-serif" }}>
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
+          <p className="text-center text-xs text-white/25 -mt-12 mb-16" style={{ fontFamily: "Inter, sans-serif" }}>
+            ¹ Dados reais — clínica veterinária de médio porte, interior do RJ, março 2026.
+          </p>
 
-      {/* ═══ BLOCO 7 — GARANTIA ═══ */}
-      <section className="py-16" style={{ background: "#0D1F3C" }}>
-        <div className="max-w-4xl mx-auto px-6">
+          {/* Depoimentos */}
           <div className="grid md:grid-cols-2 gap-6">
-
             {[
               {
-                titulo: "Plano AGENTE",
-                texto:
-                  "Em 60 dias, sua clínica responde qualquer tutor em menos de 10 segundos, 24h por dia — ou cancelamos e devolvemos cada centavo.",
+                texto: "Antes a gente perdia paciente toda semana sem nem saber. Agora cada contato é atendido. A diferença apareceu no caixa logo na primeira semana.",
+                autor: "Pedro L.",
+                cargo: "Proprietário · interior do RJ",
+                plano: "RYVEM VET DIRETOR",
+                cor: "#00C896",
               },
               {
-                titulo: "Plano DIRETOR",
-                texto:
-                  "Em 90 dias, sua clínica recupera pelo menos R$ 5.000 em receita rastreável no painel — ou nossa equipe trabalha sem custo adicional até atingir.",
+                texto: "A gente não tinha noção de quantos tutores a gente perdia por não responder rápido. Agora a clínica responde em segundos e o movimento aumentou visivelmente.",
+                autor: "Gestor",
+                cargo: "Clínica veterinária · interior do RJ",
+                plano: "RYVEM VET AGENTE",
+                cor: "#3B82F6",
               },
-            ].map((g) => (
+            ].map((d) => (
               <div
-                key={g.titulo}
-                className="rounded-2xl p-8 space-y-4"
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                }}
+                key={d.plano}
+                className="rounded-2xl p-8 relative overflow-hidden space-y-5"
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)" }}
               >
-                <Shield size={32} color="#00C896" />
-                <h3
-                  className="text-lg font-bold text-white"
-                  style={{ fontFamily: "Montserrat, sans-serif" }}
-                >
-                  {g.titulo}
-                </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.70)", fontFamily: "Inter, sans-serif" }}
-                >
-                  {g.texto}
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: d.cor }} />
+
+                <div className="flex gap-1 pt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill={d.cor}>
+                      <path d="M7 1l1.5 3.5L12 5l-2.5 2.5.5 3.5L7 9.5 4 11l.5-3.5L2 5l3.5-.5z" />
+                    </svg>
+                  ))}
+                </div>
+
+                <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)", fontFamily: "Inter, sans-serif" }}>
+                  "{d.texto}"
                 </p>
+
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-bold text-white" style={{ fontFamily: "Montserrat, sans-serif" }}>{d.autor}</p>
+                    <p className="text-xs text-white/40" style={{ fontFamily: "Inter, sans-serif" }}>{d.cargo}</p>
+                  </div>
+                  <span
+                    className="text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0"
+                    style={{ color: d.cor, background: `${d.cor}22`, fontFamily: "Inter, sans-serif" }}
+                  >
+                    {d.plano}
+                  </span>
+                </div>
               </div>
             ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ─── 7. GARANTIA ────────────────────────────────────────────── */}
+      <GuaranteeSection />
+
+      {/* ─── 8. CTA FINAL ───────────────────────────────────────────── */}
+      <section className="py-24 text-center" style={{ background: "#00C896" }}>
+        <div className="max-w-2xl mx-auto px-6 space-y-6">
+          <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}>
+            Calcule agora quanto sua clínica está perdendo.
+          </h2>
+          <p className="text-base" style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}>
+            30 minutos de diagnóstico. Sem compromisso. Sem cartão.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={scrollParaFormulario}
+              className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl font-bold text-white transition-all hover:brightness-90 hover:scale-105 active:scale-95"
+              style={{ background: "#0D1F3C", fontFamily: "Montserrat, sans-serif", fontSize: 15 }}
+            >
+              <MessageCircle size={20} />
+              Fazer meu diagnóstico gratuito
+            </button>
+            <a
+              href={CALENDLY} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-10 py-4 rounded-xl font-semibold transition-all hover:bg-[#0D1F3C]/10"
+              style={{ border: "1px solid rgba(13,31,60,0.30)", color: "#0D1F3C", fontFamily: "Inter, sans-serif", fontSize: 15 }}
+            >
+              Prefiro agendar direto
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ═══ BLOCO 8 — CTA FINAL ═══ */}
-      <section className="py-16 text-center" style={{ background: "#00C896" }}>
-        <div className="max-w-2xl mx-auto px-6 space-y-6">
-          <h2
-            className="text-3xl font-black"
-            style={{ color: "#0D1F3C", fontFamily: "Montserrat, sans-serif" }}
-          >
-            Calcule agora quanto sua clínica está perdendo.
-          </h2>
-          <p
-            className="text-base"
-            style={{ color: "rgba(13,31,60,0.70)", fontFamily: "Inter, sans-serif" }}
-          >
-            30 minutos de diagnóstico. Sem compromisso. Sem cartão.
-          </p>
-          <button
-            onClick={() => {
-              blocoHeroRef.current?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="inline-flex items-center justify-center px-10 py-4 rounded-xl font-bold text-white transition-all hover:brightness-90 hover:scale-105 active:scale-95"
-            style={{ background: "#0D1F3C", fontFamily: "Montserrat, sans-serif", fontSize: 15 }}
-          >
-            Fazer meu diagnóstico gratuito
-          </button>
-        </div>
-      </section>
-
-      {/* ═══ BLOCO 9 — FOOTER MÍNIMO ═══ */}
+      {/* ─── 9. FOOTER MÍNIMO ───────────────────────────────────────── */}
       <footer className="py-8 text-center" style={{ background: "#060f1e" }}>
-        <p
-          className="text-xs mb-2"
-          style={{ color: "rgba(255,255,255,0.30)", fontFamily: "Inter, sans-serif" }}
-        >
+        <p className="text-xs mb-2" style={{ color: "rgba(255,255,255,0.30)", fontFamily: "Inter, sans-serif" }}>
           © 2026 DMG Serviços Empresariais Ltda — CNPJ 35.416.764/0001-47 · Rua Romualdo Machado, 122 · Nova Friburgo/RJ
         </p>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 flex-wrap">
           {[
             { label: "Política de Privacidade", href: "/politica-de-privacidade" },
             { label: "Termos de Uso", href: "/termos-de-uso" },
             { label: "LGPD", href: "/conformidade-lgpd" },
           ].map((l) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={l.href} href={l.href}
               className="hover:underline"
               style={{ fontSize: 11, color: "rgba(255,255,255,0.20)", fontFamily: "Inter, sans-serif" }}
             >
@@ -754,6 +591,7 @@ export default function CampanhaPage() {
           ))}
         </div>
       </footer>
+
     </div>
   );
 }
