@@ -14,12 +14,14 @@ import ConformidadeLGPD from "./pages/ConformidadeLGPD";
 import Acessibilidade from "./pages/Acessibilidade";
 import DPA from "./pages/DPA";
 import VetHome from "./pages/VetHome";
+import CampanhaPage from "./pages/CampanhaPage";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/vet"} component={VetHome} />
+      <Route path={"/campanha"} component={CampanhaPage} />
       <Route path={"/missao-visao-valores"} component={MissaoVisaoValores} />
       {/* Páginas legais */}
       <Route path={"/politica-de-privacidade"} component={PoliticaPrivacidade} />
