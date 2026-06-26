@@ -63,15 +63,12 @@ export default function PricingSection() {
             <div className="mb-6">
               <div className="flex items-end gap-2 mb-1">
                 <span className="text-4xl font-black text-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  R$ 797
+                  R$ 997
                 </span>
                 <span className="text-white/50 text-sm mb-1" style={{ fontFamily: "Inter, sans-serif" }}>
-                  /mês · semestral
+                  /mês
                 </span>
               </div>
-              <p className="text-white/40 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-                ou R$ 997/mês no plano mensal
-              </p>
             </div>
 
             <div className="mb-6 p-4 rounded-xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
@@ -95,7 +92,7 @@ export default function PricingSection() {
                 <span className="text-sm font-black" style={{ color: "#EF4444", fontFamily: "Montserrat, sans-serif" }}>R$ 6.912/mês</span>
               </div>
               <p className="text-xs mt-2" style={{ color: "#00C896", fontFamily: "Inter, sans-serif" }}>
-                Com o AGENTE: R$ 797/mês. Você economiza R$ 6.115/mês.
+                Com o AGENTE: R$ 997/mês. Você economiza R$ 5.915/mês.
               </p>
               <p className="text-white/30 text-xs mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
                 * Salário base R$ 1.827 + 70% encargos CLT. Fonte: CAGED 2025-2026.
@@ -142,15 +139,12 @@ export default function PricingSection() {
             <div className="mb-6">
               <div className="flex items-end gap-2 mb-1">
                 <span className="text-4xl font-black text-white" style={{ fontFamily: "Montserrat, sans-serif" }}>
-                  R$ 1.497
+                  R$ 1.597
                 </span>
                 <span className="text-white/50 text-sm mb-1" style={{ fontFamily: "Inter, sans-serif" }}>
-                  /mês · semestral
+                  /mês
                 </span>
               </div>
-              <p className="text-white/40 text-xs" style={{ fontFamily: "Inter, sans-serif" }}>
-                ou R$ 1.997/mês no plano mensal
-              </p>
             </div>
 
             <div className="mb-6 p-4 rounded-xl" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}>
@@ -176,7 +170,7 @@ export default function PricingSection() {
                 <span className="text-sm font-black" style={{ color: "#EF4444", fontFamily: "Montserrat, sans-serif" }}>R$ 24.518/mês</span>
               </div>
               <p className="text-xs mt-2" style={{ color: "#00C896", fontFamily: "Inter, sans-serif" }}>
-                Com o DIRETOR: R$ 1.497/mês. Você economiza R$ 23.021/mês.
+                Com o DIRETOR: R$ 1.597/mês. Você economiza R$ 22.921/mês.
               </p>
               <p className="text-white/30 text-xs mt-1" style={{ fontFamily: "Inter, sans-serif" }}>
                 * 3 turnos × R$ 3.106/mês CLT. Atendimento 24/7 humano é inviável com menos de 3 pessoas.
