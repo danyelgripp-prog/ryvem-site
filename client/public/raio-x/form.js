@@ -116,12 +116,17 @@
 
     fetch(cfg.endpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      // formato "planilha": Google Apps Script grava na planilha. text/plain evita a checagem prévia que o Apps Script não responde.
+      headers: { 'Content-Type': cfg.formato === 'planilha' ? 'text/plain;charset=utf-8' : 'application/json' },
       body: JSON.stringify(cfg.formato === 'ipl' ? paraIPL(p) : p),
       signal: ctrl ? ctrl.signal : undefined
     })
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
+        if (cfg.formato !== 'planilha') return;
+        return r.json().then(function (j) { if (!j || j.ok !== true) throw new Error('planilha recusou'); });
+      })
+      .then(function () {
         form.reset();
         mostrar('ok',
           '<b>Solicitação recebida</b><p>Nossa equipe vai entrar em contato pelo WhatsApp para confirmar a disponibilidade da sua vaga. O acesso às conversas da clínica só acontece depois de uma autorização específica, em etapa separada.</p>');
