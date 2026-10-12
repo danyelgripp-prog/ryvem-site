@@ -1,28 +1,458 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1024"><meta name="description" content="RYVEM Saúde: inteligência artificial personalizada, CRM, agenda, Raio-X do WhatsApp e inteligência comercial para transformar conversas em pacientes."><title>RYVEM Saúde | Sua clínica merece mais que um chatbot</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
-:root{--navy:#0b1024;--navy2:#111b38;--indigo:#5545e9;--cyan:#16c9df;--ink:#141a30;--muted:#66718a;--border:#e8ebf3;--off:#f6f8fd;--white:#fff;--shadow:0 25px 65px #1d26501c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff}h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.045em}h1{font-size:clamp(42px,5vw,75px);line-height:1.09;font-weight:800}h2{font-size:clamp(32px,3.6vw,51px);line-height:1.15;font-weight:800}h3{font-size:21px;line-height:1.32}p{line-height:1.72}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}.container{max-width:1220px;padding:0 30px;margin:auto}.pill{display:inline-flex;gap:9px;align-items:center;border:1px solid #ffffff3b;background:#ffffff12;color:#e9ecff;border-radius:100px;padding:9px 15px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.pill.light{color:#4c46c9;border-color:#dfdefa;background:#f0efff}.dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px #16c9df28}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 23px;border-radius:12px;font-weight:800;font-size:14px;border:1px solid transparent;transition:.2s}.btn.primary{background:linear-gradient(110deg,#6151f2,#4338ca);color:#fff;box-shadow:0 12px 25px #4438ca35}.btn.primary:hover{transform:translateY(-2px)}.btn.ghost{border-color:#ffffff4a;color:#fff;background:#ffffff0a}.btn.outline{border-color:#d6daf1;color:#4139b5;background:white}.actions{display:flex;gap:12px;flex-wrap:wrap}.top{position:sticky;top:0;z-index:30;background:#0b1024ee;border-bottom:1px solid #ffffff19;backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:25px}.logo{font-family:Manrope,sans-serif;font-weight:800;font-size:25px;letter-spacing:-.08em;color:#fff;display:inline-flex;align-items:center;gap:10px}.logomark{width:35px;height:35px;display:grid;place-items:center;border:2px solid #5f5df1;border-right-color:var(--cyan);border-radius:10px;color:var(--cyan);font-weight:900;font-size:21px}.logo small{font-size:9px;letter-spacing:.29em;display:block;font-weight:700;color:#b4c3e6;margin-top:-4px}.navlinks{display:flex;gap:25px;align-items:center;color:#d4dbef;font-size:13px;font-weight:700}.navlinks a:hover{color:#fff}.nav .btn{padding:12px 17px}.hero{background:radial-gradient(ellipse at 80% 25%,#243678 0%,transparent 44%),linear-gradient(135deg,#0b1024,#101b37);color:#fff;overflow:hidden;position:relative}.hero:before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;border:1px solid #ffffff0e;right:-180px;top:-230px;box-shadow:0 0 0 80px #ffffff04,0 0 0 170px #ffffff03}.heroinner{position:relative;display:grid;grid-template-columns:1fr 1.02fr;gap:45px;align-items:center;padding-top:90px;padding-bottom:105px}.hero h1{margin:23px 0 23px}.gradient{background:linear-gradient(90deg,#8ed8ff,#7ef3e8);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:17px;color:#c5cce2;max-width:540px;margin-bottom:29px}.micro{color:#a8b5d0;font-size:12px;margin-top:18px;display:flex;gap:10px;align-items:center}.micro svg{flex-shrink:0}.hero-visual{position:relative;min-height:500px;display:grid;align-items:center}.app{border:1px solid #ffffff26;background:#f8faff;border-radius:20px;box-shadow:0 32px 90px #0006;overflow:hidden;transform:perspective(1200px) rotateY(-4deg) rotateX(2deg)}.appbar{height:42px;background:#f9fbff;display:flex;align-items:center;gap:6px;padding:0 17px;border-bottom:1px solid #e8ebf2}.appbar i{width:8px;height:8px;border-radius:50%;background:#d1d8e6}.appbar span{margin-left:auto;color:#6d7891;font-size:10px;font-weight:800;letter-spacing:.04em}.appbody{display:grid;grid-template-columns:145px 1fr;min-height:390px;color:#17213d}.sidebar{background:#101a37;color:#9faed3;padding:20px 12px;font-size:10px}.sidebar strong{color:#fff;display:block;margin:0 0 25px 7px;font-size:13px}.sidebar div{padding:12px 9px;border-radius:7px}.sidebar .sel{color:#fff;background:#4d48d8}.dashboard{padding:22px 20px}.dashhead{display:flex;justify-content:space-between;align-items:center}.dashhead h4{font-size:16px;margin:0}.dashhead small{color:#7a849b;font-size:9px}.tag{border-radius:7px;background:#e9ecff;color:#4e46d0;font-size:9px;font-weight:800;padding:7px}.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}.stat{border:1px solid #e6eaf2;background:#fff;border-radius:10px;padding:13px}.stat small{display:block;font-size:9px;color:#8490a6}.stat b{display:block;font-size:19px;margin-top:6px;color:#1d2b4c}.stat em{font-size:9px;color:#0c9e8b;font-style:normal}.dashbottom{display:grid;grid-template-columns:1.2fr .8fr;gap:10px}.widget{background:white;border:1px solid #e8ebf3;border-radius:12px;padding:15px}.widget h4{font-size:11px;margin-bottom:16px;letter-spacing:0}.bars{height:118px;display:flex;align-items:end;gap:8px;border-bottom:1px solid #e7eaf2}.bars span{flex:1;background:linear-gradient(180deg,#7b72fa,#c5c1ff);border-radius:4px 4px 0 0}.bars span:nth-child(3n){background:linear-gradient(180deg,#13bfd7,#9ee8f0)}.line{height:9px;background:#eff1f8;border-radius:6px;margin:11px 0}.line b{height:100%;display:block;border-radius:6px;background:#5545e9}.floating{position:absolute;background:#fff;color:#1a2540;border:1px solid #e9ecf5;box-shadow:0 20px 55px #050b2640;border-radius:15px;padding:14px 18px;display:flex;align-items:center;gap:12px;z-index:2}.float1{left:-30px;bottom:45px}.float2{right:-15px;top:20px}.floating .ic{display:grid;place-items:center;background:#e7fbf6;border-radius:10px;color:#009c7e;width:40px;height:40px;font-size:19px}.floating b{display:block;font-size:13px}.floating small{color:#7b879e;font-size:10px}.disclaimer{font-size:10px;color:#98a4c0;text-align:right;margin-top:18px}.section{padding:105px 0}.eyebrow{color:#5148ce;font-size:12px;letter-spacing:.12em;font-weight:800;text-transform:uppercase;margin-bottom:16px}.center{text-align:center}.intro{max-width:740px;margin:0 auto 50px}.intro p{font-size:17px;color:var(--muted)}.pain{background:#fff}.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.pain-card{border:1px solid var(--border);border-radius:18px;padding:30px;background:linear-gradient(180deg,#fff,#fbfcff)}.pain-card .number{color:#b0b6c7;font-size:12px;font-weight:800}.pain-card h3{margin:18px 0 11px}.pain-card p{color:var(--muted);font-size:14px;margin:0}.statement{margin-top:35px;padding:28px 35px;border-left:4px solid var(--cyan);background:#f4f7ff;border-radius:0 15px 15px 0;font-family:Manrope;font-size:20px;font-weight:800;letter-spacing:-.035em}.features{background:var(--off)}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.feature{background:white;border:1px solid #e8ebf4;border-radius:17px;padding:25px;transition:.2s}.feature:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.feature .icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:#eeedff;color:#5545e9;font-size:22px;margin-bottom:22px}.feature h3{font-size:18px;margin-bottom:9px}.feature p{font-size:13px;color:var(--muted);margin:0}.feature .meta{display:inline-block;margin-top:15px;color:#6258cf;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.full{grid-column:1/-1;background:linear-gradient(130deg,#181f48,#302c87);color:white;display:flex;justify-content:space-between;align-items:center;gap:15px}.full h3{font-size:25px}.full p{color:#d5d8f4;max-width:370px}.full .icon{background:#ffffff1e;color:#91f5ff}.full .meta{color:#a7eeff}.proof{background:#fff}.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.case{border:1px solid #e6e9f2;border-radius:20px;overflow:hidden;box-shadow:0 15px 35px #111b3410}.casehead{background:#121b3b;color:#fff;padding:24px}.casehead small{font-size:11px;color:#b4c0df;letter-spacing:.06em;text-transform:uppercase}.casehead strong{font-family:Manrope;display:block;font-size:36px;letter-spacing:-.06em;margin:12px 0 5px}.casehead p{font-size:12px;color:#d5ddf3;margin:0}.casebody{padding:24px}.casebody h3{font-size:16px;margin-bottom:8px}.casebody p{font-size:13px;color:var(--muted);margin:0}.casefoot{border-top:1px solid #edf0f6;padding:12px 24px;font-size:10px;color:#8993a6}.proof-note{margin-top:18px;color:#7d8799;font-size:12px}.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.split p{color:var(--muted)}.steps{display:grid;gap:14px;margin-top:28px}.step{display:flex;gap:15px;align-items:flex-start}.step b{width:36px;height:36px;flex-shrink:0;display:grid;place-items:center;background:#eeedff;color:#5448d7;border-radius:10px;font-size:13px}.step h3{font-size:16px;margin:1px 0 3px}.step p{font-size:13px;margin:0}.visual-stack{background:#101a3b;padding:25px;border-radius:23px;box-shadow:var(--shadow)}.stack-top{display:flex;align-items:center;justify-content:space-between;color:#fff;font-weight:800;font-size:14px;margin-bottom:22px}.stack-top span{color:#85f3e8;font-size:10px}.journey{display:grid;gap:10px}.journey div{padding:15px;background:#ffffff10;border:1px solid #ffffff1a;border-radius:11px;color:#fff;display:flex;gap:12px;align-items:center;font-size:13px}.journey i{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#4f4adb;font-style:normal;font-weight:800;font-size:11px}.journey small{margin-left:auto;color:#a8b9df;font-size:10px}.stack-foot{padding:18px 5px 0;color:#b9c7e5;font-size:12px}.darkband{background:linear-gradient(120deg,#10172f,#242266);color:white}.darkband h2{max-width:780px}.darkband p{color:#c8d2e8;max-width:690px;font-size:17px}.integrations{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.integrations span{padding:12px 16px;border:1px solid #ffffff2a;background:#ffffff0a;border-radius:9px;font-size:12px;font-weight:700}.faq{max-width:860px;margin:auto}.faq details{border-bottom:1px solid #e6eaf3;padding:20px 0}.faq summary{cursor:pointer;font-weight:800;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:15px}.faq summary:after{content:'+';color:#5d50d8;font-size:23px;line-height:1}.faq details[open] summary:after{content:'−'}.faq details p{font-size:14px;color:var(--muted);margin:13px 0 0}.closing{background:radial-gradient(circle at 85% 20%,#2a3e87,#0b1024 65%);color:white;padding:105px 0;text-align:center}.closing h2{max-width:860px;margin:15px auto 22px}.closing p{max-width:680px;margin:0 auto 30px;color:#c7d2e8;font-size:17px}.closing .actions{justify-content:center}.footer{background:#080d1e;color:#aab6d1;padding:32px 0}.footerinner{display:flex;justify-content:space-between;gap:25px;align-items:center;font-size:12px}.footer .logo{font-size:19px}.footer .logomark{width:29px;height:29px;font-size:16px}.mobile-menu{display:none;color:white;background:none;border:0;font-size:24px}.notice{position:fixed;bottom:18px;right:18px;background:#fff;border:1px solid #e6eaf2;border-radius:12px;padding:15px 17px;box-shadow:var(--shadow);z-index:50;max-width:350px;font-size:12px;display:none}.notice button{float:right;border:0;background:none;font-size:18px;margin-left:12px}.label-demo{font-size:10px;letter-spacing:.1em;color:#b0bad4;text-transform:uppercase}.menu-open{display:flex!important}.logoimg{display:block;height:44px;width:auto;background:#fff;border-radius:10px;padding:5px 10px}.footer .logoimg{height:38px}
-@media(max-width:1020px){.heroinner{grid-template-columns:1fr;gap:25px;padding-top:75px;padding-bottom:75px}.hero-visual{max-width:650px;width:100%;margin:auto}.hero h1{max-width:850px}.navlinks{gap:13px}.split{gap:35px}}@media(max-width:760px){.container{padding:0 21px}.nav{min-height:66px}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;background:#111b38;padding:22px;flex-direction:column;align-items:flex-start;gap:19px}.mobile-menu{display:block}.nav>.btn{display:none}.heroinner{padding-top:55px;padding-bottom:72px}.hero h1{font-size:clamp(38px,10vw,55px)}.hero p{font-size:15px}.hero-visual{min-height:350px}.app{transform:none}.appbody{grid-template-columns:90px 1fr;min-height:290px}.sidebar{padding:12px 5px;font-size:8px}.sidebar strong{font-size:10px}.sidebar div{padding:9px 5px}.dashboard{padding:12px 8px}.dashhead h4{font-size:12px}.statrow{gap:4px;margin:12px 0}.stat{padding:8px 5px}.stat small{font-size:7px}.stat b{font-size:14px}.dashbottom{gap:5px}.widget{padding:8px}.widget h4{font-size:9px}.bars{height:75px;gap:3px}.floating{padding:9px 11px}.float1{left:-8px;bottom:0}.float2{right:-8px;top:0}.floating b{font-size:10px}.floating small{font-size:8px}.floating .ic{width:29px;height:29px}.section{padding:73px 0}.pain-grid,.cases,.feature-grid,.split{grid-template-columns:1fr}.feature.full{grid-column:span 1}.pain-card{padding:25px}.statement{font-size:17px}.split{gap:35px}.footerinner{flex-direction:column;align-items:flex-start}.navlinks .btn{display:flex}}@media(max-width:390px){.appbody{grid-template-columns:76px 1fr}.dashboard{padding:9px 6px}.statrow{gap:3px}.stat{padding:6px 3px}.stat b{font-size:12px}.dashbottom{grid-template-columns:1fr}.dashbottom .widget:nth-child(2){display:none}}
-</style></head><body>
-<header class="top"><div class="container nav"><a class="logo" href="#inicio" aria-label="RYVEM Saúde, início"><img class="logoimg" src="/saude/assets/logo-ryvem-saude.png" alt="RYVEM Saúde" width="150" height="52"></a><nav class="navlinks" id="navlinks"><a href="#problema">O desafio</a><a href="#plataforma">Plataforma</a><a href="#resultados">Resultados</a><a href="#metodo">Como funciona</a><a href="#faq">Dúvidas</a><a href="#contato" class="btn primary">Conhecer a RYVEM ↗</a></nav><a class="btn primary" href="#contato">Agendar apresentação ↗</a><button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false" id="menubtn">☰</button></div></header>
-<main><section class="hero" id="inicio"><div class="container heroinner"><div><span class="pill"><span class="dot"></span> Inteligência artificial + inteligência comercial</span><h1>Sua clínica não precisa de mais ferramentas. <span class="gradient">Precisa de mais pacientes na agenda.</span></h1><p>A RYVEM Saúde une IA de atendimento, CRM, agendamentos, Raio-X do WhatsApp e inteligência comercial em uma operação personalizada para sua clínica. Menos tarefas repetitivas. Mais oportunidades acompanhadas. Mais capacidade de conversão.</p><div class="actions"><a class="btn primary" href="#contato">Quero conhecer a RYVEM <span>↗</span></a><a class="btn ghost" href="#resultados">Ver resultados reais ↓</a></div><div class="micro">✓ A IA apoia sua equipe, sem substituí-la. &nbsp; ✓ Implantação personalizada.</div></div><div class="hero-visual"><div class="floating float2"><div class="ic">✓</div><div><b>Equipe + inteligência artificial</b><small>Atendimento conectado à operação</small></div></div><div class="app" aria-label="Representação conceitual do painel integrado RYVEM"><div class="appbar"><i></i><i></i><i></i><span>RYVEM SAÚDE · VISÃO ILUSTRATIVA</span></div><div class="appbody"><aside class="sidebar"><strong>◈ RYVEM</strong><div class="sel">▦ Visão geral</div><div>◉ Conversas</div><div>▤ CRM</div><div>▦ Agenda</div><div>⌕ Raio-X</div><div>◫ Tráfego</div><div>◷ Relatórios</div></aside><div class="dashboard"><div class="dashhead"><h4>Uma operação conectada</h4><span class="tag">IA + humano</span></div><div class="statrow"><div class="stat"><small>Atendimento</small><b>24/7</b><em>Cobertura contínua</em></div><div class="stat"><small>Oportunidades</small><b>CRM</b><em>Funil integrado</em></div><div class="stat"><small>Agenda</small><b>360°</b><em>Jornada conectada</em></div></div><div class="dashbottom"><div class="widget"><h4>Jornada comercial · ilustração</h4><div class="bars"><span style="height:33%"></span><span style="height:50%"></span><span style="height:42%"></span><span style="height:66%"></span><span style="height:52%"></span><span style="height:82%"></span><span style="height:71%"></span><span style="height:90%"></span></div></div><div class="widget"><h4>Fluxos conectados</h4><small style="font-size:9px;color:#72809a">Atendimento</small><div class="line"><b style="width:87%"></b></div><small style="font-size:9px;color:#72809a">CRM e agenda</small><div class="line"><b style="width:71%;background:#16c9df"></b></div><small style="font-size:9px;color:#72809a">Recuperação</small><div class="line"><b style="width:60%"></b></div></div></div></div></div></div><div class="floating float1"><div class="ic">↗</div><div><b>Da primeira mensagem ao agendamento</b><small>Sem perder a visão do paciente</small></div></div><div class="disclaimer">Imagem ilustrativa.</div></div></div></section>
-<section class="section pain" id="problema"><div class="container"><div class="intro center"><div class="eyebrow">Você conhece esse cenário?</div><h2>O problema não é sua equipe. <br>É tudo o que ela precisa fazer sozinha.</h2><p>Enquanto o telefone toca e a recepção cuida de quem está na clínica, novas conversas chegam, pacientes aguardam resposta e oportunidades deixam de avançar.</p></div><div class="pain-grid"><article class="pain-card"><span class="number">01 / TEMPO</span><h3>O paciente chama. A resposta demora.</h3><p>Principalmente à noite, aos finais de semana e nos horários de maior movimento. A intenção de agendar não espera.</p></article><article class="pain-card"><span class="number">02 / PROCESSO</span><h3>O contato esfria e ninguém retoma.</h3><p>Orçamentos, dúvidas e pedidos de horário ficam perdidos entre centenas de conversas.</p></article><article class="pain-card"><span class="number">03 / GESTÃO</span><h3>Mais assinaturas. Menos visibilidade.</h3><p>WhatsApp, CRM, agenda, campanhas e relatórios em ferramentas separadas. E sua clínica se adaptando a cada uma delas.</p></article></div><div class="statement">Sua equipe cuida das pessoas. A RYVEM ajuda a cuidar de cada etapa do processo comercial.</div></div></section>
-<section class="section features" id="plataforma"><div class="container"><div class="intro center"><div class="eyebrow">Uma plataforma. Uma operação conectada.</div><h2>Tudo o que sua clínica precisa para atender, acompanhar e converter.</h2><p>Você chega pela inteligência artificial e descobre uma estrutura completa de atendimento e gestão comercial. Os recursos são configurados de acordo com o fluxo e os sistemas da sua clínica.</p></div><div class="feature-grid">
-<article class="feature"><div class="icon">✦</div><h3>IA de atendimento personalizada</h3><p>Acolhe, responde, qualifica e encaminha pacientes usando a linguagem, os serviços e as regras da clínica.</p><span class="meta">Atendimento inteligente</span></article>
-<article class="feature"><div class="icon">▤</div><h3>CRM integrado</h3><p>Organize leads, acompanhe etapas, visualize pendências e saiba quem precisa de atenção para avançar.</p><span class="meta">Gestão de oportunidades</span></article>
-<article class="feature"><div class="icon">⌕</div><h3>Raio-X do WhatsApp</h3><p>Analise conversas anteriores e identifique pacientes que pediram informações, orçamento ou horário e não agendaram.</p><span class="meta">Demanda esquecida</span></article>
-<article class="feature"><div class="icon">▦</div><h3>Agenda e agendamentos</h3><p>Consulte disponibilidade, ofereça horários e conduza agendamentos conforme as regras e integrações disponíveis.</p><span class="meta">Conversão em consultas</span></article>
-<article class="feature"><div class="icon">↻</div><h3>Follow-up e reativação</h3><p>Retome conversas interrompidas e acompanhe pacientes inativos com cadências contextualizadas.</p><span class="meta">Recuperação comercial</span></article>
-<article class="feature"><div class="icon">↗</div><h3>Rastreamento de tráfego</h3><p>Acompanhe a origem dos contatos e conecte campanhas, conversas e evolução comercial quando os dados estiverem disponíveis.</p><span class="meta">Marketing + atendimento</span></article>
-<article class="feature"><div class="icon">◫</div><h3>Indicadores e relatórios</h3><p>Visualize tempo de resposta, demanda fora do expediente, cobertura de atendimento, agendamentos e gargalos.</p><span class="meta">Gestão baseada em dados</span></article>
-<article class="feature"><div class="icon">♧</div><h3>Integrações com ERP</h3><p>Conecte a operação a sistemas compatíveis de gestão e agendamento, conforme viabilidade técnica e escopo.</p><span class="meta">Menos retrabalho</span></article>
-<article class="feature"><div class="icon">⚑</div><h3>Alertas e intervenção humana</h3><p>Sinalize conversas críticas, exceções e oportunidades para a equipe assumir no momento certo.</p><span class="meta">IA + pessoas</span></article>
-<article class="feature"><div class="icon">☷</div><h3>Triagem e qualificação</h3><p>Entenda a necessidade do paciente, organize informações e direcione cada contato para o próximo passo.</p><span class="meta">Jornada comercial</span></article>
-<article class="feature"><div class="icon">◎</div><h3>Visão gerencial do funil</h3><p>Veja a evolução das oportunidades, identifique perdas e priorize o que pode virar agendamento.</p><span class="meta">Controle operacional</span></article>
-<article class="feature"><div class="icon">⚙</div><h3>Fluxos sob medida</h3><p>Personalização de linguagem, regras, horários, tratamentos, encaminhamentos e rotinas de cada clínica.</p><span class="meta">Implementação consultiva</span></article>
-<article class="feature full"><div><div class="icon">◇</div><h3>Não é mais uma IA genérica. É uma operação 360°.</h3><p>Atendimento, dados e processos trabalhando juntos para transformar conversas em oportunidades reais de agendamento.</p><span class="meta">RYVEM SAÚDE · ATENDIMENTO + INTELIGÊNCIA COMERCIAL</span></div><a class="btn ghost" href="#contato">Conhecer a solução ↗</a></article>
-</div></div></section>
-<section class="section proof" id="resultados"><div class="container"><div class="intro center"><div class="eyebrow">Resultados observados na prática</div><h2>Não basta responder mensagens. É preciso mudar o resultado da operação.</h2><p>Indicadores extraídos de relatórios operacionais, apresentados sem identificação das clínicas. Cada resultado depende do contexto, do período e da participação da equipe.</p></div><div class="cases"><article class="case"><div class="casehead"><small>Clínica odontológica · Sul do Brasil</small><strong>61</strong><p>agendamentos de pacientes recuperados</p></div><div class="casebody"><h3>Oportunidades que já estavam no WhatsApp</h3><p>O Raio-X identificou 252 oportunidades. Das 106 acionadas, 95 retomaram contato e 61 geraram agendamentos no período reportado.</p></div><div class="casefoot">Fonte: relatório operacional de 18 dias · set/2026</div></article><article class="case"><div class="casehead"><small>Clínica especializada em lentes e facetas dentárias</small><strong>2h30 → 7s</strong><p>tempo mediano até a primeira resposta</p></div><div class="casebody"><h3>Velocidade que acompanha a intenção do paciente</h3><p>Em 15 dias, o volume de consultas na agenda passou de 49 para 63. Também foram atendidos 161 contatos enquanto a clínica estava fechada.</p></div><div class="casefoot">Fonte: relatório operacional de 15 dias · set–out/2026</div></article><article class="case"><div class="casehead"><small>Clínica odontológica · Sul do Brasil</small><strong>51%</strong><p>das conversas iniciadas fora do expediente</p></div><div class="casebody"><h3>O atendimento não precisa parar quando a clínica fecha</h3><p>Em 21 dias, a IA atendeu 246 de 286 novas conversas. A mediana da primeira resposta foi de 8 segundos e 154 atendimentos ocorreram sem intervenção humana.</p></div><div class="casefoot">Fonte: relatório operacional de 21 dias · ago–set/2026</div></article></div><p class="proof-note">Resultados históricos específicos de cada clínica, sem garantia de desempenho futuro.</p></div></section>
-<section class="section" id="metodo"><div class="container split"><div><div class="eyebrow">A tecnologia se adapta à clínica</div><h2>Chega de pagar por ferramentas e adaptar sua operação a elas.</h2><p>A RYVEM parte da sua realidade: quem atende, como agenda, quais sistemas utiliza, onde perde oportunidades e o que precisa melhorar primeiro.</p><div class="steps"><div class="step"><b>01</b><div><h3>Entendemos sua operação</h3><p>Mapeamento do atendimento, dos horários, do fluxo comercial e das ferramentas existentes.</p></div></div><div class="step"><b>02</b><div><h3>Configuramos a inteligência</h3><p>Personalizamos linguagem, regras, triagem, integrações viáveis e jornada de agendamento.</p></div></div><div class="step"><b>03</b><div><h3>Colocamos IA e equipe para trabalhar juntas</h3><p>A IA assume rotinas repetitivas; sua equipe recebe contexto e atua nas situações que exigem atenção humana.</p></div></div><div class="step"><b>04</b><div><h3>Medimos e evoluímos</h3><p>Acompanhamos indicadores, corrigimos gargalos e priorizamos oportunidades reais de conversão.</p></div></div></div></div><div class="visual-stack"><div class="stack-top">A jornada conectada <span>RYVEM SAÚDE</span></div><div class="journey"><div><i>1</i> Paciente entra em contato <small>WhatsApp</small></div><div><i>2</i> IA acolhe e qualifica <small>Atendimento</small></div><div><i>3</i> Oportunidade entra no funil <small>CRM</small></div><div><i>4</i> Agenda ou encaminha à equipe <small>Agenda</small></div><div><i>5</i> Acompanha quem não concluiu <small>Follow-up</small></div><div><i>6</i> Gestor acompanha indicadores <small>Gestão</small></div></div><div class="stack-foot">Uma visão ilustrativa do processo. Os fluxos reais variam conforme a implantação.</div></div></div></section>
-<section class="section darkband"><div class="container"><div class="eyebrow" style="color:#8de8f3">Tecnologia a serviço do atendimento</div><h2>Não substituímos o cuidado humano. Eliminamos o trabalho repetitivo que impede sua equipe de cuidar melhor.</h2><p>O paciente continua sendo atendido com a identidade da sua clínica. A diferença é que cada conversa pode ter continuidade, contexto, encaminhamento e acompanhamento, inclusive fora do horário comercial.</p><div class="integrations"><span>WhatsApp</span><span>Inteligência artificial</span><span>CRM</span><span>Agenda</span><span>ERP compatível</span><span>Tráfego</span><span>Raio-X</span><span>Relatórios</span></div></div></section>
-<section class="section" id="faq"><div class="container faq"><div class="intro center"><div class="eyebrow">Perguntas frequentes</div><h2>Antes de dar o próximo passo</h2></div><details><summary>A RYVEM substitui minha recepcionista ou meu CRC?</summary><p>Não é essa a proposta. A IA assume tarefas repetitivas, faz triagem e dá continuidade a conversas. A equipe humana continua essencial para acolhimento, decisões, exceções e relacionamento.</p></details><details><summary>Preciso trocar o WhatsApp que minha clínica já usa?</summary><p>O desenho da operação depende da configuração técnica e das necessidades da clínica. As opções de conexão, coexistência e canais devem ser avaliadas na implantação.</p></details><details><summary>A RYVEM integra com minha agenda ou ERP?</summary><p>Trabalhamos com integrações conforme o sistema, as APIs disponíveis e a viabilidade técnica. A compatibilidade é confirmada antes de assumir qualquer integração no projeto.</p></details><details><summary>O Raio-X analisa conversas antigas?</summary><p>Com a autorização e o acesso adequados, o diagnóstico pode analisar o histórico disponível para identificar oportunidades comerciais ainda não concluídas, respeitando as condições técnicas e de privacidade aplicáveis.</p></details><details><summary>O atendimento é igual para todas as clínicas?</summary><p>Não. A implantação considera a linguagem, os serviços, as regras de atendimento, os horários, a agenda e os processos da sua operação.</p></details><details><summary>Como sei se a operação está dando resultado?</summary><p>Acompanhamos indicadores como velocidade de resposta, cobertura fora do expediente, avanço do funil, oportunidades recuperadas e agendamentos, conforme a disponibilidade e a qualidade dos dados.</p></details></div></section>
-<section class="closing" id="contato"><div class="container"><span class="pill"><span class="dot"></span> Próximo passo</span><h2>Descubra o que sua clínica pode ganhar quando atendimento e inteligência comercial trabalham juntos.</h2><p>Conheça a RYVEM Saúde e veja como uma operação personalizada pode ajudar sua equipe a atender melhor, recuperar oportunidades e aumentar a capacidade de agendamento.</p><div class="actions"><a class="btn primary" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Falar no WhatsApp ↗</a><a class="btn ghost" href="/raio-x">Pedir meu Raio-X gratuito ↗</a></div></div></section></main>
-<footer class="footer"><div class="container footerinner"><a class="logo" href="#inicio" aria-label="RYVEM Saúde"><img class="logoimg" src="/saude/assets/logo-ryvem-saude.png" alt="RYVEM Saúde" width="130" height="45"></a><span>© <span id="year"></span> RYVEM Saúde · Atendimento inteligente e inteligência comercial.</span><a href="/politica-de-privacidade" style="color:#aab6d1">Política de privacidade</a></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();const b=document.getElementById('menubtn'),n=document.getElementById('navlinks');b.addEventListener('click',()=>{const o=n.classList.toggle('menu-open');b.setAttribute('aria-expanded',String(o));b.textContent=o?'✕':'☰'});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('menu-open');b.setAttribute('aria-expanded','false');b.textContent='☰'}));</script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RYVEM Saúde | Mais pacientes na agenda, direto do WhatsApp</title>
+<meta name="description" content="IA de atendimento, CRM, agenda e Raio-X do WhatsApp para clínicas de odontologia e estética. Responda em segundos e recupere pacientes que já falaram com a sua clínica.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RYVEM Saúde | Mais pacientes na agenda, direto do WhatsApp">
+<meta property="og:description" content="IA de atendimento, CRM, agenda e Raio-X do WhatsApp para clínicas de odontologia e estética.">
+<meta property="og:image" content="https://ryvem.com.br/raio-x/assets/raiox-agendamento.webp">
+<link rel="icon" href="/saude/assets/logo-ryvem-saude.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0E1446;      /* texto, títulos e botões */
+  --indigo:#4338CA;    /* cor principal da marca */
+  --cyan:#06B6D4;      /* apoio */
+  --lav:#F1F0FF;       /* superfície lilás clara (cards e faixas) */
+  --lav2:#E4E2FF;
+  --yellow:#FFD84D;    /* bloco de cor atrás das telas */
+  --pink:#FF8FB8;
+  --line:#E6E8F0;
+  --muted:#4B5070;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font-family:Outfit,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--navy);background:var(--white);font-size:18px;line-height:1.45;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+.wrap{max-width:1110px;margin:0 auto;padding:0 24px}
+
+/* topo */
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{height:84px;display:flex;align-items:center;justify-content:space-between}
+.logo img{height:46px;width:auto}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;border-radius:999px;padding:13px 28px;font-size:18px;font-weight:500;transition:background .15s}
+.pill:hover{background:var(--indigo)}
+.pill.white{background:#fff;color:var(--navy)}
+.pill.white:hover{background:var(--lav)}
+.link{font-weight:600;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px}
+
+/* abertura */
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:88px}
+.eyebrow{font-size:20px;margin-bottom:10px}
+.hero h1{font-size:58px;line-height:1.08;font-weight:700;letter-spacing:-.5px;margin-bottom:22px}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:520px;margin-bottom:32px}
+.hero .acts{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hero .acts .pill{padding:15px 34px}
+.art{position:relative;max-width:500px;justify-self:end;width:100%}
+.art .blob{position:absolute;border-radius:36px}
+.art .b1{inset:8% -4% -6% 14%;background:var(--indigo)}
+.art .b2{width:120px;height:120px;left:-2%;top:-4%;background:var(--yellow);border-radius:50%}
+.art .photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:1/1;background:#ddd url('/raio-x/assets/raiox-agendamento.webp') 58% center/cover}
+.chip{position:absolute;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(14,20,70,.16);padding:12px 16px;font-size:15px;line-height:1.25;display:flex;gap:10px;align-items:center}
+.chip b{display:block;font-weight:600}
+.chip small{color:var(--muted);font-size:13px}
+.chip .ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:700;flex:none}
+.c1{left:-34px;bottom:44px}.c1 .ic{background:#DCFCE7;color:#15803D}
+.c2{right:-18px;top:30px}.c2 .ic{background:var(--lav2);color:var(--indigo)}
+
+/* faixa do produto */
+.band{background:var(--lav);padding:64px 0 80px}
+.board{background:#fff;border-radius:18px;box-shadow:0 1px 0 var(--line),0 18px 50px rgba(14,20,70,.08);padding:20px 18px;overflow:hidden}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.col h4{margin:0 0 12px;font-size:13px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600;text-align:center;padding-bottom:10px;border-bottom:3px solid var(--c)}
+.card{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:13px;display:grid;grid-template-columns:30px 1fr;gap:4px 10px;align-items:center}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:600;font-size:12px;grid-row:span 2}
+.card .n{font-weight:600}
+.card .s{color:var(--indigo)}
+.card .t{grid-column:2;display:flex;gap:6px;flex-wrap:wrap}
+.tag{border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:11px;color:var(--muted)}
+.tag.ok{background:#DCFCE7;border-color:#DCFCE7;color:#15803D}
+.band h2{font-size:44px;font-weight:700;text-align:center;margin:56px 0 10px;line-height:1.1}
+.band p.c{text-align:center;font-size:20px}
+.note{font-size:13px;color:var(--muted);text-align:right;margin-top:10px}
+
+/* frase central */
+.statement{padding:96px 0 40px;text-align:center}
+.statement p{font-size:44px;line-height:1.35;max-width:860px;margin:auto}
+.shape{display:inline-block;width:46px;height:46px;vertical-align:-6px;margin:0 6px}
+.sh1{background:var(--indigo);border-radius:50% 50% 12px 50%}
+.sh2{background:var(--pink);border-radius:50%;width:38px;height:38px}
+.sh3{background:var(--cyan);border-radius:12px;transform:rotate(12deg);width:38px;height:38px}
+
+/* recursos */
+.feat{padding:40px 0}
+.split{background:var(--lav);border-radius:24px;display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:center;padding:50px 0 0 54px;overflow:hidden}
+.split h3{font-size:38px;line-height:1.12;font-weight:700;margin-bottom:14px}
+.split p{font-size:20px;margin-bottom:24px}
+.split .txt{padding-bottom:50px}
+.canvas{border-radius:24px 0 0 0;padding:28px 0 0 28px;background:var(--c)}
+.screen{background:#fff;border-radius:14px 0 0 0;padding:18px;min-height:300px;box-shadow:0 10px 30px rgba(14,20,70,.12)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+.box{background:var(--lav);border-radius:24px;padding:28px 28px 34px;display:flex;flex-direction:column}
+.box .canvas2{background:var(--c);border-radius:18px;padding:24px 0 0 24px;height:250px;overflow:hidden;margin-bottom:34px}
+.box .screen{border-radius:12px 0 0 0;min-height:240px;padding:14px}
+.box h3{font-size:36px;line-height:1.12;font-weight:700;margin-bottom:16px}
+.box p{font-size:18px;margin-bottom:28px;flex:1}
+.box .link{align-self:flex-start;font-size:18px}
+
+/* telas ilustrativas */
+.bubble{max-width:82%;padding:9px 12px;border-radius:14px;font-size:14px;margin-bottom:9px;line-height:1.35}
+.bubble.in{background:#F1F2F6;border-bottom-left-radius:4px}
+.bubble.out{background:#DCF8C6;margin-left:auto;border-bottom-right-radius:4px}
+.bubble small{display:block;color:#7A8094;font-size:11px;margin-top:3px;text-align:right}
+.scr-h{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line);font-size:14px}
+.scr-h b{font-weight:600}
+.row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;gap:10px}
+.row:last-child{border:0}
+.row>span:first-child{white-space:nowrap}
+.row .who{display:flex;align-items:center;gap:9px}
+.row .av{width:28px;height:28px;font-size:11px}
+.badge{font-size:11px;border-radius:6px;padding:3px 7px;font-weight:600;white-space:nowrap}
+.bd1{background:#FEE2E2;color:#B91C1C}.bd2{background:#FEF3C7;color:#92400E}.bd3{background:#DCFCE7;color:#15803D}.bd4{background:var(--lav2);color:var(--indigo)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.kpi div{border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:11px;color:var(--muted)}
+.kpi b{display:block;font-size:20px;color:var(--navy)}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px}
+.mini{background:var(--lav);border-radius:20px;padding:30px 30px 34px}
+.mini h3{font-size:30px;font-weight:700;line-height:1.15;margin-bottom:14px}
+.mini p{font-size:18px}
+
+/* prova */
+.proof{padding:90px 0 70px;text-align:center}
+.proof h2{font-size:40px;font-weight:500;line-height:1.3;max-width:760px;margin:0 auto 46px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:left}
+.num{border-top:3px solid var(--c);padding-top:20px}
+.num strong{display:block;font-size:56px;font-weight:700;line-height:1;margin-bottom:10px}
+.num span{display:block;font-size:18px;font-weight:600;margin-bottom:8px}
+.num p{font-size:16px;color:var(--muted)}
+.num small{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+.fine{margin-top:34px;font-size:13px;color:var(--muted)}
+
+/* como ajuda */
+.help{background:var(--lav);padding:70px 0}
+.help .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:50px;align-items:center}
+.help .ph{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:#ccc url('/raio-x/assets/raiox-painel.webp') 30% center/cover}
+.help h2{font-size:44px;font-weight:700;line-height:1.15;margin-bottom:26px}
+details{border-bottom:1px solid #D9D6F7;padding:18px 8px}
+summary{list-style:none;cursor:pointer;font-size:26px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:'';width:10px;height:10px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:rotate(45deg);transition:transform .2s;flex:none;margin-right:6px}
+details[open] summary:after{transform:rotate(-135deg)}
+details p,details li{font-size:17px}
+details p{margin-top:14px}
+details ul{margin:8px 0 0;padding-left:20px}
+summary:focus-visible,.pill:focus-visible,.link:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+
+/* chamada final */
+.cta{padding:70px 0 80px}
+.cta .in{background:var(--navy);color:#fff;border-radius:22px;text-align:center;padding:64px 30px;position:relative;overflow:hidden}
+.cta .in:before{content:'';position:absolute;width:190px;height:190px;border-radius:50%;background:var(--indigo);left:-50px;bottom:-60px}
+.cta .in:after{content:'';position:absolute;width:120px;height:120px;border-radius:30px;background:var(--cyan);right:-30px;top:-30px;transform:rotate(18deg);opacity:.9}
+.cta .in>*{position:relative;z-index:1}
+.cta h2{font-size:46px;font-weight:500;margin-bottom:12px;position:relative}
+.cta p{font-size:18px;margin-bottom:28px;position:relative;opacity:.9}
+.cta .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta .ghost{background:transparent;border:1.5px solid rgba(255,255,255,.6)}
+.cta .ghost:hover{background:rgba(255,255,255,.1)}
+
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer img{height:36px;width:auto}
+footer a{color:var(--muted)}
+
+/* notebook */
+@media (max-width:1100px){
+  .hero h1{font-size:50px}
+  .art{max-width:430px}
+  .c1{left:-14px}.c2{right:-8px}
+}
+/* tablet e celular */
+@media (max-width:860px){
+  body{font-size:17px}
+  .top .wrap{height:68px}
+  .logo img{height:38px}
+  .top .pill{padding:10px 18px;font-size:15px}
+  .hero .wrap{grid-template-columns:1fr;padding-top:36px;padding-bottom:60px;gap:44px}
+  .eyebrow{font-size:17px}
+  .hero h1{font-size:40px}
+  .hero p.sub{font-size:18px}
+  .art{justify-self:center;max-width:420px}
+  .c1{left:-6px;bottom:18px}.c2{right:-6px;top:14px}
+  .band{padding:40px 0 56px}
+  .board{overflow-x:auto}
+  .cols{grid-template-columns:repeat(4,230px)}
+  .band h2{font-size:32px;margin-top:40px}
+  .band p.c{font-size:18px}
+  .statement{padding:64px 0 24px}
+  .statement p{font-size:30px}
+  .shape{width:32px;height:32px}.sh2,.sh3{width:28px;height:28px}
+  .split{grid-template-columns:1fr;padding:34px 0 0 26px}
+  .split .txt{padding:0 26px 0 0}
+  .split h3,.box h3{font-size:30px}
+  .split p{font-size:18px}
+  .grid2,.grid3{grid-template-columns:1fr;gap:20px}
+  .mini h3{font-size:26px}
+  .proof{padding:64px 0 50px}
+  .proof h2{font-size:30px}
+  .nums{grid-template-columns:1fr;gap:28px}
+  .num strong{font-size:46px}
+  .help .wrap{grid-template-columns:1fr;gap:30px}
+  .help .ph{aspect-ratio:4/3}
+  .help h2{font-size:32px}
+  summary{font-size:21px}
+  .cta h2{font-size:32px}
+  .cta .in{padding:50px 22px}
+  .cta .in:before{width:110px;height:110px;left:-60px;bottom:-60px}
+  .cta .in:after{width:70px;height:70px;right:-34px;top:-34px}
+  .note{text-align:left}
+}
+@media (max-width:400px){
+  .hero h1{font-size:35px}
+  .top .pill{padding:9px 14px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/saude/" aria-label="RYVEM Saúde"><img src="/saude/assets/logo-ryvem-saude.png" alt="RYVEM Saúde" width="133" height="46"></a>
+    <a class="pill" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Falar com a RYVEM</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Para clínicas de odontologia e estética</p>
+      <h1>Mais pacientes na agenda, direto do seu WhatsApp</h1>
+      <p class="sub">A RYVEM responde seus pacientes em segundos, organiza cada conversa e retoma quem parou no meio do caminho. Sua equipe fica com o que só ela pode fazer.</p>
+      <div class="acts">
+        <a class="pill" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Quero conhecer</a>
+        <a class="link" href="/raio-x">Pedir Raio-X gratuito</a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <span class="blob b1"></span><span class="blob b2"></span>
+      <div class="photo"></div>
+      <div class="chip c2"><span class="ic">IA</span><div><b>Respondido em 7 s</b><small>Domingo, 22:14</small></div></div>
+      <div class="chip c1"><span class="ic">✓</span><div><b>Avaliação agendada</b><small>Ter, 14:00 · Lentes de resina</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="board" role="img" aria-label="Funil de pacientes da RYVEM com as etapas novo contato, em triagem, avaliação agendada e compareceu">
+      <div class="cols">
+        <div class="col" style="--c:#FFD84D"><h4>Novo contato</h4>
+          <div class="card"><span class="av" style="background:#F59E0B">MS</span><span class="n">Mariana Souza</span><span class="s">Lentes de resina</span><span class="t"><span class="tag">Anúncio</span><span class="tag">Agora</span></span></div>
+          <div class="card"><span class="av" style="background:#0EA5E9">RL</span><span class="n">Rafael Lima</span><span class="s">Implante</span><span class="t"><span class="tag">Instagram</span></span></div>
+          <div class="card"><span class="av" style="background:#EC4899">BC</span><span class="n">Beatriz Costa</span><span class="s">Botox</span><span class="t"><span class="tag">Fora do horário</span></span></div>
+        </div>
+        <div class="col" style="--c:#A78BFA"><h4>Em triagem</h4>
+          <div class="card"><span class="av" style="background:#8B5CF6">JA</span><span class="n">Juliana Alves</span><span class="s">Clareamento</span><span class="t"><span class="tag">IA conduzindo</span></span></div>
+          <div class="card"><span class="av" style="background:#14B8A6">PM</span><span class="n">Paulo Mendes</span><span class="s">Prótese</span><span class="t"><span class="tag">Equipe avisada</span></span></div>
+        </div>
+        <div class="col" style="--c:#4338CA"><h4>Avaliação agendada</h4>
+          <div class="card"><span class="av" style="background:#4338CA">CF</span><span class="n">Carla Ferreira</span><span class="s">Facetas</span><span class="t"><span class="tag ok">Confirmado</span><span class="tag">Ter 14:00</span></span></div>
+          <div class="card"><span class="av" style="background:#F97316">LN</span><span class="n">Lucas Nunes</span><span class="s">Alinhador</span><span class="t"><span class="tag">Qua 09:30</span></span></div>
+          <div class="card"><span class="av" style="background:#06B6D4">AR</span><span class="n">Ana Ribeiro</span><span class="s">Harmonização</span><span class="t"><span class="tag">Recuperada</span></span></div>
+        </div>
+        <div class="col" style="--c:#22C55E"><h4>Compareceu</h4>
+          <div class="card"><span class="av" style="background:#22C55E">FG</span><span class="n">Fernanda Gomes</span><span class="s">Lentes de resina</span><span class="t"><span class="tag ok">Fechou</span></span></div>
+          <div class="card"><span class="av" style="background:#64748B">DS</span><span class="n">Diego Santos</span><span class="s">Limpeza</span><span class="t"><span class="tag">Retorno em 6 meses</span></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Telas ilustrativas com nomes fictícios.</p>
+    <h2>Todos os pacientes ao seu alcance</h2>
+    <p class="c">Conversa, funil e agenda no mesmo lugar: Atendimento | Funil | Agenda</p>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p>O WhatsApp que sua clínica já usa <span class="shape sh1" aria-hidden="true"></span> agora com quem responda, <span class="shape sh2" aria-hidden="true"></span> acompanhe e agende <span class="shape sh3" aria-hidden="true"></span></p>
+  </div>
+</section>
+
+<section class="feat">
+  <div class="wrap">
+    <div class="split">
+      <div class="txt">
+        <h3>A resposta chega em segundos, de dia ou de madrugada</h3>
+        <p>A IA acolhe o paciente com o jeito da sua clínica, entende o que ele precisa e conduz até a avaliação. Quando o caso pede uma pessoa, sua equipe é avisada na hora.</p>
+        <a class="link" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Quero ver funcionando</a>
+      </div>
+      <div class="canvas" style="--c:var(--pink)" aria-hidden="true">
+        <div class="screen">
+          <div class="scr-h"><span class="av" style="background:#EC4899;width:30px;height:30px;font-size:11px">BC</span><div><b>Beatriz Costa</b><br><small style="color:#7A8094">Domingo</small></div></div>
+          <div class="bubble in">Oi, boa noite! Vocês fazem lente de resina? Quanto fica?<small>22:14</small></div>
+          <div class="bubble out">Boa noite, Beatriz! Fazemos sim, e o resultado sai no mesmo dia. O valor depende do seu sorriso, por isso começamos por uma avaliação. O que você gostaria de mudar?<small>22:14</small></div>
+          <div class="bubble in">Acho meus dentes amarelados e um pouco desalinhados<small>22:16</small></div>
+          <div class="bubble out">Entendi. Tenho terça às 14h ou quarta às 9h30 para a sua avaliação. Qual fica melhor?<small>22:16</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <article class="box">
+        <div class="canvas2" style="--c:var(--yellow)" aria-hidden="true">
+          <div class="screen">
+            <div class="scr-h"><b>Raio-X do WhatsApp</b><span class="badge bd4" style="margin-left:auto">252 oportunidades</span></div>
+            <div class="row"><span class="who"><span class="av" style="background:#F59E0B">TM</span>Pediu valor de facetas</span><span class="badge bd1">Sem retorno</span></div>
+            <div class="row"><span class="who"><span class="av" style="background:#0EA5E9">GO</span>Queria marcar avaliação</span><span class="badge bd2">Parou na agenda</span></div>
+            <div class="row"><span class="who"><span class="av" style="background:#8B5CF6">VP</span>Paciente sem voltar há 8 meses</span><span class="badge bd4">Reativar</span></div>
+            <div class="row"><span class="who"><span class="av" style="background:#14B8A6">LS</span>Retomou a conversa</span><span class="badge bd3">Agendou</span></div>
+          </div>
+        </div>
+        <h3>Raio-X do WhatsApp</h3>
+        <p>Lemos as conversas que já existem e mostramos quem pediu orçamento, quis marcar ou sumiu sem agendar. Paciente que já falou com você custa menos do que um novo.</p>
+        <a class="link" href="/raio-x">Pedir meu Raio-X gratuito</a>
+      </article>
+      <article class="box">
+        <div class="canvas2" style="--c:var(--indigo)" aria-hidden="true">
+          <div class="screen">
+            <div class="scr-h"><b>Agenda</b><span style="margin-left:auto;color:#7A8094">Terça, 14 de outubro</span></div>
+            <div class="row"><span>09:00</span><span class="badge bd3">Retorno · Dra. Camila</span></div>
+            <div class="row"><span>10:30</span><span class="badge bd4">Avaliação · lentes</span></div>
+            <div class="row"><span>14:00</span><span class="badge bd4">Avaliação · facetas · marcada pela IA</span></div>
+            <div class="row"><span>15:30</span><span class="badge bd2">Livre</span></div>
+            <div class="row"><span>16:00</span><span class="badge bd3">Manutenção</span></div>
+          </div>
+        </div>
+        <h3>Agenda conectada</h3>
+        <p>A IA oferece os horários livres do sistema que a clínica já usa e grava a consulta quando o paciente confirma. Lembrete e confirmação saem sozinhos.</p>
+        <a class="link" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20saber%20se%20a%20RYVEM%20integra%20com%20a%20agenda%20da%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Ver se integra com a sua agenda</a>
+      </article>
+      <article class="box">
+        <div class="canvas2" style="--c:var(--cyan)" aria-hidden="true">
+          <div class="screen">
+            <div class="scr-h"><b>Retomada de conversas</b></div>
+            <div class="row"><span>Dia 1</span><span class="badge bd4">Mensagem com o assunto da conversa</span></div>
+            <div class="row"><span>Dia 3</span><span class="badge bd4">Novo convite para a avaliação</span></div>
+            <div class="row"><span>Dia 5</span><span class="badge bd3">Paciente respondeu · pausa</span></div>
+            <div class="row"><span>Equipe</span><span class="badge bd2">Avisada no grupo</span></div>
+          </div>
+        </div>
+        <h3>Ninguém fica sem retorno</h3>
+        <p>Quem parou no preço, na data ou no "vou pensar" recebe uma nova mensagem no momento certo, sempre com o contexto do que conversou. Se responder, a sequência para.</p>
+        <a class="link" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Quero conhecer</a>
+      </article>
+      <article class="box">
+        <div class="canvas2" style="--c:#A78BFA" aria-hidden="true">
+          <div class="screen">
+            <div class="kpi"><div>Conversas<b>286</b></div><div>Fora do horário<b>51%</b></div><div>1ª resposta<b>8 s</b></div></div>
+            <div class="row"><span>Anúncio · Lentes</span><span class="badge bd3">18 agendamentos</span></div>
+            <div class="row"><span>Anúncio · Implante</span><span class="badge bd4">9 agendamentos</span></div>
+            <div class="row"><span>Instagram</span><span class="badge bd4">6 agendamentos</span></div>
+          </div>
+        </div>
+        <h3>Saiba de onde vem cada paciente</h3>
+        <p>Veja qual anúncio trouxe a conversa, quantas viraram avaliação e onde o atendimento trava. Decisão de marketing com número na mão.</p>
+        <a class="link" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Quero conhecer</a>
+      </article>
+    </div>
+
+    <div class="grid3">
+      <div class="mini"><h3>Alertas para a equipe</h3><p>Emergência, paciente pedindo pessoa ou caso delicado chegam no grupo da clínica na hora.</p></div>
+      <div class="mini"><h3>Triagem</h3><p>A IA entende a queixa antes de falar de preço e encaminha cada paciente para o próximo passo certo.</p></div>
+      <div class="mini"><h3>Relatórios</h3><p>Tempo de resposta, atendimentos fora do horário, agendamentos e perdas em um só painel.</p></div>
+      <div class="mini"><h3>Painel da equipe</h3><p>Sua equipe assume qualquer conversa pelo computador ou celular, com todo o histórico na tela.</p></div>
+      <div class="mini"><h3>Integração com sistema</h3><p>Conectamos com o sistema de gestão e agenda que a clínica já usa, quando ele permite.</p></div>
+      <div class="mini"><h3>Do jeito da clínica</h3><p>Linguagem, regras, tratamentos, horários e profissionais configurados para a sua operação.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" id="resultados">
+  <div class="wrap">
+    <h2>O que mudou nas clínicas que já atendem com a RYVEM</h2>
+    <div class="nums">
+      <div class="num" style="--c:var(--yellow)">
+        <strong>61</strong>
+        <span>pacientes recuperados agendaram</span>
+        <p>O Raio-X achou 252 oportunidades paradas no WhatsApp. Das 106 acionadas, 95 voltaram a conversar.</p>
+        <small>Clínica odontológica · Sul do Brasil · 18 dias</small>
+      </div>
+      <div class="num" style="--c:var(--indigo)">
+        <strong>2h30 → 7 s</strong>
+        <span>até a primeira resposta</span>
+        <p>Em 15 dias a agenda passou de 49 para 63 consultas, e 161 pacientes foram atendidos com a clínica fechada.</p>
+        <small>Clínica especializada em lentes e facetas dentárias · 15 dias</small>
+      </div>
+      <div class="num" style="--c:var(--cyan)">
+        <strong>51%</strong>
+        <span>das conversas chegam fora do horário</span>
+        <p>Em 21 dias a IA atendeu 246 de 286 novas conversas, com primeira resposta em 8 segundos.</p>
+        <small>Clínica odontológica · Sul do Brasil · 21 dias</small>
+      </div>
+    </div>
+    <p class="fine">Resultados de clínicas reais, sem identificação. Cada operação tem seu próprio resultado.</p>
+  </div>
+</section>
+
+<section class="help">
+  <div class="wrap">
+    <div class="ph" role="img" aria-label="Profissional acompanhando no computador as oportunidades encontradas no WhatsApp da clínica"></div>
+    <div>
+      <h2>Como a RYVEM ajuda sua clínica?</h2>
+      <details open>
+        <summary>Para a recepção</summary>
+        <p>A recepção para de correr atrás de mensagem e cuida de quem está na clínica.</p>
+        <ul><li>A IA responde, faz a triagem e oferece horário</li><li>Conversas que precisam de pessoa chegam com o resumo pronto</li><li>Nada de paciente esquecido no fim do dia</li></ul>
+      </details>
+      <details>
+        <summary>Para o dono da clínica</summary>
+        <p>Você enxerga o atendimento inteiro sem precisar perguntar para ninguém.</p>
+        <ul><li>Quantos chegaram, quantos agendaram e onde perdeu</li><li>Pacientes antigos que podem voltar</li><li>Implantação feita por nós, no seu ritmo</li></ul>
+      </details>
+      <details>
+        <summary>Para o marketing</summary>
+        <p>O investimento em anúncio deixa de se perder na conversa.</p>
+        <ul><li>Origem de cada paciente, anúncio por anúncio</li><li>Resposta imediata para quem acabou de clicar</li><li>Relatório de agendamentos por campanha</li></ul>
+      </details>
+      <details>
+        <summary>Preciso trocar meu WhatsApp?</summary>
+        <p>Não. A RYVEM funciona no número que a clínica já usa e com a equipe que você já tem. A IA não substitui a recepção: tira dela o trabalho repetitivo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="in">
+      <h2>Raio-X gratuito do seu WhatsApp</h2>
+      <p>Descubra quantos pacientes já falaram com a sua clínica e ainda podem agendar.</p>
+      <div class="acts">
+        <a class="pill white" href="/raio-x">Pedir meu Raio-X</a>
+        <a class="pill ghost" href="https://wa.me/5522981047666?text=Ol%C3%A1%21%20Quero%20conhecer%20a%20RYVEM%20Sa%C3%BAde%20para%20a%20minha%20cl%C3%ADnica." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="/saude/assets/logo-ryvem-saude.png" alt="RYVEM Saúde" width="104" height="36">
+    <span>© <span id="ano">2026</span> RYVEM Saúde · Inteligência para clínicas e profissionais da saúde</span>
+    <a href="/politica-de-privacidade">Política de privacidade</a>
+  </div>
+</footer>
+<script>document.getElementById('ano').textContent=new Date().getFullYear();</script>
+</body>
+</html>
